@@ -4,6 +4,7 @@ import React from "react";
 import logo from "@/assets/logo/authLogo.png";
 import { FieldValues, useForm } from "react-hook-form";
 import Link from "next/link";
+import { EmailIcon, PasswordIcon } from "@/Components/SvgContainer/SvgContainer";
 
 const Login = () => {
   const {
@@ -37,59 +38,51 @@ const Login = () => {
           {/* Form */}
           <form className="space-y-5" onSubmit={handleSubmit(onSubmit)}>
             {/* Email */}
-            <div className="text-left">
-              <label
-                htmlFor="email"
-                className="block text-sm font-medium text-gray-700 mb-1"
-              >
+            <div className="text-left relative">
+              <label htmlFor="email" className="block text-sm font-medium text-gray-700 mb-1">
                 Email
               </label>
-              <input
-                type="email"
-                id="email"
-                placeholder="Enter your email"
-                className={`w-full px-4 py-3 border rounded-lg focus:ring-2 focus:ring-[#004D3F] focus:border-[#004D3F] outline-none transition ${errors.email ? "border-red-500" : "border-gray-300"
-                  }`}
-                {...register("email", {
-                  required: "Email is required",
-                  pattern: {
-                    value: /^\S+@\S+$/i,
-                    message: "Invalid email address",
-                  },
-                })}
-              />
-              {errors.email && (
-                <p className="text-red-500 text-sm mt-1">{errors.email.message}</p>
-              )}
+              <div className="relative">
+                <span className="absolute left-3 top-1/2 -translate-y-1/2 text-gray-400">
+                  <EmailIcon className="w-5 h-5" />
+                </span>
+                <input
+                  type="email"
+                  id="email"
+                  placeholder="Enter your email"
+                  className={`w-full pl-10 pr-4 py-3 border rounded-lg focus:ring-2 focus:ring-[#004D3F] focus:border-[#004D3F] outline-none transition ${errors.email ? "border-red-500" : "border-gray-300"
+                    }`}
+                  {...register("email", {
+                    required: "Email is required",
+                    pattern: { value: /^\S+@\S+$/i, message: "Invalid email address" },
+                  })}
+                />
+              </div>
+              {errors.email && <p className="text-red-500 text-sm mt-1">{errors.email.message as string}</p>}
             </div>
 
             {/* Password */}
-            <div className="text-left">
-              <label
-                htmlFor="password"
-                className="block text-sm font-medium text-gray-700 mb-1"
-              >
+            <div className="text-left relative">
+              <label htmlFor="password" className="block text-sm font-medium text-gray-700 mb-1">
                 Password
               </label>
-              <input
-                type="password"
-                id="password"
-                placeholder="Enter your password"
-                className={`w-full px-4 py-3 border rounded-lg focus:ring-2 focus:ring-[#004D3F] focus:border-[#004D3F] outline-none transition ${errors.password ? "border-red-500" : "border-gray-300"
-                  }`}
-                {...register("password", {
-                  required: "Password is required",
-                  minLength: {
-                    value: 6,
-                    message: "Password must be at least 6 characters",
-                  },
-                })}
-              />
-              {errors.password && (
-                <p className="text-red-500 text-sm mt-1">
-                  {errors.password.message}
-                </p>
-              )}
+              <div className="relative">
+                <span className="absolute left-3 top-1/2 -translate-y-1/2 text-gray-400">
+                  <PasswordIcon className="w-5 h-5" />
+                </span>
+                <input
+                  type="password"
+                  id="password"
+                  placeholder="Enter your password"
+                  className={`w-full pl-10 pr-4 py-3 border rounded-lg focus:ring-2 focus:ring-[#004D3F] focus:border-[#004D3F] outline-none transition ${errors.password ? "border-red-500" : "border-gray-300"
+                    }`}
+                  {...register("password", {
+                    required: "Password is required",
+                    minLength: { value: 6, message: "Password must be at least 6 characters" },
+                  })}
+                />
+              </div>
+              {errors.password && <p className="text-red-500 text-sm mt-1">{errors.password.message as string}</p>}
             </div>
 
             {/* Remember & Forgot */}
@@ -110,7 +103,11 @@ const Login = () => {
             {/* Sign In */}
             <button
               type="submit"
-              className="w-full bg-[#004D3F] text-white py-3 rounded-lg font-medium border border-[#1F825EB8]/70 shadow-lg hover:bg-[#016A55] transition hover:cursor-pointer"
+              className="w-full bg-[#004D3F] text-white py-3 rounded-lg font-medium border border-[#1F825EB8]/70 hover:bg-[#016A55] transition hover:cursor-pointer"
+              style={{
+                boxShadow:
+                  "0 0 0 1px var(--Primary-700, #1F825E), 0 4px 12px -2px rgba(31, 130, 94, 0.72), 0 0 0 2px var(--Background-bg-primary-hover, #F5FDFA)"
+              }}
             >
               Sign In
             </button>
@@ -125,7 +122,7 @@ const Login = () => {
             {/* Google Sign In */}
             <button
               type="button"
-              className="w-full flex items-center justify-center gap-3 py-3 border border-gray-300 rounded-lg hover:bg-gray-50 transition"
+              className="w-full flex items-center justify-center gap-3 py-3 border border-gray-300 rounded-lg hover:bg-gray-50 transition hover:cursor-pointer"
             >
               <Image
                 src="https://www.svgrepo.com/show/475656/google-color.svg"
