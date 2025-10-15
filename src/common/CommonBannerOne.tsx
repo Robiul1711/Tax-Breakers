@@ -1,6 +1,6 @@
 import { motion } from "framer-motion";
-
 import { cn } from "@/lib/utils";
+import { TCommonBannerOne } from "@/Types";
 import Title from "./Title";
 
 const CommonBannerOne = ({
@@ -11,7 +11,7 @@ const CommonBannerOne = ({
   logo,
   className,
   isLoading,
-}) => {
+}: TCommonBannerOne) => {
   const MotionTitle = motion(Title);
 
   return (
@@ -68,6 +68,7 @@ const CommonBannerOne = ({
               </Title>
 
               <MotionTitle
+                className="mb-5 md:mt-6 md:text-lg !font-normal"
                 initial={{ x: 100, opacity: 0 }}
                 whileInView={{ x: 0, opacity: 1 }}
                 transition={{
@@ -77,7 +78,7 @@ const CommonBannerOne = ({
                   ease: "easeOut",
                 }}
                 viewport={{ once: true }}
-                className="mb-5 md:mt-6 md:text-lg !font-normal"
+
               >
                 {description}
               </MotionTitle>
