@@ -3,6 +3,29 @@
 :root {
   --background: #ffffff;
   --foreground: #171717;
+  --auth-gradient: linear-gradient(
+    180deg,
+    rgba(251, 254, 249, 0.4),
+    rgba(229, 247, 218, 0.4) 100%
+  );
+}
+
+/* auth background gradient color */
+.auth-bg {
+  background: linear-gradient(
+    180deg,
+    rgba(251, 254, 249, 0.4),
+    rgba(229, 247, 218, 0.4) 100%
+  );
+}
+
+/* form gradient color */
+.auth-form-bg {
+  background: linear-gradient(
+    180deg,
+    rgba(249, 254, 246, 1) 36%,
+    rgba(255, 255, 255, 1) 100%
+  );
 }
 
 @theme inline {
