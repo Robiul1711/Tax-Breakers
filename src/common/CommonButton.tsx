@@ -1,14 +1,16 @@
 import React from "react";
 import { cn } from "@/lib/utils";
 import Link from "next/link";
+import { TButtonVariants, TCommonButton, VariantKeys } from "@/Types";
 
-const variants = {
+const variants: TButtonVariants = {
   primary:
     "px-4 py-2 sm:px-5 sm:py-2 md:px-7 border rounded-full text-white text-sm sm:text-base",
   secondary:
     "bg-Secondary-light hover:bg-Secondary/80 text-white border rounded-md px-4 py-2 text-sm sm:px-6 sm:py-2.5 sm:text-base md:px-7 md:py-3 md:text-base",
   danger: "bg-red-500 hover:bg-red-600 text-white",
 };
+
 
 const CommonButton = ({
   children,
@@ -19,20 +21,20 @@ const CommonButton = ({
   disabled = false,
   fullWidth = false,
   className = "",
-  link = null,
+  link,
   ...props
-}) => {
+}: TCommonButton) => {
   const buttonClasses = cn(
     "py-3 px-6 rounded-lg font-semibold transition duration-300 flex items-center justify-center gap-2",
-    variants[variant] || variants.primary,
+    variants[variant as VariantKeys ?? "primary"], // ✅ Safe fallback
     (disabled || isLoading) && "opacity-60 cursor-not-allowed",
     fullWidth && "w-full",
     className
   );
 
-  if (link) {
+    if (typeof link === "string") {  // ✅ strict check
     return (
-      <Link to={link} className={buttonClasses} {...props}>
+      <Link href={link} className={buttonClasses} {...props}>
         {children}
       </Link>
     );
