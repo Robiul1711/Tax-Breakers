@@ -4,6 +4,7 @@ import { TTitleProps, TTitleSize } from "@/Types";
 
 
 const sizeMap: TTitleSize = {
+  title72: "text-[48px] sm:text-[56px] md:text-[64px] lg:text-[72px] font-bold",
   title64: "text-[34px] sm:text-[48px] md:text-[56px] lg:text-[64px] font-bold",
   title56: "text-[30px] sm:text-[42px] md:text-[50px] lg:text-[56px] font-semibold sm:font-bold",
   title48: "text-xl sm:text-2xl md:text-3xl lg:text-[48px] font-semibold",

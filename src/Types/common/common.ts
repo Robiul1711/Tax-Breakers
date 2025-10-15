@@ -24,6 +24,7 @@ export type TCommonButton = {
 }
 export type TButtonVariants = Record<VariantKeys, string>;
 export type TTitleSize = {
+  title72: string;
   title64: string;
   title56: string;
   title48: string;
@@ -71,4 +72,13 @@ export type TTitleProps = {
 
 
 } & HTMLAttributes<HTMLHeadingElement>
+
+
+export type ISectionHeader = {
+    title?: string;
+    main_title?: string;
+    brandName?: string;
+    companyName?: string;
+    description?: string;
+}
 

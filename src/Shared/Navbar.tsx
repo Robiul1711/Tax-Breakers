@@ -1,6 +1,6 @@
 "use client"
 import Logo from "@/assets/images/logo.png";
-import { UserICon, WorldIcon } from "@/Components/SvgContainer/SvgContainer";
+import { GlobIcon, UserICon } from "@/Components/SvgContainer/SvgContainer";
 import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
@@ -40,7 +40,7 @@ const Navbar = () => {
         </div>
         <div className="flex justify-center items-center gap-[18px]">
           <button className="bg-[#ECF4E9] w-[50px] h-[50px] rounded-full flex items-center justify-center"><UserICon /> </button>
-          <button className="bg-[#ECF4E9] rounded-full px-4 py-3 flex justify-center items-center gap-[6px]"><WorldIcon /> <span className="text-[#004D3F] ">EN</span></button>
+          <button className="bg-[#ECF4E9] rounded-full px-4 py-3 flex justify-center items-center gap-[6px]"><GlobIcon /> <span className="text-[#004D3F] ">EN</span></button>
         </div>
       </div>
     </div>
