@@ -11,7 +11,7 @@ const sizeMap: TTitleSize = {
   title40: "text-[22px] sm:text-2xl md:text-[32px] xl:text-[40px] font-medium",
   title32: "text-lg sm:text-xl md:text-2xl xl:text-[32px] font-medium",
   title28: "text-base sm:text-lg md:text-xl lg:text-[28px] font-medium",
-  title24: "text-sm sm:text-base lg:text-lg xl:text-[24px] font-medium",
+  title24: "text-sm sm:text-base lg:text-lg xl:text-[24px] font-semibold",
   title22: "text-sm sm:text-base xl:text-[22px] font-medium",
   title20: "text-sm md:text-base xl:text-xl font-normal",
   title18: "text-xs sm:text-sm md:text-base sm:text-lg font-normal",
