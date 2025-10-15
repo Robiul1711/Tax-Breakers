@@ -51,3 +51,72 @@ body {
   color: var(--foreground);
   font-family: 'Raleway', sans-serif;
 }
+.section-padding-x {
+  padding-left: 16px;
+  padding-right: 16px;
+}
+
+.section-padding-y {
+  padding-top: 30px;
+  padding-bottom: 30px;
+}
+
+/* Small screens */
+@media screen and (min-width: 480px) {
+  .section-padding-x {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+  .section-padding-y {
+    padding-top: 35px;
+    padding-bottom: 35px;
+  }
+}
+
+/* Medium screens */
+@media screen and (min-width: 768px) {
+  .section-padding-x {
+    padding-left: 40px;
+    padding-right: 40px;
+  }
+  .section-padding-y {
+    padding-top: 50px;
+    padding-bottom: 50px;
+  }
+}
+
+/* Large screens */
+@media screen and (min-width: 1024px) {
+  .section-padding-x {
+    padding-left: 80px;
+    padding-right: 80px;
+  }
+  .section-padding-y {
+    padding-top: 70px;
+    padding-bottom: 70px;
+  }
+}
+
+/* Extra large screens */
+@media screen and (min-width: 1280px) {
+  .section-padding-x {
+    padding-left: 120px;
+    padding-right: 120px;
+  }
+  .section-padding-y {
+    padding-top: 90px;
+    padding-bottom: 90px;
+  }
+}
+
+/* Ultra large screens */
+@media screen and (min-width: 1460px) {
+  .section-padding-x {
+    padding-left: 150px;
+    padding-right: 150px;
+  }
+  .section-padding-y {
+    padding-top: 100px;
+    padding-bottom: 100px;
+  }
+}

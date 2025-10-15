@@ -1,7 +1,7 @@
 import { StarIcon } from "@/Components/SvgContainer/SvgContainer";
 
 
-const CommonSubTitle = ({title}: {title? : string}) => {
+const CommonSubTitle = ({title}: {title ?: string}) => {
     return (
         <div className="flex items-center justify-center gap-2">
             <div className="flex items-center gap-[2px]">
