@@ -1,7 +1,5 @@
-
-import Footer from '@/Shared/Footer';
-import Navbar from '@/Shared/Navbar';
-
+import Footer from "@/Shared/Footer";
+import Navbar from "@/Shared/Navbar";
 
 
 

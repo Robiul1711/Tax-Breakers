@@ -1,31 +1,16 @@
-"use client";
-
-import { useRouter } from "next/navigation";
-import { useSelector } from "react-redux";
-import { RootState } from "@/redux/store";
+import About from "../pages/home/about/About";
+import Banner from "../pages/home/banner/Banner";
 
 export default function LandingPage() {
-  const router = useRouter();
-  const isLoggedIn = useSelector((state: RootState) => state.auth.isLoggedIn);
-
-  const handleLoginRedirect = () => {
-    if (isLoggedIn) {
-      router.push("/dashboard");
-    } else {
-      router.push("/auth/login");
-    }
-  };
 
   return (
-    <main className="flex flex-col items-center justify-center h-screen bg-gray-900 text-white">
-      <h1 className="text-4xl font-bold mb-8">Welcome to Our App</h1>
-      <button
-        onClick={handleLoginRedirect}
-        className="px-6 py-3 bg-blue-600 hover:bg-blue-700 rounded-md font-semibold transition-colors"
-      >
-        {isLoggedIn ? "Go to dashboard" : "Go to login page"}
-      </button>
-    </main>
+    <div>
+      <Banner />
+      <div className="section-padding-x">
+        <About />
+      </div>
+      
+    </div>
   );
 }
 
