@@ -1,6 +1,7 @@
 import About from "../pages/home/about/About";
 import Banner from "../pages/home/banner/Banner";
 import BlogSection from "../pages/home/blogSection/BlogSection";
+import FaqSection from "../pages/home/faqSection/FaqSection";
 import Pricing from "../pages/home/pricing/Pricing";
 import Services from "../pages/home/services/Services";
 
@@ -14,6 +15,7 @@ export default function LandingPage() {
         <Services />
         <Pricing/>
         <BlogSection/>
+        <FaqSection/>
       </div>
 
     </div>
