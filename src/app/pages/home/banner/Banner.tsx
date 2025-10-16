@@ -5,22 +5,31 @@ import Banner2 from "@/assets/images/banner_image_2.png"
 import UserImg from "@/assets/images/user_1.png"
 import { ChatGPTLogoIcon, SendIcon, StarBurst } from "@/Components/SvgContainer/SvgContainer";
 import BannerBackground from "@/assets/images/banner_background.png"
+import CommonButton from "@/common/CommonButton";
 
 const Banner = () => {
     return (
-        <div  style={{
-    backgroundImage: `url(${BannerBackground.src})`,
-    backgroundSize: "cover",
-    backgroundPosition: "center",
-    backgroundRepeat: "no-repeat",
-  }} className="lg:m-8 m-4 rounded-[24px]">
+        <div style={{
+            backgroundImage: `url(${BannerBackground.src})`,
+            backgroundSize: "cover",
+            backgroundPosition: "center",
+            backgroundRepeat: "no-repeat",
+        }} className="lg:m-8 m-4 rounded-[24px]">
             <div className="section-padding-x py-[80px] mx-auto">
 
                 <Title level="title72" children="Expert Accounting & Tax Solutions Anytime, Anywhere" className="max-w-[1152px] mx-auto text-center text-[#151515] mb-6" />
                 <p className="text-[#677489] text-[20px] font-medium max-w-[860px] mx-auto text-center">Streamline your finances with professional tax and accounting support. Simple, transparent, and tailored to your needs.</p>
                 <div className="flex justify-center items-center gap-4 mt-[32px] mb-12" >
-                    <button className="cursor-pointer px-12 py-3 bg-[#065341] rounded-xl text-white text-[18px] font-semibold">Get Started Free</button>
-                    <button className="cursor-pointer px-12 py-3 bg-white border border-[#065341] rounded-xl text-[#0E1109] text-[18px] font-semibold">Book An Appointment</button>
+                    <CommonButton
+                        variant="primary"
+                        isLoading={false} className="!px-12 !py-3 !rounded-xl !text-[18px] !font-semibold">
+                        Get Started Free
+                    </CommonButton>
+                    <CommonButton
+                        variant="primary"
+                        isLoading={false} className="!px-12 !py-3 !bg-white !border !border-[#065341] !rounded-xl !text-[#0E1109] !text-[18px] !font-semibold">
+                        Book An Appointment
+                    </CommonButton>
                 </div>
                 <div className="flex gap-[20px] w-full">
                     <div>

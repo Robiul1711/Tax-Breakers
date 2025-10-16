@@ -1,4 +1,5 @@
 import PricingShape from "@/assets/images/price shape.png"
+import CommonButton from "@/common/CommonButton";
 import Title from "@/common/Title";
 import { PricingFeatureIcon } from "@/Components/SvgContainer/SvgContainer";
 import { TPricingPlan } from "@/Types";
@@ -44,11 +45,8 @@ const PricingCard = ({ plan, billingCycle }: { plan: TPricingPlan, billingCycle:
 
             {/* Footer/CTA Button */}
             <div className="mt-auto">
-                <button
-                    className="bg-[#004D3F] w-full p-[22px] rounded-2xl text-[#FFF] text-[18px] font-semibold cursor-pointer"
-                >
-                    {cta}
-                </button>
+                <CommonButton className="!w-full !p-[18px] !rounded-2xl !text-[#FFF] !text-[18px] !font-semibold">{cta}</CommonButton>
+                
             </div>
         </div>
     );
