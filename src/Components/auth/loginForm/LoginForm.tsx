@@ -7,6 +7,7 @@ import Link from "next/link";
 import { EmailIcon, PasswordIcon } from "@/Components/SvgContainer/SvgContainer";
 import CommonButton from "@/common/CommonButton";
 import { AiOutlineEye, AiOutlineEyeInvisible } from "react-icons/ai";
+import { FaX } from "react-icons/fa6";
 
 const LoginForm = () => {
     const [showPassword, setShowPassword] = useState(false)
@@ -24,7 +25,10 @@ const LoginForm = () => {
     return (
         <div className="min-h-screen p-6">
             <div className="p-4 rounded-2xl auth-bg h-[900px] flex items-center justify-center">
-                <div className="auth-form-bg shadow-[3px_3px_40px_0px_rgba(0,0,0,0.06)] rounded-2xl max-w-xl w-full mx-auto p-10">
+                <div className="auth-form-bg relative shadow-[3px_3px_40px_0px_rgba(0,0,0,0.06)] rounded-2xl max-w-xl w-full mx-auto p-10">
+                    <div className="absolute">
+                        <Link href={'/'}><FaX className="h-3 w-4"/></Link>
+                    </div>
                     {/* Top */}
                     <div className="w-full text-center mb-8">
                         <div className="flex justify-center mb-4">
