@@ -11,6 +11,7 @@ export default function MainLayout({
   return (
     <>
       <Navbar />
+      {/* <meta name="color-scheme" content="light" /> */}
       <main>{children}</main>
       <Footer />
     </>
