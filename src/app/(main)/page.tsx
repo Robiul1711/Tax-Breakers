@@ -1,5 +1,7 @@
 import About from "../pages/home/about/About";
 import Banner from "../pages/home/banner/Banner";
+import Pricing from "../pages/home/pricing/Pricing";
+import Services from "../pages/home/services/Services";
 
 export default function LandingPage() {
 
@@ -8,8 +10,10 @@ export default function LandingPage() {
       <Banner />
       <div className="section-padding-x">
         <About />
+        <Services />
+        <Pricing/>
       </div>
-      
+
     </div>
   );
 }
