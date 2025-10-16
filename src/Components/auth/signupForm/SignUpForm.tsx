@@ -1,13 +1,17 @@
 "use client"
 import Image from "next/image";
-import React from "react";
+import React, { useState } from "react";
 import { useForm, FieldValues } from "react-hook-form";
 import Link from "next/link";
 import logo from "@/assets/logo/authLogo.png";
 import { EmailIcon, PasswordIcon } from "@/Components/SvgContainer/SvgContainer";
 import CommonButton from "@/common/CommonButton";
+import { AiOutlineEye, AiOutlineEyeInvisible } from "react-icons/ai";
 
 const SignUpForm = () => {
+    const [showPassword, setShowPassword] = useState(false);
+    const [showConfirmPassword, setShowConfirmPassword] = useState(false)
+
     const {
         register,
         handleSubmit,
@@ -70,7 +74,7 @@ const SignUpForm = () => {
                                     <PasswordIcon className="w-5 h-5" />
                                 </span>
                                 <input
-                                    type="password"
+                                    type={showPassword ? "text" : "password"}
                                     id="password"
                                     placeholder="Enter your password"
                                     className={`w-full pl-10 pr-4 py-3 border rounded-lg focus:ring-2 focus:ring-[#004D3F] focus:border-[#004D3F] outline-none transition ${errors.password ? "border-red-500" : "border-gray-300"
@@ -81,6 +85,17 @@ const SignUpForm = () => {
                                     })}
                                 />
                             </div>
+                            <button
+                                type="button"
+                                onClick={() => setShowPassword(!showPassword)}
+                                className="absolute right-4 top-12 -translate-y-1/2 text-gray-500 hover:text-gray-700 focus:outline-none"
+                            >
+                                {showPassword ? (
+                                    <AiOutlineEyeInvisible className="w-5 h-5" />
+                                ) : (
+                                    <AiOutlineEye className="w-5 h-5" />
+                                )}
+                            </button>
                             {errors.password && <p className="text-red-500 text-sm mt-1">{errors.password.message as string}</p>}
                         </div>
 
@@ -94,7 +109,7 @@ const SignUpForm = () => {
                                     <PasswordIcon className="w-5 h-5" />
                                 </span>
                                 <input
-                                    type="password"
+                                    type={showConfirmPassword? "text" : "password"}
                                     id="confirmPassword"
                                     placeholder="Confirm your password"
                                     className={`w-full pl-10 pr-4 py-3 border rounded-lg focus:ring-2 focus:ring-[#004D3F] focus:border-[#004D3F] outline-none transition ${errors.confirmPassword ? "border-red-500" : "border-gray-300"
@@ -105,6 +120,17 @@ const SignUpForm = () => {
                                     })}
                                 />
                             </div>
+                             <button
+                                type="button"
+                                onClick={() => setShowConfirmPassword(!showConfirmPassword)}
+                                className="absolute right-4 top-12 -translate-y-1/2 text-gray-500 hover:text-gray-700 focus:outline-none"
+                            >
+                                {showConfirmPassword ? (
+                                    <AiOutlineEyeInvisible className="w-5 h-5" />
+                                ) : (
+                                    <AiOutlineEye className="w-5 h-5" />
+                                )}
+                            </button>
                             {errors.confirmPassword && (
                                 <p className="text-red-500 text-sm mt-1">{errors.confirmPassword.message as string}</p>
                             )}
@@ -130,16 +156,16 @@ const SignUpForm = () => {
 
                         {/* Sign Up */}
 
-                         <CommonButton
+                        <CommonButton
                             type="submit"
-                            variant="primary"  
-                            fullWidth 
+                            variant="primary"
+                            fullWidth
                             isLoading={false}
                         >
-                           Sign Up
+                            Sign Up
                         </CommonButton>
-                        
-                        
+
+
 
                         {/* OR Separator */}
                         <div className="flex px-24 items-center my-6">

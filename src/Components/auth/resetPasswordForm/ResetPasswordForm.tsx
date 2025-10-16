@@ -1,13 +1,18 @@
 "use client";
-import React from "react";
+import React, { useState } from "react";
 import { useForm, FieldValues } from "react-hook-form";
 import Link from "next/link";
 import Image from "next/image";
 import logo from "@/assets/logo/authLogo.png";
 import { EmailIcon, PasswordIcon } from "@/Components/SvgContainer/SvgContainer";
 import CommonButton from "@/common/CommonButton";
+import { AiOutlineEye, AiOutlineEyeInvisible } from "react-icons/ai";
 
 const ResetPasswordForm = () => {
+
+    const [showPassword, setShowPassword] = useState(false);
+    const [showConfirmPassword, setShowConfirmPassword] = useState(false)
+
     const {
         register,
         handleSubmit,
@@ -66,7 +71,7 @@ const ResetPasswordForm = () => {
                         </div>
 
                         {/* Password */}
-                        <div className="text-left">
+                        <div className="text-left relative">
                             <label htmlFor="password" className="block text-sm font-medium text-gray-700 mb-1">
                                 Password
                             </label>
@@ -75,7 +80,7 @@ const ResetPasswordForm = () => {
                                     <PasswordIcon className="w-5 h-5" />
                                 </span>
                                 <input
-                                    type="password"
+                                    type={showPassword ? "text" : "password"}
                                     id="password"
                                     placeholder="Enter your password"
                                     className={`w-full pl-10 pr-4 py-3 border rounded-lg focus:ring-2 focus:ring-[#004D3F] focus:border-[#004D3F] outline-none transition ${errors.password ? "border-red-500" : "border-gray-300"
@@ -86,11 +91,22 @@ const ResetPasswordForm = () => {
                                     })}
                                 />
                             </div>
+                            <button
+                                type="button"
+                                onClick={() => setShowPassword(!showPassword)}
+                                className="absolute right-4 top-12 -translate-y-1/2 text-gray-500 hover:text-gray-700 focus:outline-none"
+                            >
+                                {showPassword ? (
+                                    <AiOutlineEyeInvisible className="w-5 h-5" />
+                                ) : (
+                                    <AiOutlineEye className="w-5 h-5" />
+                                )}
+                            </button>
                             {errors.password && <p className="text-red-500 text-sm mt-1">{errors.password.message as string}</p>}
                         </div>
 
                         {/* Confirm Password */}
-                        <div className="text-left">
+                        <div className="text-left relative">
                             <label htmlFor="confirmPassword" className="block text-sm font-medium text-gray-700 mb-1">
                                 Confirm Password
                             </label>
@@ -100,7 +116,7 @@ const ResetPasswordForm = () => {
                                     <PasswordIcon className="w-5 h-5" />
                                 </span>
                                 <input
-                                    type="password"
+                                    type={showConfirmPassword ? "text" : "password"}
                                     id="confirmPassword"
                                     placeholder="Confirm your password"
                                     className={`w-full pl-10 pr-4 py-3 border rounded-lg focus:ring-2 focus:ring-[#004D3F] focus:border-[#004D3F] outline-none transition ${errors.confirmPassword ? "border-red-500" : "border-gray-300"
@@ -111,14 +127,25 @@ const ResetPasswordForm = () => {
                                     })}
                                 />
                             </div>
+                            <button
+                                type="button"
+                                onClick={() => setShowConfirmPassword(!showConfirmPassword)}
+                                className="absolute right-4 top-12 -translate-y-1/2 text-gray-500 hover:text-gray-700 focus:outline-none"
+                            >
+                                {showConfirmPassword ? (
+                                    <AiOutlineEyeInvisible className="w-5 h-5" />
+                                ) : (
+                                    <AiOutlineEye className="w-5 h-5" />
+                                )}
+                            </button>
                             {errors.confirmPassword && <p className="text-red-500 text-sm mt-1">{errors.confirmPassword.message as string}</p>}
                         </div>
 
                         {/* Submit Button */}
                         <CommonButton
                             type="submit"
-                            variant="primary"  
-                            fullWidth 
+                            variant="primary"
+                            fullWidth
                             isLoading={false}
                         >
                             Reset Password
