@@ -50,6 +50,9 @@
     rgba(229, 247, 218, 0.4) 100%
   );
 }
+.steper-bg {
+  background: linear-gradient(180deg, #FBFEF9 0%, #E5F7DA 100%);
+}
 
 /* form gradient color */
 .auth-form-bg {
