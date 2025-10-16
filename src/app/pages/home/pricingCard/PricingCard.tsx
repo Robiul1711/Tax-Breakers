@@ -5,12 +5,11 @@ import { TPricingPlan } from "@/Types";
 import Image from "next/image";
 
 const PricingCard = ({ plan, billingCycle }: { plan: TPricingPlan, billingCycle: "Monthly" | "Annual" }) => {
-    const { name, tagline, icon, isPopular, price, features, cta } = plan;
+    const { name, tagline, icon, price, features, cta } = plan;
     const currentPrice = price[billingCycle];
 
     return (
-        <div className={`rounded-3xl p-6 relative flex flex-col
-         ${isPopular ? 'bg-[#E7F9DE]' : 'bg-[#FBFBFB] border border-[#E5E5E5]'}`}>
+        <div className="rounded-3xl p-6 relative flex flex-col bg-[#FBFBFB] border border-[#E5E5E5] hover:bg-[#E7F9DE] transition-all duration-200">
            <div className="absolute -top-[26px] right-6 z-50">
              <div className="relative w-[100px] h-[112px]">
                 <Image className="h-[108px]" src={PricingShape} alt="Pricing Shape" width={100} height={112} />

@@ -3,7 +3,6 @@ export type TPricingPlan = {
   name: string;
   tagline: string;
   icon: React.JSX.Element;
-  isPopular: boolean;
   price: {
     Monthly: { amount: number; period: string };
     Annual: { amount: number; period: string };
