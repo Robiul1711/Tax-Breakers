@@ -68,7 +68,7 @@ const StepTwo: React.FC = () => {
         )}
       />
       {errors.stepTwoOption?.message && (
-        <p className="text-red-500 text-sm mt-1">{errors.stepTwoOption.message}</p>
+        <p className="text-red-500 text-sm mt-1">{errors.stepTwoOption.message as string}</p>
       )}
 
       {/* Divider */}
@@ -91,7 +91,7 @@ const StepTwo: React.FC = () => {
           })}
         ></textarea>
         {errors.stepTwoNotes?.message && (
-          <p className="text-red-500 text-sm mt-1">{errors.stepTwoNotes.message}</p>
+          <p className="text-red-500 text-sm mt-1">{errors.stepTwoNotes.message as string}</p>
         )}
       </div>
     </div>

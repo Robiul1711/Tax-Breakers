@@ -68,7 +68,7 @@ const StepThree: React.FC = () => {
         )}
       />
       {errors.stepThreeOption?.message && (
-        <p className="text-red-500 text-sm mt-1">{errors.stepThreeOption.message}</p>
+        <p className="text-red-500 text-sm mt-1">{errors.stepThreeOption.message as string}</p>
       )}
 
       {/* Divider */}
@@ -91,7 +91,7 @@ const StepThree: React.FC = () => {
           })}
         ></textarea>
         {errors.stepThreeNotes?.message && (
-          <p className="text-red-500 text-sm mt-1">{errors.stepThreeNotes.message}</p>
+          <p className="text-red-500 text-sm mt-1">{errors.stepThreeNotes.message as string}</p>
         )}
       </div>
     </div>
