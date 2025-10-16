@@ -74,7 +74,7 @@ const testimonialData : TTestimonial[] = [
 
 const Testimonial = () => {
     return (
-        <div className="mt-[144px]">
+        <div className="my-35">
             <style>{`
             @keyframes marqueeScroll {
                 0% { transform: translateX(0%); }
