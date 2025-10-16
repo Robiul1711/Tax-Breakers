@@ -53,10 +53,10 @@ const Footer = () => {
           </p>
 
           <div className="flex flex-wrap gap-4 justify-center">
-            <button className="p-4 bg-[#A7EB94] text-[#004D3F] font-medium text-lg rounded-2xl transition-colors cursor-pointer">
+            <button className="p-4 bg-[#A7EB94] hover:bg-[#FAFAFA] text-[#004D3F] hover:text-[#111827] font-medium text-lg rounded-2xl transition-colors cursor-pointer">
               Sign Up Now
             </button>
-            <button className="py-4 px-10 bg-[#FAFAFA] text-[#111827] font-medium  text-lg rounded-2xl transition-colors cursor-pointer">
+            <button className="py-4 px-10 bg-[#FAFAFA] hover:bg-[#A7EB94] text-[#111827] hover:text-[#004D3F] font-medium  text-lg rounded-2xl transition-colors cursor-pointer">
               Contact
             </button>
           </div>
@@ -103,13 +103,13 @@ const Footer = () => {
             </p>
 
             <div className="flex gap-3">
-              <a href="#" className="w-14 h-14 rounded-full text-[#004D3F] border-2 border-[#004D3F] flex items-center justify-center hover:bg-teal-700 hover:text-white transition-all">
+              <a href="#" className="w-14 h-14 rounded-full text-[#004D3F] border-2 border-[#004D3F] flex items-center justify-center hover:bg-[#004D3F] hover:text-white transition-all">
                 <FaFacebookF className="w-7 h-7" />
               </a>
-              <a href="#" className="w-14 h-14 rounded-full text-[#004D3F] border-2 border-[#004D3F] flex items-center justify-center hover:bg-teal-700 hover:text-white transition-all">
+              <a href="#" className="w-14 h-14 rounded-full text-[#004D3F] border-2 border-[#004D3F] flex items-center justify-center hover:bg-[#004D3F] hover:text-white transition-all">
                 <BsInstagram className="w-7 h-7" />
               </a>
-              <a href="#" className="w-14 h-14 rounded-full  text-[#004D3F] border-2 border-[#004D3F] flex items-center justify-center hover:bg-teal-700 hover:text-white transition-all">
+              <a href="#" className="w-14 h-14 rounded-full  text-[#004D3F] border-2 border-[#004D3F] flex items-center justify-center hover:bg-[#004D3F] hover:text-white transition-all">
                 <FaLinkedinIn className="w-7 h-7" />
               </a>
             </div>

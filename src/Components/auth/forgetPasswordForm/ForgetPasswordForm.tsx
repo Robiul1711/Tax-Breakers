@@ -25,8 +25,10 @@ const ForgetPasswordForm = () => {
                 <div className="auth-form-bg shadow-[3px_3px_40px_0px_rgba(0,0,0,0.06)] rounded-2xl max-w-xl w-full mx-auto px-10 py-14">
                     {/* Top */}
                     <div className="w-full text-center mb-8">
-                        <div className="flex justify-center mb-4">
-                            <Image src={logo} height={180} width={160} alt="auth logo" />
+                       <div className="flex justify-center mb-4">
+                            <Link href={'/'}>
+                                <Image src={logo} height={180} width={160} alt="auth logo" />
+                            </Link>
                         </div>
                         <h1 className="text-3xl font-semibold mb-3 text-gray-800">
                             Forgot Password

@@ -22,12 +22,13 @@ const Banner = () => {
                 <div className="flex justify-center items-center gap-4 mt-[32px] mb-12" >
                     <CommonButton
                         variant="primary"
-                        isLoading={false} className="!px-12 !py-3 !rounded-xl !text-[18px] !font-semibold">
+                        isLoading={false}
+                        className="!px-12 !py-3 !rounded-xl !text-[18px] !font-semibold hover:bg-white">
                         Get Started Free
                     </CommonButton>
                     <CommonButton
-                        variant="primary"
-                        isLoading={false} className="!px-12 !py-3 !bg-white !border !border-[#065341] !rounded-xl !text-[#0E1109] !text-[18px] !font-semibold">
+                        variant="secondary"
+                        isLoading={false} className="!px-12 !py-3 !rounded-xl !text-[18px] !font-semibold">
                         Book An Appointment
                     </CommonButton>
                 </div>
