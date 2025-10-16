@@ -20,7 +20,7 @@ const sizeMap: TTitleSize = {
   title12: "text-[10px] sm:text-xs md:text-sm font-normal",
 };
 
-const Title = forwardRef<HTMLHRElement, TTitleProps>(({ children, level = "title24", className = "", ...rest }, ref) => {
+const Title = forwardRef<HTMLHRElement, TTitleProps>(({ children, level = "title24", className = "text-[#000]", ...rest }, ref) => {
   return (
     <h2 ref={ref} className={clsx(sizeMap[level], className)} {...rest}>
       {children}

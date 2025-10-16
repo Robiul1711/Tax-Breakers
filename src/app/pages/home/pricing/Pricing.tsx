@@ -94,18 +94,25 @@ const Pricing = () => {
                         ></div>
 
                         <button
-                            className={`w-27 py-2 text-sm font-semibold rounded-md transition-colors z-10 cursor-pointer ${billingCycle === 'Monthly' ? 'text-[#1E4841] bg-[#BBF49C]' : 'text-gray-500'
+                            className={`w-27 py-3 flex items-center gap-2 justify-center text-sm font-semibold rounded-md transition-colors z-10 cursor-pointer ${billingCycle === 'Monthly' ? 'text-[#1E4841] bg-[#BBF49C] ' : 'text-gray-500'
                                 }`}
                             onClick={() => setBillingCycle('Monthly')}
                         >
+                            {
+                                billingCycle === 'Monthly' && <p className='w-2 h-2 rounded-full bg-[#1E4841] border-2 border-[#ECFDCD]'></p>
+                            }
                             Monthly
                         </button>
                         <button
-                            className={`w-27 py-2 text-sm font-semibold rounded-md transition-colors z-10 cursor-pointer ${billingCycle === 'Annual' ? 'text-[#1E4841] bg-[#BBF49C]' : 'text-gray-500'
+                            className={`w-27 py-3 flex items-center gap-2 justify-center text-sm font-semibold rounded-md transition-colors z-10 cursor-pointer ${billingCycle === 'Annual' ? 'text-[#1E4841] bg-[#BBF49C]' : 'text-gray-500'
                                 }`}
                             onClick={() => setBillingCycle('Annual')}
                         >
+                            {
+                                billingCycle === 'Annual' && <p className='w-2 h-2 rounded-full bg-[#1E4841] border-2 border-[#ECFDCD]'></p>
+                            }
                             Annual
+
                         </button>
                     </div>
                 </div>
