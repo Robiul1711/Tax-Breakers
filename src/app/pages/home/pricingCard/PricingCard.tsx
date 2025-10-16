@@ -44,7 +44,7 @@ const PricingCard = ({ plan, billingCycle }: { plan: TPricingPlan, billingCycle:
 
             {/* Footer/CTA Button */}
             <div className="mt-auto">
-                <CommonButton className="!w-full !p-[18px] !rounded-2xl !text-[#FFF] !text-[18px] !font-semibold">{cta}</CommonButton>
+                <CommonButton className="!w-full !p-[18px] !rounded-2xl  !text-[18px] !font-semibold">{cta}</CommonButton>
                 
             </div>
         </div>

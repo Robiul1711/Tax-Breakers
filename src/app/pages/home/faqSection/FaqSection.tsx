@@ -6,6 +6,7 @@ import { FiMinus, FiPlus } from "react-icons/fi";
 import MessagePngImg from "@/assets/images/message.png"
 import Image from "next/image";
 import Title from "@/common/Title";
+import CommonButton from "@/common/CommonButton";
 
 const faqData = [
     {
@@ -87,8 +88,17 @@ const FaqSection = () => {
                     <Title level="title24" children="Do you have more questions?" />
                     <p className="text-[#515151] text-center mt-4">End-to-end payments and financial management in a single solution. Meet the right platform to help realize.</p>
                     <div className="flex justify-center items-center w-full gap-4 mt-8" >
-                        <button className="cursor-pointer px-8 py-[22px] w-full bg-[#FFF] border border-[#004D3F] rounded-xl text-[#004D3F] text-[18px] font-semibold">View More</button>
-                        <button className="cursor-pointer px-8 py-[22px] w-full bg-[#004D3F] rounded-2xl text-[#FFF] text-[18px] font-semibold">Live Chat</button>
+                        <CommonButton
+                            className="!px-8 !py-[22px] !w-full !border !rounded-xl !text-[18px] font-semibold"
+                            variant="secondary"
+                        >View More</CommonButton>
+                        <CommonButton
+                            variant="primary"
+                            className="!px-8 !py-[22px] !w-full !rounded-2xl !text-[18px] !font-semibold"
+
+                        >
+                            Live Chat
+                        </CommonButton>
                     </div>
                 </div>
             </div>

@@ -3,6 +3,7 @@ import React, { useRef } from "react";
 import Image from "next/image";
 import logo from "@/assets/logo/authLogo.png";
 import CommonButton from "@/common/CommonButton";
+import Link from "next/link";
 
 const VerifyOtpForm = () => {
     const inputRefs = useRef<Array<HTMLInputElement | null>>([]);
@@ -30,7 +31,9 @@ const VerifyOtpForm = () => {
                     {/* Top */}
                     <div className="w-full text-center mb-8">
                         <div className="flex justify-center mb-4">
-                            <Image src={logo} height={180} width={160} alt="auth logo" />
+                            <Link href={'/'}>
+                                <Image src={logo} height={180} width={160} alt="auth logo" />
+                            </Link>
                         </div>
                         <h1 className="text-3xl font-semibold mb-3 text-gray-800">
                             Verify OTP

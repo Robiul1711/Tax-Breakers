@@ -25,14 +25,13 @@ const LoginForm = () => {
     return (
         <div className="min-h-screen p-6">
             <div className="p-4 rounded-2xl auth-bg h-[900px] flex items-center justify-center">
-                <div className="auth-form-bg relative shadow-[3px_3px_40px_0px_rgba(0,0,0,0.06)] rounded-2xl max-w-xl w-full mx-auto p-10">
-                    <div className="absolute">
-                        <Link href={'/'}><FaX className="h-3 w-4"/></Link>
-                    </div>
+                <div className="auth-form-bg shadow-[3px_3px_40px_0px_rgba(0,0,0,0.06)] rounded-2xl max-w-xl w-full mx-auto p-10">
                     {/* Top */}
                     <div className="w-full text-center mb-8">
                         <div className="flex justify-center mb-4">
-                            <Image src={logo} height={180} width={160} alt="auth logo" />
+                            <Link href={'/'}>
+                                <Image src={logo} height={180} width={160} alt="auth logo" />
+                            </Link>
                         </div>
                         <h1 className="text-3xl font-semibold mb-3 text-gray-800">
                             Welcome Back.
@@ -65,7 +64,7 @@ const LoginForm = () => {
                                     })}
                                 />
                             </div>
-                           
+
                             {errors.email && <p className="text-red-500 text-sm mt-1">{errors.email.message as string}</p>}
                         </div>
 
@@ -79,7 +78,7 @@ const LoginForm = () => {
                                     <PasswordIcon className="w-5 h-5" />
                                 </span>
                                 <input
-                                    type={showPassword? "text": "password"}
+                                    type={showPassword ? "text" : "password"}
                                     id="password"
                                     placeholder="Enter your password"
                                     className={`w-full pl-10 pr-4 py-3 border rounded-lg focus:ring-2 focus:ring-[#004D3F] focus:border-[#004D3F] outline-none transition ${errors.password ? "border-red-500" : "border-gray-300"
@@ -90,7 +89,7 @@ const LoginForm = () => {
                                     })}
                                 />
                             </div>
-                             <button
+                            <button
                                 type="button"
                                 onClick={() => setShowPassword(!showPassword)}
                                 className="absolute right-4 top-12 -translate-y-1/2 text-gray-500 hover:text-gray-700 focus:outline-none"
