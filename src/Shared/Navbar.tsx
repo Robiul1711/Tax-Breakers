@@ -19,7 +19,7 @@ const navLinks = [
 const Navbar = () => {
   const pathname = usePathname();
   return (
-    <div className="bg-[#FFF]/95  border-b border-[#E3E8EF] shadow-[0_4px_16px_0_rgba(0,0,0,0.06)] sticky top-0">
+    <div className="bg-[#FFF]/95  border-b border-[#E3E8EF] shadow-[0_4px_16px_0_rgba(0,0,0,0.06)] sticky top-0 z-100">
       <div className="section-padding-x flex items-center justify-between py-4 gap-8">
         <div>
           <Link href="/">
