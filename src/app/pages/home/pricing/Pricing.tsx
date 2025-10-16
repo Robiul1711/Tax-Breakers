@@ -11,7 +11,6 @@ const pricingPlans: TPricingPlan[] = [
         name: "Starter Plan",
         tagline: "Best for Freelancers & Sole Traders",
         icon: <LikeIcon />,
-        isPopular: false,
         price: {
             Monthly: { amount: 120, period: "/month" },
             Annual: { amount: 1296, period: "/year" }
@@ -31,7 +30,6 @@ const pricingPlans: TPricingPlan[] = [
         name: "Pro Plan",
         tagline: "Best for Freelancers & Sole Traders",
         icon: <BadgeIcon />,
-        isPopular: true,
         price: {
             Monthly: { amount: 150, period: "/month" },
             Annual: { amount: 1620, period: "/year" }
@@ -44,14 +42,13 @@ const pricingPlans: TPricingPlan[] = [
             "Unlimited Free E-Invoicing",
             "Alumni network establishment."
         ],
-        cta: "Start Your Pro Plan"
+        cta: "Subscribe Now"
     },
     {
         id: "premium",
         name: "Premium Plan",
         tagline: "Best for Freelancers & Sole Traders",
         icon: <PremiumBadgeIcon />,
-        isPopular: false,
         price: {
             Monthly: { amount: 200, period: "/month" },
             Annual: { amount: 2160, period: "/year" }
@@ -64,7 +61,7 @@ const pricingPlans: TPricingPlan[] = [
             "Unlimited Free E-Invoicing",
             "Alumni network establishment"
         ],
-        cta: "Contact Sales"
+        cta: "Subscribe Now"
     }
 ];
 
@@ -94,18 +91,25 @@ const Pricing = () => {
                         ></div>
 
                         <button
-                            className={`w-27 py-2 text-sm font-semibold rounded-md transition-colors z-10 cursor-pointer ${billingCycle === 'Monthly' ? 'text-[#1E4841] bg-[#BBF49C]' : 'text-gray-500'
+                            className={`w-27 py-3 flex items-center gap-2 justify-center text-sm font-semibold rounded-md transition-colors z-10 cursor-pointer ${billingCycle === 'Monthly' ? 'text-[#1E4841] bg-[#BBF49C] ' : 'text-gray-500'
                                 }`}
                             onClick={() => setBillingCycle('Monthly')}
                         >
+                            {
+                                billingCycle === 'Monthly' && <p className='w-2 h-2 rounded-full bg-[#1E4841] border-2 border-[#ECFDCD]'></p>
+                            }
                             Monthly
                         </button>
                         <button
-                            className={`w-27 py-2 text-sm font-semibold rounded-md transition-colors z-10 cursor-pointer ${billingCycle === 'Annual' ? 'text-[#1E4841] bg-[#BBF49C]' : 'text-gray-500'
+                            className={`w-27 py-3 flex items-center gap-2 justify-center text-sm font-semibold rounded-md transition-colors z-10 cursor-pointer ${billingCycle === 'Annual' ? 'text-[#1E4841] bg-[#BBF49C]' : 'text-gray-500'
                                 }`}
                             onClick={() => setBillingCycle('Annual')}
                         >
+                            {
+                                billingCycle === 'Annual' && <p className='w-2 h-2 rounded-full bg-[#1E4841] border-2 border-[#ECFDCD]'></p>
+                            }
                             Annual
+
                         </button>
                     </div>
                 </div>

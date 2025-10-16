@@ -1,19 +1,19 @@
 import PricingShape from "@/assets/images/price shape.png"
+import CommonButton from "@/common/CommonButton";
 import Title from "@/common/Title";
 import { PricingFeatureIcon } from "@/Components/SvgContainer/SvgContainer";
 import { TPricingPlan } from "@/Types";
 import Image from "next/image";
 
 const PricingCard = ({ plan, billingCycle }: { plan: TPricingPlan, billingCycle: "Monthly" | "Annual" }) => {
-    const { name, tagline, icon, isPopular, price, features, cta } = plan;
+    const { name, tagline, icon, price, features, cta } = plan;
     const currentPrice = price[billingCycle];
 
     return (
-        <div className={`rounded-3xl p-6 relative flex flex-col
-         ${isPopular ? 'bg-[#E7F9DE]' : 'bg-[#FBFBFB] border border-[#E5E5E5]'}`}>
-           <div className="absolute -top-6 right-6 z-50">
-             <div className="relative w-[90px] h-[112px]">
-                <Image src={PricingShape} alt="Pricing Shape" width={90} height={112} />
+        <div className="rounded-3xl p-6 relative flex flex-col bg-[#FBFBFB] border border-[#E5E5E5] hover:bg-[#E7F9DE] transition-all duration-200">
+           <div className="absolute -top-[26px] right-6 z-50">
+             <div className="relative w-[100px] h-[112px]">
+                <Image className="h-[108px]" src={PricingShape} alt="Pricing Shape" width={100} height={112} />
                 <h2 className="absolute top-[40%] left-[58%] transform -translate-x-1/2 -translate-y-1/2 text-2xl font-semibold text-center text-[#004D3F] leading-4">
                     ${currentPrice?.amount} <br /> <span className="text-sm font-normal">{currentPrice?.period}</span>
                 </h2>
@@ -44,11 +44,8 @@ const PricingCard = ({ plan, billingCycle }: { plan: TPricingPlan, billingCycle:
 
             {/* Footer/CTA Button */}
             <div className="mt-auto">
-                <button
-                    className="bg-[#004D3F] w-full p-[22px] rounded-2xl text-[#FFF] text-[18px] font-semibold cursor-pointer"
-                >
-                    {cta}
-                </button>
+                <CommonButton className="!w-full !p-[18px] !rounded-2xl !text-[#FFF] !text-[18px] !font-semibold">{cta}</CommonButton>
+                
             </div>
         </div>
     );
