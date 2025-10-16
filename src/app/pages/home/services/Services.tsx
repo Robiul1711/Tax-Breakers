@@ -1,9 +1,9 @@
 import SectionHeader from "@/common/SectionHeader";
 import Title from "@/common/Title";
-import TaxAnalyticsIcon from "@/Components/SvgContainer/SvgContainer";
 import Image from "next/image";
 import ServicePhoneImg from "@/assets/images/service_phone.png"
 import ServiceMeetingImg from "@/assets/images/home_service_meeting.png"
+import { TaxAnalyticsIcon } from "@/Components/SvgContainer/SvgContainer";
 
 
 const Services = () => {
