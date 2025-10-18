@@ -1,12 +1,9 @@
-import WeOffer from "@/app/pages/about/weOffer/WeOffer";
 import CommonBannerTwo from "@/common/CommonBannerTwo";
 import SectionHeader from "@/common/SectionHeader";
 import Title from "@/common/Title";
 import { TaxAnalyticsIcon } from "@/Components/SvgContainer/SvgContainer";
 import Image from "next/image";
-import Link from "next/link";
 import ServiceMeetingImg from "@/assets/images/home_service_meeting.png"
-import ServicePhoneImg from "@/assets/images/service_phone.png"
 import FaqSection from "@/app/pages/home/faqSection/FaqSection";
 import ExploreMoreServices from "@/app/pages/services/exploreMoreServices/ExploreMoreServices";
 import Testimonial from "@/app/pages/home/testimonial/Testimonial";

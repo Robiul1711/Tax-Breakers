@@ -83,11 +83,17 @@ const Testimonial = () => {
 
             .marquee-inner {
                 animation: marqueeScroll 25s linear infinite;
+                   will-change: transform;
             }
 
             .marquee-reverse {
                 animation-direction: reverse;
             }
+
+            .marquee-row:hover .marquee-inner {
+                animation-play-state: paused;
+            }
+
         `}</style>
             <SectionHeader title="Testimonial" main_title="Don't take our word for it. Take them." description="See how StoreX is transforming the way entrepreneurs around the world do business online." />
 

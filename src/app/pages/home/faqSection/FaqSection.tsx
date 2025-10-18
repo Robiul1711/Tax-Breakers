@@ -31,11 +31,11 @@ const faqData = [
 
 
 const FaqSection = () => {
-    const [openIndex, setOpenIndex] = useState<number | null>(0);
+        const [openIndex, setOpenIndex] = useState<number | null>(0);
 
-    const toggleFaq = (index: number) => {
-        setOpenIndex(openIndex === index ? null : index);
-    };
+        const toggleFaq = (index: number) => {
+            setOpenIndex(openIndex === index ? null : index);
+        };
 
     return (
         <div className="mt-[145px]">
