@@ -1,3 +1,3 @@
 export * from "./common/common"
-export * from "./pricingPlan/PricingPlan"
+export * from "./pricingPlan/pricingPlan"
 export * from "./about/about"

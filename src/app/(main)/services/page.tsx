@@ -2,6 +2,9 @@ import CommonBannerTwo from "@/common/CommonBannerTwo";
 import IdentityImg1 from "@/assets/images/about_img_3.png"
 import IdentityImg2 from "@/assets/images/about_img_4.png"
 import Image from "next/image";
+import Services from "@/app/pages/home/services/Services";
+import FaqSection from "@/app/pages/home/faqSection/FaqSection";
+import Testimonial from "@/app/pages/home/testimonial/Testimonial";
 
 
 const ServicesPage = () => {
@@ -23,6 +26,11 @@ const ServicesPage = () => {
                     <Image className="w-full h-full object-cover rounded-3xl" src={IdentityImg1} alt="our identity img" width={730} height={730} />
                 </div>
             </div>
+            <div className="section-padding-x my-36">
+                <Services />
+                <FaqSection />
+            </div>
+            <Testimonial />
         </div >
     );
 };
