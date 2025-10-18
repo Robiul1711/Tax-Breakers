@@ -1,0 +1,44 @@
+[
+    {
+        "id": 1,
+        "image": "https://i.ibb.co.com/8409Cff9/image-136.png",
+        "name": "John Anderson",
+        "position": "Chief Executive Officer (CEO)"
+    },
+    {
+        "id": 2,
+        "image": "https://i.ibb.co.com/B219kqGq/image-143.png",
+        "name": "Wade Warren",
+        "position": "Chief Financial Officer (CFO)"
+    },
+    {
+        "id": 3,
+        "image": "https://i.ibb.co.com/XB15gLh/image-148.png",
+        "name": "Robert Fox",
+        "position": "Head of Accounting & Compliance"
+    },
+    {
+        "id": 4,
+        "image": "https://i.ibb.co.com/N6H9XXxQ/image-149.png",
+        "name": "Jacob Jones",
+        "position": "Senior Tax Consultant"
+    },
+    {
+        "id": 5,
+        "image": "https://i.ibb.co.com/vCrRP0p6/image-150.png",
+        "name": "Cody Fisher",
+        "position": "Business Advisory Manager"
+    },
+    {
+        "id": 6,
+        "image": "https://i.ibb.co.com/9j6VGks/image-151.png",
+        "name": "Guy Hawkins",
+        "position": "Financial Planning Specialist"
+    },
+    {
+        "id": 7,
+        "image": "https://i.ibb.co.com/BhKHV0y/image-152.png",
+        "name": "Devon Lane",
+        "position": "Audit & Assurance Lead"
+    }
+]
