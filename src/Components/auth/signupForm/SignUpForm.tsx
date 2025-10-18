@@ -29,14 +29,14 @@ const SignUpForm = () => {
     return (
         <div className="min-h-screen p-6">
             <div className="p-4 rounded-2xl auth-bg min-h-screen flex items-center justify-center">
-                <div className="relative auth-form-bg shadow-[3px_3px_40px_0px_rgba(0,0,0,0.06)] rounded-2xl max-w-xl w-full mx-auto p-10">
-                    <div className="absolute">
-                        <Link href={'/'}><FaX className="h-3 w-4" /></Link>
-                    </div>
+                <div className=" auth-form-bg shadow-[3px_3px_40px_0px_rgba(0,0,0,0.06)] rounded-2xl max-w-xl w-full mx-auto p-10">
+
                     {/* Top */}
                     <div className="w-full text-center mb-8">
                         <div className="flex justify-center mb-4">
-                            <Image src={logo} height={180} width={160} alt="auth logo" />
+                            <Link href={'/'}>
+                                <Image src={logo} height={180} width={160} alt="auth logo" />
+                            </Link>
                         </div>
                         <h1 className="text-3xl font-semibold mb-3 text-gray-800">Create Account</h1>
                         <p className="[color:rgba(145,153,146,1)] text-base">Sign up to get started.</p>
