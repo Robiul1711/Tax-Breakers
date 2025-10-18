@@ -7,7 +7,6 @@ import logo from "@/assets/logo/authLogo.png";
 import { EmailIcon, PasswordIcon } from "@/Components/SvgContainer/SvgContainer";
 import CommonButton from "@/common/CommonButton";
 import { AiOutlineEye, AiOutlineEyeInvisible } from "react-icons/ai";
-import { FaX } from "react-icons/fa6";
 
 const SignUpForm = () => {
     const [showPassword, setShowPassword] = useState(false);
@@ -28,11 +27,11 @@ const SignUpForm = () => {
     const password = watch("password");
     return (
         <div className="min-h-screen p-6">
-            <div className="p-4 rounded-2xl auth-bg min-h-screen flex items-center justify-center">
-                <div className=" auth-form-bg shadow-[3px_3px_40px_0px_rgba(0,0,0,0.06)] rounded-2xl max-w-xl w-full mx-auto p-10">
+            <div className="p-4 rounded-2xl h-[900px] auth-bg flex items-center justify-center">
+                <div className="auth-form-bg shadow-[3px_3px_40px_0px_rgba(0,0,0,0.06)] rounded-2xl max-w-xl w-full mx-auto px-10 py-8">
 
                     {/* Top */}
-                    <div className="w-full text-center mb-8">
+                    <div className="w-full text-center">
                         <div className="flex justify-center mb-4">
                             <Link href={'/'}>
                                 <Image src={logo} height={180} width={160} alt="auth logo" />
