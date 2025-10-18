@@ -20,7 +20,7 @@ const navLinks = [
 const Navbar = () => {
   const pathname = usePathname();
   return (
-    <div className="bg-[#FFF]/95  border-b border-[#E3E8EF] shadow-[0_4px_16px_0_rgba(0,0,0,0.06)] sticky top-0 z-100">
+    <div className="bg-[#FFF]/95  border-b border-[#E3E8EF] shadow-[0_4px_16px_0_rgba(0,0,0,0.06)] sticky top-0 z-50">
       <div className="section-padding-x flex items-center justify-between py-4 gap-8">
         <div>
           <Link href="/">
@@ -40,8 +40,8 @@ const Navbar = () => {
           ))}
         </div>
         <div className="flex justify-center items-center gap-[18px]">
-          <Link href={'/auth/stepers'} className="bg-[#ECF4E9] w-[50px] h-[50px] rounded-full flex items-center justify-center cursor-pointer"><UserICon /> </Link>
-          <button className="bg-[#ECF4E9] rounded-full px-4 py-3 flex justify-center items-center gap-[6px] cursor-pointer"><GlobIcon /> <span className="text-[#004D3F] ">EN</span></button>
+          <Link href={'/auth/stepers'} className="bg-[#ECF4E9] hover:bg-[#085441] text-[#085441] transition-all duration-300 hover:text-white w-[50px] h-[50px] rounded-full flex items-center justify-center cursor-pointer"><UserICon /> </Link>
+          <button className="bg-[#ECF4E9] hover:bg-[#085441] text-[#085441] transition-all duration-300 hover:text-white rounded-full px-4 py-3 flex justify-center items-center gap-[6px] cursor-pointer"><GlobIcon /> <span>EN</span></button>
         </div>
       </div>
     </div>
