@@ -15,6 +15,7 @@ import StepNine from "@/Components/AllStepers/StepNine";
 import StepTen from "@/Components/AllStepers/StepTen";
 
 import stepsData from "@/Components/AllStepers/SetepsAllData/StepsAllData";
+import { useRouter } from "next/navigation";
 
 type FormValues = {
   // Add all the fields from all steps here
@@ -27,6 +28,7 @@ type FormValues = {
 const Page = () => {
   const totalSteps = stepsData.length;
   const [currentStep, setCurrentStep] = useState<number>(1);
+  const router = useRouter();
 
   // Initialize React Hook Form
   const methods = useForm<FormValues>({
@@ -43,7 +45,7 @@ const Page = () => {
       nextStep();
     } else {
       console.log("Final Form Data:", data);
-      alert("Form Submitted!");
+      router.push('/auth/signup')
     }
   };
 
@@ -81,9 +83,8 @@ const Page = () => {
         {stepsData.map((_, index) => (
           <div
             key={index}
-            className={`h-3 flex-1 rounded-full transition-all duration-300 ${
-              index < currentStep ? "bg-[#004D3F]" : "bg-gray-300"
-            }`}
+            className={`h-3 flex-1 rounded-full transition-all duration-300 ${index < currentStep ? "bg-[#004D3F]" : "bg-gray-300"
+              }`}
           ></div>
         ))}
       </div>
