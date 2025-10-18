@@ -5,6 +5,7 @@ import AboutUsersImg from "@/assets/images/about_users.png"
 import Image from "next/image";
 import Title from "@/common/Title";
 import OurIdentity from "@/app/pages/about/ourIdentity/OurIdentity";
+import WeOffer from "@/app/pages/about/weOffer/WeOffer";
 
  
 const AboutPage = () => {
@@ -27,6 +28,7 @@ const AboutPage = () => {
            </div>
            <div className="section-padding-x">
                 <OurIdentity/>
+                <WeOffer/>
            </div>
 
         </div>
