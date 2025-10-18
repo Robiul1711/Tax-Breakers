@@ -17,9 +17,9 @@ const AboutPage = () => {
            <div className="lg:m-8 m-4 flex gap-5">
                 <Image src={AboutImg1} alt="about img one" width={668} height={474}/>
                 <div className="flex flex-col gap-5">
-                    <div className="bg-[#FFF] border border-[#E5E5E5] rounded-3xl p-8 flex items-center gap-5">
-                        <Image className= " flex-1 w-full h-full object-cover" src={AboutUsersImg} alt="about users img" width={120} height={300}/>
-                        <h2 className=" text-[#101115]  font-semibold text-2xl">90% Customer Satisfaction</h2>
+                    <div className="bg-[#FFF] border border-[#E5E5E5] rounded-3xl p-8 flex items-center gap-6">
+                        <Image className= "flex-1 w-full h-full object-cover" src={AboutUsersImg} alt="about users img" width={125} height={300}/>
+                        <h2 className=" text-[#101115]  font-semibold text-xl">90% Customer Satisfaction</h2>
                     </div>
                     <div className="bg-[#E7F9DE] rounded-3xl p-8 flex-1">
                         <Title level="title24" children="Simplifying Finance, Empowering Your Success." className="mt-6"/>

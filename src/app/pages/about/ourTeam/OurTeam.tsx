@@ -10,7 +10,7 @@ const OurTeam = async () => {
     }
     const teamMembers: TTeamMember[] = result;
     return (
-        <div>
+        <div className="mb-36">
             <SectionHeader title="Meet Out Team" main_title="Meet the Team Helping You Grow" />
             <div className="grid grid-cols-4 gap-5">
                 {

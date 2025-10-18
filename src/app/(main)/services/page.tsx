@@ -1,0 +1,30 @@
+import CommonBannerTwo from "@/common/CommonBannerTwo";
+import IdentityImg1 from "@/assets/images/about_img_3.png"
+import IdentityImg2 from "@/assets/images/about_img_4.png"
+import Image from "next/image";
+
+
+const ServicesPage = () => {
+    return (
+        <div>
+            <CommonBannerTwo main_title="Expert Accounting & Tax Solutions Tailored to Your Needs" description="At MY TAX BREAKER, we provide a full range of professional financial services to simplify your accounting, taxation, and financial planning. Whether you are an individual, freelancer, or business owner, our solutions are designed to ensure accuracy, compliance, and peace of mind." />
+            <div className="mt-12 lg:m-8 m-4 flex gap-5">
+                <div className="flex-1">
+                    <Image className="w-full h-full object-cover rounded-3xl" src={IdentityImg1} alt="our identity img" width={730} height={730} />
+                </div>
+                <div className="flex-1 flex flex-col gap-5" >
+                    <Image className="w-full" src={IdentityImg2} alt="our identity img" width={730} height={510} />
+                    <div className="bg-[#004D3F] rounded-3xl p-8 flex-1">
+                        <h2 className="text-[32px] font-semibold text-white mb-6">Your Financial Solutions</h2>
+                        <p className="text-[#FFF]">From tax planning to business consulting, we’ve got you covered.</p>
+                    </div>
+                </div>
+                <div className="flex-1">
+                    <Image className="w-full h-full object-cover rounded-3xl" src={IdentityImg1} alt="our identity img" width={730} height={730} />
+                </div>
+            </div>
+        </div >
+    );
+};
+
+export default ServicesPage;
