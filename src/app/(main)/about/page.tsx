@@ -7,6 +7,7 @@ import Title from "@/common/Title";
 import OurIdentity from "@/app/pages/about/ourIdentity/OurIdentity";
 import WeOffer from "@/app/pages/about/weOffer/WeOffer";
 import WhyChooseUs from "@/app/pages/about/whyChooseUs/WhyChooseUs";
+import OurTeam from "@/app/pages/about/ourTeam/OurTeam";
 
  
 const AboutPage = () => {
@@ -31,6 +32,7 @@ const AboutPage = () => {
                 <OurIdentity/>
                 <WeOffer/>
                 <WhyChooseUs/>
+                <OurTeam/>
            </div>
 
         </div>
