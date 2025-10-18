@@ -4,6 +4,7 @@ import AboutImg2 from "@/assets/images/about_img_2.png"
 import AboutUsersImg from "@/assets/images/about_users.png"
 import Image from "next/image";
 import Title from "@/common/Title";
+import OurIdentity from "@/app/pages/about/ourIdentity/OurIdentity";
 
  
 const AboutPage = () => {
@@ -23,6 +24,9 @@ const AboutPage = () => {
                     </div>
                 </div>
                 <Image src={AboutImg2} alt="about img one" width={668} height={474}/>
+           </div>
+           <div className="section-padding-x">
+                <OurIdentity/>
            </div>
 
         </div>
