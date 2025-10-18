@@ -39,7 +39,7 @@ const Navbar = () => {
           ))}
         </div>
         <div className="flex justify-center items-center gap-[18px]">
-          <Link href={'/auth/login'} className="bg-[#ECF4E9] w-[50px] h-[50px] rounded-full flex items-center justify-center cursor-pointer"><UserICon /> </Link>
+          <Link href={'/auth/stepers'} className="bg-[#ECF4E9] w-[50px] h-[50px] rounded-full flex items-center justify-center cursor-pointer"><UserICon /> </Link>
           <button className="bg-[#ECF4E9] rounded-full px-4 py-3 flex justify-center items-center gap-[6px] cursor-pointer"><GlobIcon /> <span className="text-[#004D3F] ">EN</span></button>
         </div>
       </div>

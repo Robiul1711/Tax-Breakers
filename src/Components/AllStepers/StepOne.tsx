@@ -71,7 +71,7 @@ const StepOne: React.FC = () => {
         )}
       />
       {errors.stepOneOption && (
-        <p className="text-red-500 text-sm ">{errors.stepOneOption?.message}</p>
+        <p className="text-red-500 text-sm ">{errors.stepOneOption?.message as string}</p>
       )}
 
       {/* Divider */}
@@ -94,7 +94,7 @@ const StepOne: React.FC = () => {
           })}
         ></textarea>
         {errors.stepOneNotes && (
-          <p className="text-red-500 text-sm ">{errors.stepOneNotes?.message}</p>
+          <p className="text-red-500 text-sm ">{errors.stepOneNotes?.message as string}</p>
         )}
       </div>
     </div>
