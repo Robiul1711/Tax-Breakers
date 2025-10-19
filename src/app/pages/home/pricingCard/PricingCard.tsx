@@ -11,7 +11,7 @@ const PricingCard = ({ plan, billingCycle }: { plan: TPricingPlan, billingCycle:
 
     return (
         <div className="rounded-3xl p-6 relative flex flex-col bg-[#FBFBFB] border border-[#E5E5E5] hover:bg-[#E7F9DE] transition-all duration-200">
-           <div className="absolute -top-[26px] right-6 z-50">
+           <div className="absolute -top-[26px] right-6 z-30">
              <div className="relative w-[100px] h-[112px]">
                 <Image className="h-[108px]" src={PricingShape} alt="Pricing Shape" width={100} height={112} />
                 <h2 className="absolute top-[40%] left-[58%] transform -translate-x-1/2 -translate-y-1/2 text-2xl font-semibold text-center text-[#004D3F] leading-4">

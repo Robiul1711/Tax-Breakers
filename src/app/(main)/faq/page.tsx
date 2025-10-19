@@ -1,397 +1,86 @@
-"use client"
+"use client";
 import CommonBannerThree from "@/common/CommonBannerThree";
-import featureImage from '@/assets/images/Featured Image.png'
+import featureImage from "@/assets/images/Featured Image 2.png";
 import Image from "next/image";
 import { motion, AnimatePresence } from "framer-motion";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { FiMinus, FiPlus } from "react-icons/fi";
-
-const faqData = {
-    "navigation": [
-        { "title": "General Questions", "slug": "general-questions" },
-        { "title": "Account & Onboarding", "slug": "account-onboarding" },
-        { "title": "Invoicing & Payments", "slug": "invoicing-payments" },
-        { "title": "Tax Management", "slug": "tax-management" },
-        { "title": "Expense & Income Tracking", "slug": "expense-income-tracking" },
-        { "title": "Book Appointment", "slug": "book-appointment" },
-        { "title": "Pricing", "slug": "pricing" },
-        { "title": "Chat & Support", "slug": "chat-support" }
-    ],
-    "categories": [
-        {
-            "categoryTitle": "General Questions",
-            "slug": "general-questions",
-            "faqs": [
-                {
-                    "id": "gq_01",
-                    "question": "Can I Connect Multiple Bank Accounts?",
-                    "answer": "Yes! With the Pro and Premium plans, you can connect an unlimited number of accounts and manage them all from one dashboard. Starter plans are limited to 2 accounts.",
-                    "isOpen": true
-                },
-                {
-                    "id": "gq_02",
-                    "question": "Is My Financial Data Secure?",
-                    "answer": "Security is our top priority. We use industry-leading 256-bit encryption for all data transfers, and never store your bank credentials directly. All data is managed according to strict privacy standards.",
-                    "isOpen": false
-                },
-                {
-                    "id": "gq_03",
-                    "question": "Does Coinest Support Mobile Access?",
-                    "answer": "Yes, Coinest is fully responsive and optimized for mobile browsers, providing a seamless experience on both iOS and Android devices. A dedicated app is currently in development.",
-                    "isOpen": false
-                },
-                {
-                    "id": "gq_04",
-                    "question": "Storage Limit For The Free Plan?",
-                    "answer": "The Starter (Free) plan includes storage for up to 6 months of transaction history. Pro and Premium plans include unlimited history storage.",
-                    "isOpen": false
-                },
-                {
-                    "id": "gq_05",
-                    "question": "Can I Upgrade From The Free Plan?",
-                    "answer": "Absolutely. You can upgrade from the Starter plan to Pro or Premium at any time directly through your dashboard settings. Your new features and limits will be applied instantly.",
-                    "isOpen": false
-                },
-                {
-                    "id": "gq_06",
-                    "question": "What Support Options Are Available For Free Users?",
-                    "answer": "Starter (Free) users have access to our comprehensive Knowledge Base and community forums. Email Support and Priority Support are features exclusive to Pro and Premium subscribers.",
-                    "isOpen": false
-                }
-            ]
-        },
-        {
-            "categoryTitle": "Account & Onboarding",
-            "slug": "account-onboarding",
-            "faqs": [
-                {
-                    "id": "ao_01",
-                    "question": "How do I reset my password?",
-                    "answer": "You can reset your password by clicking the 'Forgot Password' link on the login page and following the instructions sent to your registered email address.",
-                    "isOpen": false
-                },
-                {
-                    "id": "ao_02",
-                    "question": "What documents do I need to verify my account?",
-                    "answer": "For basic account setup, no documents are required. For certain premium services or high-value transactions, identity verification documents (e.g., photo ID) may be requested.",
-                    "isOpen": false
-                },
-                {
-                    "id": "ao_03",
-                    "question": "Does Coinest Support Mobile Access?",
-                    "answer": "Yes, Coinest is fully responsive and optimized for mobile browsers, providing a seamless experience on both iOS and Android devices. A dedicated app is currently in development.",
-                    "isOpen": false
-                },
-                {
-                    "id": "ao_04",
-                    "question": "Storage Limit For The Free Plan?",
-                    "answer": "The Starter (Free) plan includes storage for up to 6 months of transaction history. Pro and Premium plans include unlimited history storage.",
-                    "isOpen": false
-                },
-                {
-                    "id": "ao_05",
-                    "question": "Can I Upgrade From The Free Plan?",
-                    "answer": "Absolutely. You can upgrade from the Starter plan to Pro or Premium at any time directly through your dashboard settings. Your new features and limits will be applied instantly.",
-                    "isOpen": false
-                },
-            ]
-        },
-        {
-            "categoryTitle": "Invoicing & Payments",
-            "slug": "invoicing-payments",
-            "faqs": [
-                {
-                    "id": "ip_01",
-                    "question": "Can I send recurring invoices?",
-                    "answer": "Yes, our Pro and Premium plans allow you to set up automated recurring invoices for regular clients, saving you time each billing cycle.",
-                    "isOpen": false
-                },
-                {
-                    "id": "ip_02",
-                    "question": "What payment gateways are supported?",
-                    "answer": "Coinest integrates with major payment gateways including Stripe, PayPal, and Square for easy client payment collection.",
-                    "isOpen": false
-                },
-                {
-                    "id": "ip_03",
-                    "question": "Can clients pay directly from the invoice link?",
-                    "answer": "Yes. When you send an invoice through Coinest, it includes a secure link where clients can view the invoice and pay instantly using any of the integrated payment gateways (Stripe, PayPal, etc.).",
-                    "isOpen": false
-                },
-                {
-                    "id": "ip_04",
-                    "question": "Does Coinest track the status of my invoices?",
-                    "answer": "Absolutely. The Invoicing dashboard provides real-time status updates, including Draft, Sent, Viewed by Client, Paid (or Partially Paid), and Overdue, ensuring you always know where your cash flow stands.",
-                    "isOpen": false
-                },
-                {
-                    "id": "ip_05",
-                    "question": "Can I customize the design of my invoices?",
-                    "answer": "Yes, Pro and Premium users can customize invoice templates with their own company logo, color scheme, and specific terms and conditions to maintain brand consistency.",
-                    "isOpen": false
-                },
-                {
-                    "id": "ip_06",
-                    "question": "Can I set up automatic late payment reminders?",
-                    "answer": "Yes. You can configure automated, friendly reminder emails to be sent to clients if an invoice remains unpaid a set number of days after the due date.",
-                    "isOpen": false
-                }
-            ]
-        },
-        {
-            "categoryTitle": "Tax Management",
-            "slug": "tax-management",
-            "faqs": [
-                {
-                    "id": "tm_01",
-                    "question": "Does Coinest calculate my taxes?",
-                    "answer": "Coinest provides categorized reports (Income & Expense Analytics) that simplify tax preparation. While we don't file taxes, Premium users can easily export data formatted for popular tax software.",
-                    "isOpen": false
-                },
-                {
-                    "id": "tm_02",
-                    "question": "How do I categorize expenses for tax purposes?",
-                    "answer": "You can use our custom categories and tags feature to mark transactions as tax-deductible. Premium plans include advanced filtering for Q3/Q4 estimated tax preparation.",
-                    "isOpen": false
-                },
-                {
-                    "id": "tm_03",
-                    "question": "Can I attach receipts to tax-related expenses?",
-                    "answer": "Yes. All users can upload and attach digital receipts and invoices directly to individual transactions. This documentation is included when you export your data, simplifying audits.",
-                    "isOpen": false
-                },
-                {
-                    "id": "tm_04",
-                    "question": "Does Coinest handle sales tax calculations?",
-                    "answer": "Coinest is designed for income and expense tracking. It does not automatically calculate or file sales tax. However, you can create custom tags to track sales tax collected and paid.",
-                    "isOpen": false
-                },
-                {
-                    "id": "tm_05",
-                    "question": "Are there limits on data export for tax documents?",
-                    "answer": "Starter plans are limited to exporting data monthly. Pro and Premium users can export an unlimited number of reports spanning any date range required for annual tax filing.",
-                    "isOpen": false
-                },
-                {
-                    "id": "tm_06",
-                    "question": "Does the app provide a 1099 or W-2 summary?",
-                    "answer": "Coinest provides a detailed summary of contractor payments (1099) and payroll expenses (W-2) based on how you categorize those transactions. We do not generate the forms themselves, but provide the necessary data.",
-                    "isOpen": false
-                }
-            ]
-        },
-        {
-            "categoryTitle": "Expense & Income Tracking",
-            "slug": "expense-income-tracking",
-            "faqs": [
-                {
-                    "id": "eit_01",
-                    "question": "Can I manually add cash transactions?",
-                    "answer": "Yes, you can easily log cash income or expenses manually through the 'Add Transaction' button on your dashboard. These will be included in your reports.",
-                    "isOpen": false
-                },
-                {
-                    "id": "eit_02",
-                    "question": "How often is my bank data refreshed?",
-                    "answer": "Your linked bank accounts are automatically refreshed every 2-4 hours. You can also manually refresh the data at any time.",
-                    "isOpen": false
-                },
-                {
-                    "id": "eit_03",
-                    "question": "Can I set up recurring expenses?",
-                    "answer": "Yes, you can designate any expense (like subscriptions or rent) as recurring. The app will automatically log these transactions each month, helping improve your budget forecasting.",
-                    "isOpen": false
-                },
-                {
-                    "id": "eit_04",
-                    "question": "How does automatic categorization work?",
-                    "answer": "Coinest uses an AI algorithm to read transaction details and assign an initial category. You can train the system by manually correcting a category, and it will remember your preference for future transactions from that vendor.",
-                    "isOpen": false
-                },
-                {
-                    "id": "eit_05",
-                    "question": "Can I split a single transaction into multiple categories?",
-                    "answer": "Yes, our transaction editor allows you to split a single bank transaction into multiple line items, assigning different amounts to different categories (e.g., separating a grocery bill into 'Food' and 'Household Goods').",
-                    "isOpen": false
-                },
-                {
-                    "id": "eit_06",
-                    "question": "How long is my transaction history stored?",
-                    "answer": "Starter (Free) plans store history for up to 6 months. Pro and Premium plans include unlimited, searchable transaction history storage for as long as you maintain your subscription.",
-                    "isOpen": false
-                }
-            ]
-        },
-        {
-            "categoryTitle": "Book Appointment",
-            "slug": "book-appointment",
-            "faqs": [
-                {
-                    "id": "ba_01",
-                    "question": "How do I schedule a consultation with a financial advisor?",
-                    "answer": "If you are a Premium user, you can book a consultation directly through the 'Book Appointment' tab in the left navigation menu. You'll see a list of available times and advisors.",
-                    "isOpen": false
-                },
-                {
-                    "id": "ba_02",
-                    "question": "Is the consultation service free?",
-                    "answer": "One 30-minute consultation per quarter is included with the Premium plan. Additional consultations can be purchased at a discounted rate.",
-                    "isOpen": false
-                },
-                {
-                    "id": "ba_03",
-                    "question": "What topics can I discuss during the consultation?",
-                    "answer": "You can discuss personalized budgeting strategies, investment dashboard analysis, debt reduction plans, and specific questions regarding Coinest's financial forecasting tools.",
-                    "isOpen": false
-                },
-                {
-                    "id": "ba_04",
-                    "question": "How do I cancel or reschedule an appointment?",
-                    "answer": "You can cancel or reschedule an appointment up to 24 hours in advance through the 'My Appointments' section of the 'Book Appointment' tab. Cancellations made less than 24 hours in advance may be charged.",
-                    "isOpen": false
-                },
-                {
-                    "id": "ba_05",
-                    "question": "Are the financial advisors independent?",
-                    "answer": "The advisors available through Coinest are certified financial planning professionals who are contracted to provide unbiased guidance based on your financial data within the app.",
-                    "isOpen": false
-                },
-                {
-                    "id": "ba_06",
-                    "question": "What is the format of the consultation?",
-                    "answer": "Consultations are typically conducted via video conference (Zoom or Google Meet), but phone calls can be requested depending on the advisor's availability.",
-                    "isOpen": false
-                }
-            ]
-        },
-        {
-            "categoryTitle": "Pricing",
-            "slug": "pricing",
-            "faqs": [
-                {
-                    "id": "pr_01",
-                    "question": "Do you offer a free trial for the Pro plan?",
-                    "answer": "We offer a permanent Starter (Free) plan with limited features. You can test out the Pro and Premium features with a 7-day money-back guarantee.",
-                    "isOpen": false
-                },
-                {
-                    "id": "pr_02",
-                    "question": "Can I change my plan subscription at any time?",
-                    "answer": "Yes, you can upgrade, downgrade, or cancel your subscription at any point. Changes will take effect at the beginning of your next billing cycle.",
-                    "isOpen": false
-                },
-                {
-                    "id": "pr_03",
-                    "question": "What happens if I downgrade my plan?",
-                    "answer": "When you downgrade, your current subscription remains active until the end of your billing cycle. At that point, your plan will switch to the lower tier, and premium features will no longer be accessible.",
-                    "isOpen": false
-                },
-                {
-                    "id": "pr_04",
-                    "question": "Do you offer annual discounts?",
-                    "answer": "Yes, we offer a significant discount (typically 20%) when you choose to pay for the Pro or Premium plan annually instead of monthly. This saves you money over the year.",
-                    "isOpen": false
-                },
-                {
-                    "id": "pr_05",
-                    "question": "Are there any hidden fees or setup costs?",
-                    "answer": "No. Our pricing is completely transparent. The monthly or annual price listed for Pro and Premium is the final amount you will pay. There are no setup fees or hidden charges.",
-                    "isOpen": false
-                },
-                {
-                    "id": "pr_06",
-                    "question": "What payment methods do you accept for subscriptions?",
-                    "answer": "We accept all major credit cards (Visa, MasterCard, Amex) and PayPal for all Pro and Premium subscription payments.",
-                    "isOpen": false
-                }
-            ]
-        },
-        {
-            "categoryTitle": "Chat & Support",
-            "slug": "chat-support",
-            "faqs": [
-                {
-                    "id": "cs_01",
-                    "question": "How do I access Priority Support?",
-                    "answer": "Priority Support is available 24/7 for Premium users via the dedicated chat widget located in the bottom right corner of your dashboard. Pro users have standard Email Support.",
-                    "isOpen": false
-                },
-                {
-                    "id": "cs_02",
-                    "question": "What is the typical response time for Email Support?",
-                    "answer": "We aim to respond to all Pro user email support inquiries within 12 hours during business days (Monday-Friday).",
-                    "isOpen": false
-                },
-                {
-                    "id": "cs_03",
-                    "question": "Does the Starter (Free) plan include any support?",
-                    "answer": "Yes, Starter users have full access to our comprehensive **Knowledge Base**, including tutorials and FAQs, as well as the **Community Forum** for peer-to-peer assistance.",
-                    "isOpen": false
-                },
-                {
-                    "id": "cs_04",
-                    "question": "What is the difference between Email Support and Priority Support?",
-                    "answer": "Email Support (Pro plan) is for non-critical issues and has a response window of up to 12 hours. Priority Support (Premium plan) is for urgent issues, offering 24/7 access to live chat with immediate response times.",
-                    "isOpen": false
-                },
-                {
-                    "id": "cs_05",
-                    "question": "Can I request a phone call for technical support?",
-                    "answer": "Phone support is not the primary support channel. However, our Priority Support team (Premium users) may offer a call-back option for complex or critical technical issues that cannot be resolved via chat.",
-                    "isOpen": false
-                },
-                {
-                    "id": "cs_06",
-                    "question": "Where can I find tutorials and guides for using Coinest?",
-                    "answer": "All tutorials, video guides, and detailed articles on using features like budgeting, tracking, and reports are available in the dedicated **Knowledge Base** section, accessible from the main footer.",
-                    "isOpen": false
-                }
-            ]
-        }
-    ]
-}
-
-const initialCategory = faqData.categories[0];
+import { getAllFaq } from "@/services/faq/faq";
+import { TFaqData } from "@/Types";
 
 const FaqPage = () => {
-    const [activeCategorySlug, setActiveCategorySlug] = useState(initialCategory.slug);
+    const [faqData, setFaqData] = useState<TFaqData>({
+        navigation: [],
+        categories: []
+    });
+
+    const [activeCategorySlug, setActiveCategorySlug] = useState<string>("");
     const [openIndex, setOpenIndex] = useState<number | null>(0);
-    const currentCategory = faqData.categories.find(
-        (category) => category.slug === activeCategorySlug
-    ) || initialCategory;
-    const faqsToDisplay = currentCategory.faqs;
+
+    useEffect(() => {
+        const fetchData = async () => {
+            const result = await getAllFaq();
+            if (!(result instanceof Error)) {
+                setFaqData(result);
+            }
+        };
+        fetchData();
+    }, []);
+
+    useEffect(() => {
+        if (faqData.categories.length > 0) {
+            setActiveCategorySlug(faqData.categories[0].slug);
+        }
+    }, [faqData]);
+
+    const currentCategory =
+        faqData.categories.find((category) => category.slug === activeCategorySlug) ||
+        faqData.categories[0] ||
+        null;
+
+    const faqsToDisplay = currentCategory?.faqs || [];
+
     const toggleFaq = (index: number) => {
         setOpenIndex(openIndex === index ? null : index);
     };
+
     const switchCategory = (slug: string) => {
         setActiveCategorySlug(slug);
         setOpenIndex(null);
     };
 
-
-
     return (
-        <div>
+        <div className="overflow-x-hidden">
             <div className="relative">
-                <CommonBannerThree title="FAQ" main_title="Tax Breaks: FAQs  Key Tax Breaks." description="Understanding tax breaks is crucial for savings. This section highlights strategies that can impact your financial planning." />
-                <div className='absolute -bottom-1/2 left-1/2 -translate-x-1/3 w-full'>
-                    <Image src={featureImage} height={1024} width={1320} alt='feature image'></Image>
+                <CommonBannerThree
+                    title="FAQ"
+                    main_title="Tax Breaks: FAQs  Key Tax Breaks."
+                    description="Understanding tax breaks is crucial for savings. This section highlights strategies that can impact your financial planning."
+                />
+                <div className="absolute -bottom-1/2 left-1/2 -translate-x-1/3 w-full">
+                    <Image src={featureImage} height={1024} width={1320} alt="feature image" />
                 </div>
             </div>
-            <div className="section-padding-x mt-120">
+
+            <div className="section-padding-x mt-120 mb-36">
                 <div className="flex flex-col lg:flex-row gap-12">
                     <div className="w-full lg:w-[35%]">
-                        <ul className=" bg-[#FBFBFB] rounded-[16px] p-6">
+                        <ul className="bg-[#FBFBFB] rounded-[16px] py-6 px-12">
                             {faqData.navigation.map((navItem) => (
                                 <li key={navItem.slug}>
                                     <button
                                         onClick={() => switchCategory(navItem.slug)}
-                                        className={`w-full text-left transition-all cursor-pointer duration-300 border-b border-[#E5E5E5] py-5 px-8 text-[26px] ${activeCategorySlug === navItem.slug
-                                            ? "text-[#004D3F] font-semibold "
-                                            : "text-[#677489] hover:text-[#004D3F]"
-                                            }`}
+                                        className={`w-full text-left transition-all cursor-pointer duration-300 ${
+                                            navItem?.title === "Chat & Support"
+                                                ? ""
+                                                : "border-b border-[#E5E5E5]"
+                                        } py-6 text-[26px] ${
+                                            activeCategorySlug === navItem.slug
+                                                ? "text-[#004D3F] font-semibold"
+                                                : "text-[#677489] hover:text-[#004D3F]"
+                                        }`}
                                     >
-                                        {navItem.title}
+                                        {navItem?.title}
                                     </button>
                                 </li>
                             ))}
@@ -400,53 +89,59 @@ const FaqPage = () => {
 
                     {/* FAQ Accordion Content */}
                     <div className="space-y-5 w-full lg:w-[65%]">
-                        <h1 className="text-3xl font-bold text-[#1E4841] mb-6">
-                            {currentCategory.categoryTitle}
-                        </h1>
+                        {currentCategory && (
+                            <h1 className="text-3xl font-bold text-[#1E4841] mb-6">
+                                {currentCategory.categoryTitle}
+                            </h1>
+                        )}
 
-                        {/* CORRECTED MAPPING: Map over the FAQs of the currently selected category */}
-                        {faqsToDisplay.map((faq, index) => (
-                            <div
-                                key={index} // Use the unique ID as the key for better performance
-                                className={`border border-[#E5E5E5] cursor-pointer rounded-2xl transition-all duration-300 ${openIndex === index ? "bg-[#E7F9DE]" : "bg-[#FBFBFB]"
+                        {faqsToDisplay.length > 0 ? (
+                            faqsToDisplay.map((faq, index) => (
+                                <div
+                                    key={faq.id}
+                                    className={`border border-[#E5E5E5] cursor-pointer rounded-2xl transition-all duration-300 ${
+                                        openIndex === index ? "bg-[#E7F9DE]" : "bg-[#FBFBFB]"
                                     }`}
-                            >
-                                <button
-                                    onClick={() => toggleFaq(index)}
-                                    className="flex justify-between items-center cursor-pointer w-full text-left focus:outline-none px-6 pb-3 pt-5"
                                 >
-                                    <h3 className="text-xl font-semibold text-[#1E4841]">
-                                        {faq.question}
-                                    </h3>
-                                    <motion.div
-                                        animate={{ rotate: openIndex === index ? 180 : 0 }}
-                                        transition={{ duration: 0.3 }}
-                                        className="cursor-pointer flex-shrink-0 ml-4"
+                                    <button
+                                        onClick={() => toggleFaq(index)}
+                                        className="flex justify-between items-center w-full text-left focus:outline-none px-6 py-5"
                                     >
-                                        {
-                                            openIndex === index ?
-                                                <FiMinus size={24} className="text-gray-600" /> :
-                                                <FiPlus size={24} className="text-gray-600" />
-                                        }
-                                    </motion.div>
-                                </button>
-
-                                <AnimatePresence>
-                                    {openIndex === index && (
+                                        <h3 className="text-xl font-semibold text-[#1E4841]">
+                                            {faq.question}
+                                        </h3>
                                         <motion.div
-                                            initial={{ height: 0, opacity: 0 }}
-                                            animate={{ height: "auto", opacity: 1 }}
-                                            exit={{ height: 0, opacity: 0 }}
-                                            transition={{ duration: 0.4, ease: "easeInOut" }}
+                                            animate={{ rotate: openIndex === index ? 180 : 0 }}
+                                            transition={{ duration: 0.3 }}
+                                            className="flex-shrink-0 ml-4"
                                         >
-                                            <div className="text-[#677489] text-lg leading-relaxed pb-6 px-6">
-                                                {faq.answer}
-                                            </div>
+                                            {openIndex === index ? (
+                                                <FiMinus size={24} className="text-gray-600" />
+                                            ) : (
+                                                <FiPlus size={24} className="text-gray-600" />
+                                            )}
                                         </motion.div>
-                                    )}
-                                </AnimatePresence>
-                            </div>
-                        ))}
+                                    </button>
+
+                                    <AnimatePresence>
+                                        {openIndex === index && (
+                                            <motion.div
+                                                initial={{ height: 0, opacity: 0 }}
+                                                animate={{ height: "auto", opacity: 1 }}
+                                                exit={{ height: 0, opacity: 0 }}
+                                                transition={{ duration: 0.4, ease: "easeInOut" }}
+                                            >
+                                                <div className="text-[#677489] text-lg leading-relaxed pb-6 px-6">
+                                                    {faq.answer}
+                                                </div>
+                                            </motion.div>
+                                        )}
+                                    </AnimatePresence>
+                                </div>
+                            ))
+                        ) : (
+                            <p className="text-gray-500">No FAQs available.</p>
+                        )}
                     </div>
                 </div>
             </div>
