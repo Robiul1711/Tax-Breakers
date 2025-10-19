@@ -11,7 +11,7 @@ const CommonBannerThree = ({ title, main_title, description, brandName }: {title
       borderRadius: "20px"
     }} className="lg:m-8 m-4 rounded-[24px] pt-24 pb-96">
       <div className="mb-8">
-        <CommonSubTitle title={title}/>
+        <CommonSubTitle title={title || ""} />
       </div>
       <h2 className="text-[#151515] text-[64px] font-semibold text-center max-w-[1080px] mx-auto">{main_title}</h2>
       <p className="text-[#677489] text-center max-w-[1080px] leading-8 text-xl font-medium mx-auto mt-6">

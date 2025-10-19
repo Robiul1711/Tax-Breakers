@@ -1,4 +1,4 @@
-"use client"; // Required for state and interactivity
+"use client"
 
 import Title from "@/common/Title";
 import { getAllBlog } from "@/services/blog/blog";
