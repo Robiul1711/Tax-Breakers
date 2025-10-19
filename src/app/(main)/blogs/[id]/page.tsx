@@ -1,4 +1,4 @@
-import BlogDetails from "@/Components/auth/blogDetails/BlogDetails";
+import BlogDetails from "@/app/pages/blogDetails/BlogDetails";
 
 const BlogDetailsPage = async ({ params }: { params: Promise<{ id: string }> }) => {
     const { id } = await params;

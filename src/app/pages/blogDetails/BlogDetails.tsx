@@ -2,11 +2,11 @@
 
 import BannerImg from "@/assets/images/banner3.png";
 import PageHeading from "@/Components/PageHeading/PageHeading";
+import { RightArrow } from "@/Components/SvgContainer/SvgContainer";
 import { getAllBlog } from "@/services/blog/blog";
 import Image from "next/image";
 import { useRouter } from "next/navigation";
 import { useEffect, useState } from "react";
-import RightArrowSvg from "@/assets/images/right arrow.svg";
 
 
 type TBlog = {
@@ -45,7 +45,7 @@ const BlogDetails = ({ id }: { id: string }) => {
     }, [id]);
 
     if (!blog) {
-        return <p className="text-center mt-20 text-gray-500">Loading blog...</p>;
+        return <p className="text-center mt-20 text-gray-500">Loading</p>;
     }
 
     return (
@@ -114,13 +114,9 @@ const BlogDetails = ({ id }: { id: string }) => {
                             <p className="text-[#56595C] text-sm line-clamp-3">{b.introduction}</p>
                             <div className="flex justify-between items-center mt-4 text-sm text-[#004D3F] font-medium">
                                 <span>{b.date}</span>
-                                <button className="hover:cursor-pointer flex gap-2" onClick={() => router.push(`/blogs/${b.id}`)}><span>Read More  </span>
-                                    <Image
-                                        src={RightArrowSvg}
-                                        alt="right arrow svg"
-                                        width={14}
-                                        height={14}
-                                    /></button>
+                                <button className="hover:cursor-pointer flex gap-2" onClick={() => router.push(`/blogs/${b.id}`)}><span>Read More </span>
+                                    <RightArrow />
+                                </button>
                             </div>
                         </div>
                     ))}
