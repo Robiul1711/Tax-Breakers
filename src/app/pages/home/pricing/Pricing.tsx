@@ -65,7 +65,7 @@ const pricingPlans: TPricingPlan[] = [
     }
 ];
 
-const Pricing = () => {
+const Pricing = ({title,description , className}: {title : string, description : string, className?: string}) => {
     const [billingCycle, setBillingCycle] = useState<"Monthly" | "Annual">('Monthly');
     console.log(billingCycle);
     const getSliderTransform = () => {
@@ -76,9 +76,9 @@ const Pricing = () => {
         <div>
             <div>
                 <CommonSubTitle title='Pricing' />
-                <h2 className="text-[#151515] text-[48px] font-bold capitalize mt-6">Pricing and Plans</h2>
-                <p className="text-[#515151] leading-6 w-[571px]">
-                    Choose a plan that fits your financial needs. No hidden fees, no surprises—just expert services at fair rates.
+                <h2 className={`text-[#151515] text-[48px] font-bold capitalize mt-6 ${className}`}>{title}</h2>
+                <p className={`text-[#515151] leading-6 w-[571px] mt-6 ${className}`}>
+                    {description}
                 </p>
 
                 {/* Toggle Switch */}

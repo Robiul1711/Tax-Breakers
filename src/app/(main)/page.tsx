@@ -14,7 +14,7 @@ export default function LandingPage() {
       <div className="section-padding-x">
         <About />
         <Services />
-        <Pricing/>
+        <Pricing title="Pricing and Plans" description="Choose a plan that fits your financial needs. No hidden fees, no surprises—just expert services at fair rates."/>
         <BlogSection/>
         <FaqSection/>
       </div>
