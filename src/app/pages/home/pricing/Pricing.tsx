@@ -67,7 +67,6 @@ const pricingPlans: TPricingPlan[] = [
 
 const Pricing = ({title,description , className}: {title : string, description : string, className?: string}) => {
     const [billingCycle, setBillingCycle] = useState<"Monthly" | "Annual">('Monthly');
-    console.log(billingCycle);
     const getSliderTransform = () => {
         return billingCycle === 'Annual' ? 'translateX(100%)' : 'translateX(0)';
     };
