@@ -52,7 +52,7 @@ const BlogSection = async () => {
                 <div className="flex-1 flex xl:flex-col lg:flex-row flex-col gap-5">
                     {blogs.slice(1, 3).map((blog: TBlog, index: number) => (
                         <div key={index} className="md:p-6 p-3 bg-[#FBFBF] border border-[#E5E5E5] rounded-3xl flex xl:flex-row lg:flex-col md:flex-row flex-col gap-6">
-                            <Image className="md:h-full h-[200px] object-cover rounded-3xl" src={blog?.thumbnail} alt={blog?.title} width={256} height={271} />
+                            <Image className="md:h-full h-[200px] w-full xl:w-[250px] object-cover rounded-3xl" src={blog?.thumbnail} alt={blog?.title} width={256} height={271} />
                             <div>
                                 <div>
                                     <Title level="title24" children={blog?.title} />
