@@ -1,10 +1,11 @@
-"use client"
+"use client";
+import { useState } from "react";
 import Logo from "@/assets/images/logo.png";
 import { GlobIcon, UserICon } from "@/Components/SvgContainer/SvgContainer";
 import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-
+import { FiMenu, FiX } from "react-icons/fi";
 
 const navLinks = [
   { path: "/", name: "Home" },
@@ -19,32 +20,92 @@ const navLinks = [
 
 const Navbar = () => {
   const pathname = usePathname();
+  const [isOpen, setIsOpen] = useState(false);
+
+  const closeDrawer = () => setIsOpen(false);
+
   return (
-    <div className="bg-[#FFF]/95  border-b border-[#E3E8EF] shadow-[0_4px_16px_0_rgba(0,0,0,0.06)] sticky top-0 z-50">
-      <div className="section-padding-x flex items-center justify-between py-4 gap-8">
-        <div>
+    <>
+      <div className="bg-[#FFF]/95 border-b border-[#E3E8EF] shadow-[0_4px_16px_0_rgba(0,0,0,0.06)] sticky top-0 z-50">
+        <div className="section-padding-x flex items-center justify-between py-4 gap-8">
           <Link href="/">
-            <Image src={Logo} alt="Logo" width={140} height={72} />
+            <Image className="lg:w-[140px] w-[100px]" src={Logo} alt="Logo" width={140} height={72} />
           </Link>
+
+          {/* Desktop Nav */}
+          <div className="hidden lg:flex items-center gap-[38px]">
+            {navLinks.map((nav) => (
+              <Link
+                key={nav.path}
+                href={nav.path}
+                className={`font-medium transition-all duration-300 ${
+                  pathname === nav.path
+                    ? "text-[#085441] text-[18px] font-semibold"
+                    : "text-[#595959]"
+                } hover:text-[#085441]`}
+              >
+                {nav.name}
+              </Link>
+            ))}
+          </div>
+
+          {/* Desktop Right */}
+          <div className="hidden lg:flex justify-center items-center gap-[18px]">
+            <Link
+              href={"/auth/stepers"}
+              className="bg-[#ECF4E9] hover:bg-[#085441] text-[#085441] transition-all duration-300 hover:text-white w-[50px] h-[50px] rounded-full flex items-center justify-center"
+            >
+              <UserICon />
+            </Link>
+            <button className="bg-[#ECF4E9] hover:bg-[#085441] text-[#085441] transition-all duration-300 hover:text-white rounded-full px-4 py-3 flex justify-center items-center gap-[6px]">
+              <GlobIcon /> <span>EN</span>
+            </button>
+          </div>
+
+          {/* Mobile Menu Button */}
+          <button
+            className="block lg:hidden text-[#085441] text-2xl"
+            onClick={() => setIsOpen(true)}
+          >
+            <FiMenu />
+          </button>
         </div>
-        <div className="flex items-center gap-[38px]">
+      </div>
+
+      {/* ✅ Dark Overlay */}
+      {isOpen && (
+        <div
+          className="fixed inset-0 bg-black/40 z-40"
+          onClick={closeDrawer}
+        ></div>
+      )}
+
+      {/* ✅ Mobile Drawer Working */}
+      <div
+        className={`fixed top-0 right-0 h-full w-[260px] bg-white shadow-lg z-50 transition-transform duration-300 ${
+          isOpen ? "translate-x-0" : "translate-x-full"
+        }`}
+      >
+        <div className="flex justify-between items-center p-4 pt-12 border-b">
+          <FiX className="text-xl cursor-pointer" onClick={closeDrawer} />
+        </div>
+
+        <div className="flex flex-col p-6 gap-5">
           {navLinks.map((nav) => (
             <Link
               key={nav.path}
               href={nav.path}
-              className={`font-medium ${pathname === nav.path ? "text-[#085441] text-[18px] font-semibold" : "text-[#595959] "
-                } hover:text-[#085441]`}
+              onClick={closeDrawer}
+              className={`font-medium text-lg ${
+                pathname === nav.path ? "text-[#085441] font-semibold" : "text-[#595959]"
+              } hover:text-[#085441] transition-all duration-300`}
             >
               {nav.name}
             </Link>
           ))}
         </div>
-        <div className="flex justify-center items-center gap-[18px]">
-          <Link href={'/auth/stepers'} className="bg-[#ECF4E9] hover:bg-[#085441] text-[#085441] transition-all duration-300 hover:text-white w-[50px] h-[50px] rounded-full flex items-center justify-center cursor-pointer"><UserICon /> </Link>
-          <button className="bg-[#ECF4E9] hover:bg-[#085441] text-[#085441] transition-all duration-300 hover:text-white rounded-full px-4 py-3 flex justify-center items-center gap-[6px] cursor-pointer"><GlobIcon /> <span>EN</span></button>
-        </div>
       </div>
-    </div>
+    </>
   );
 };
 

@@ -22,12 +22,12 @@ const PricingCard = ({ plan, billingCycle }: { plan: TPricingPlan, billingCycle:
 
             <div>
 
-                <div className="p-2 bg-[#1E4841] w-[48px] h-[48px] rounded-lg flex items-center justify-center mb-6">
+                <div className="p-2 bg-[#1E4841] md:w-[48px] w-[36px] md:h-[48px] h-[36px] rounded-lg flex items-center justify-center mb-6">
                     {icon}
                 </div>
                 <div>
                     <Title level="title24" children={name} className="mb-3" />
-                    <p className="text-[#0C121D] text-xl">{tagline}</p>
+                    <p className="text-[#0C121D] md:text-xl text-lg">{tagline}</p>
                     <p className="h-[1px] w-full bg-[#E5E5E5] mt-3"></p>
                 </div>
             </div>
@@ -35,7 +35,7 @@ const PricingCard = ({ plan, billingCycle }: { plan: TPricingPlan, billingCycle:
             {/* Features List */}
             <ul className="my-8 flex flex-col gap-4">
                 {features.map((feature, index) => (
-                    <li key={index} className="flex items-start gap-2 text-[#0C121D]">
+                    <li key={index} className="flex items-start gap-2 text-[#0C121D] md:text-[16px] text-sm">
                         <PricingFeatureIcon />
                         <span>{feature}</span>
                     </li>
@@ -44,7 +44,7 @@ const PricingCard = ({ plan, billingCycle }: { plan: TPricingPlan, billingCycle:
 
             {/* Footer/CTA Button */}
             <div className="mt-auto">
-                <CommonButton className="!w-full !p-[18px] !rounded-2xl  !text-[18px] !font-semibold">{cta}</CommonButton>
+                <CommonButton className="!w-full md:!p-[18px] !p-3 !rounded-2xl  !text-[18px] !font-semibold">{cta}</CommonButton>
                 
             </div>
         </div>
