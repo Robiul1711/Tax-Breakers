@@ -2,8 +2,8 @@ import SectionHeader from "@/common/SectionHeader";
 import Title from "@/common/Title";
 import { getAllBlog } from "@/services/blog/blog";
 import Image from "next/image";
-import RightArrowSvg from "@/assets/images/right arrow.svg"
 import Link from "next/link";
+import { RightArrow } from "@/Components/SvgContainer/SvgContainer";
 
 type TBlog = {
     id: number;
@@ -45,7 +45,7 @@ const BlogSection = async () => {
                                 <p className="text-[#061929] text-lg">{blog?.date}</p>
                                 <Link href={`/blogs/${blog?.id}`} className="flex items-center justify-center gap-2 text-[#004D3F] font-medium text-xl cursor-pointer">
                                     Learn More
-                                    <Image src={RightArrowSvg} alt="right arrow svg" width={16} height={20} />
+                                    <RightArrow />
                                 </Link>
                             </div>
                         </div>
@@ -65,7 +65,7 @@ const BlogSection = async () => {
                                     <p className="text-[#061929] text-lg">{blog?.date}</p>
                                     <Link href={`/blogs/${blog?.id}`} className="flex items-center justify-center gap-2 text-[#004D3F] font-medium text-xl cursor-pointer">
                                         Learn More
-                                        <Image src={RightArrowSvg} alt="right arrow svg" width={16} height={20} />
+                                        <RightArrow />
                                     </Link>
                                 </div>
                             </div>

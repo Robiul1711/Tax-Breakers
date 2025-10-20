@@ -38,7 +38,7 @@ const WeOffer = () => {
     return (
         <div>
             <SectionHeader title="What we offer" main_title="Solutions Tailored for You" />
-            <div className="mt-12 flex gap-6">
+            <div className="mt-12 flex flex-col lg:flex-row gap-6">
                 <div className="space-y-5 flex-1">
                     {weOffersData?.map((faq, index) => (
                         <div
