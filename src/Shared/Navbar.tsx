@@ -82,7 +82,7 @@ const Navbar = () => {
 
       {/* ✅ Mobile Drawer Working */}
       <div
-        className={`fixed top-0 right-0 h-full w-[260px] bg-white shadow-lg z-50 transition-transform duration-300 ${
+        className={`fixed top-0 right-0 h-full w-[260px] bg-[#f8fdf4] shadow-lg z-50 transition-transform duration-300 ${
           isOpen ? "translate-x-0" : "translate-x-full"
         }`}
       >

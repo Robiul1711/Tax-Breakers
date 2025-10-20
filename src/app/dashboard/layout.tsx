@@ -10,6 +10,7 @@ import { logout } from "@/redux/slices/authSlice";
 const menuItems = [
   { label: "Dashboard", href: "/dashboard" },
   { label: "Projects", href: "/dashboard/projects" },
+  { label: "Documents", href: "/dashboard/documents" },
   { label: "Settings", href: "/dashboard/settings" },
 ];
 
@@ -78,7 +79,7 @@ export default function DashboardLayout({
         </header>
 
         {/* Page Content */}
-        <section className="h-auto w-full container py-5">
+        <section className="h-auto w-full container m-8">
           <div>{children}</div>
         </section>
       </main>
