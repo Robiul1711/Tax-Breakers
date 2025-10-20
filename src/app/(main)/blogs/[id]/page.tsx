@@ -1,13 +1,9 @@
-import React from 'react';
+import BlogDetails from "@/app/pages/blogDetails/BlogDetails";
 
-const BlogDetails = async ({ params }: { params: Promise<{ id: number }> }) => {
+const BlogDetailsPage = async ({ params }: { params: Promise<{ id: string }> }) => {
     const { id } = await params;
-    console.log(id);
-    return (
-        <div>
-            <h1>blog details page {id}</h1>
-        </div>
-    );
+
+    return <BlogDetails id={id} />;
 };
 
-export default BlogDetails;
+export default BlogDetailsPage;

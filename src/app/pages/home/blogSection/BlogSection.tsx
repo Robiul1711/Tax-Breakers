@@ -2,7 +2,7 @@ import SectionHeader from "@/common/SectionHeader";
 import Title from "@/common/Title";
 import { getAllBlog } from "@/services/blog/blog";
 import Image from "next/image";
-import RightArrowSvg from "@/assets/images/right arrow.svg"
+import { RightArrow } from "@/Components/SvgContainer/SvgContainer";
 
 type TBlog = {
     thumbnail: string;
@@ -31,7 +31,7 @@ const BlogSection = async () => {
             <SectionHeader title="Blog" main_title="Insights, Tips & Updates to Keep You Ahead" description="Stay informed with expert advice, tax updates, and financial strategies to help you make smarter decisions for your business and personal finances." />
             <div className="flex gap-5 mt-12">
                 <div className="flex-1">
-                    {blogs.slice(0, 1).map((blog: TBlog, index: number) => (
+                    {blogs?.slice(0, 1).map((blog: TBlog, index: number) => (
                         <div key={index} className="p-5 bg-[#FBFBF] border border-[#E5E5E5] rounded-3xl">
                             <Image className="w-full rounded-3xl mb-8" src={blog?.thumbnail} alt={blog?.title} width={682} height={358} />
                             <div>
@@ -43,7 +43,7 @@ const BlogSection = async () => {
                                 <p className="text-[#061929] text-lg">{blog?.date}</p>
                                 <button className="flex items-center justify-center gap-2 text-[#004D3F] font-medium text-xl cursor-pointer">
                                     Learn More
-                                    <Image src={RightArrowSvg} alt="right arrow svg" width={16} height={20} />
+                                    <RightArrow />
                                 </button>
                             </div>
                         </div>
@@ -63,7 +63,7 @@ const BlogSection = async () => {
                                     <p className="text-[#061929] text-lg">{blog?.date}</p>
                                     <button className="flex items-center justify-center gap-2 text-[#004D3F] font-medium text-xl cursor-pointer">
                                         Learn More
-                                        <Image src={RightArrowSvg} alt="right arrow svg" width={16} height={20} />
+                                        <RightArrow />
                                     </button>
                                 </div>
                             </div>

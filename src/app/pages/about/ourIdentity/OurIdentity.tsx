@@ -8,7 +8,7 @@ const OurIdentity = () => {
     return (
         <div className="my-36">
             <SectionHeader title="Who We Are" main_title="Our Identity" />
-            <div className="flex gap-5 mt-12">
+            <div className="flex flex-col lg:flex-row gap-5 mt-12">
                 <Image className="flex-1 w-full" src={IdentityImg1} alt="our identity img" width={730} height={730} />
                 <div className="flex-1 flex flex-col gap-5" >
                     <Image className="w-full" src={IdentityImg2} alt="our identity img" width={730} height={510} />

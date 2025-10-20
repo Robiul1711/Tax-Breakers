@@ -6,7 +6,7 @@ const WhyChooseUs = () => {
         <div className="my-36">
             <SectionHeader title="Why Choose Us" main_title="What Sets Us Apart" />
             <div className="mt-12">
-                <div className="flex gap-5">
+                <div className="flex flex-col lg:flex-row gap-5">
                     <div className="bg-[#004D3F] flex justify-center items-center rounded-3xl p-13">
                         <h2 className="text-[#FFF] text-[64px] font-bold text-center">24/7 Support</h2>
                     </div>
@@ -20,7 +20,7 @@ const WhyChooseUs = () => {
                         <h2 className="text-[#101115] text-[64px] font-bold text-center">Proactive Advice</h2>
                     </div>
                 </div>
-                <div className="flex gap-5 mt-5">
+                <div className="flex flex-col lg:flex-row gap-5 mt-5">
                     <div className="bg-[#FBFBFB] flex justify-center items-center rounded-3xl p-13">
                         <h2 className="text-[#101115] text-[64px] font-bold text-center">Trust & Integrity</h2>
                     </div>
