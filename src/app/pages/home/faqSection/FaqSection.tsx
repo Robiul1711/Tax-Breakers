@@ -31,11 +31,11 @@ const faqData = [
 
 
 const FaqSection = () => {
-    const [openIndex, setOpenIndex] = useState<number | null>(0);
+        const [openIndex, setOpenIndex] = useState<number | null>(0);
 
-    const toggleFaq = (index: number) => {
-        setOpenIndex(openIndex === index ? null : index);
-    };
+        const toggleFaq = (index: number) => {
+            setOpenIndex(openIndex === index ? null : index);
+        };
 
     return (
         <div className="mt-[145px]">
@@ -50,7 +50,7 @@ const FaqSection = () => {
                         >
                             <button
                                 onClick={() => toggleFaq(index)}
-                                className="flex justify-between items-center cursor-pointer w-full text-left focus:outline-none mb-3 pt-7 px-6"
+                                className="flex justify-between items-center cursor-pointer w-full text-left focus:outline-none mb-3 px-6 pb-3 pt-5"
                             >
                                 <h3 className="text-xl font-semibold text-[#1E4841]">
                                     {faq?.question}

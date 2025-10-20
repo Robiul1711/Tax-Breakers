@@ -7,7 +7,6 @@ import Link from "next/link";
 import { EmailIcon, PasswordIcon } from "@/Components/SvgContainer/SvgContainer";
 import CommonButton from "@/common/CommonButton";
 import { AiOutlineEye, AiOutlineEyeInvisible } from "react-icons/ai";
-import { FaX } from "react-icons/fa6";
 
 const LoginForm = () => {
     const [showPassword, setShowPassword] = useState(false)
