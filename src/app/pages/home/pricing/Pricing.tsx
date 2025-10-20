@@ -67,7 +67,6 @@ const pricingPlans: TPricingPlan[] = [
 
 const Pricing = ({title,description , className}: {title : string, description : string, className?: string}) => {
     const [billingCycle, setBillingCycle] = useState<"Monthly" | "Annual">('Monthly');
-    console.log(billingCycle);
     const getSliderTransform = () => {
         return billingCycle === 'Annual' ? 'translateX(100%)' : 'translateX(0)';
     };
@@ -76,13 +75,13 @@ const Pricing = ({title,description , className}: {title : string, description :
         <div>
             <div>
                 <CommonSubTitle title='Pricing' />
-                <h2 className={`text-[#151515] text-[48px] font-bold capitalize mt-6 ${className}`}>{title}</h2>
-                <p className={`text-[#515151] leading-6 w-[571px] mt-6 ${className}`}>
+                <h2 className={`text-[#151515] text-3xl sm:text-4xl md:text-5xl lg:text-[48px] font-bold capitalize mt-6 ${className}`}>{title}</h2>
+                <p className={`text-[#515151] leading-6 max-w-[571px] mt-6 ${className}`}>
                     {description}
                 </p>
 
                 {/* Toggle Switch */}
-                <div className="flex justify-end mt-8 mb-[98px]">
+                <div className="flex justify-end mt-8 lg:mb-[98px] md:mb-[70px] mb-[50px]">
                     <div className="relative inline-flex p-1 bg-[#FAFAFA] border border-[#E3E8EF] rounded-md">
                         {/* Slider (Dynamic element) */}
                         <div
@@ -91,7 +90,7 @@ const Pricing = ({title,description , className}: {title : string, description :
                         ></div>
 
                         <button
-                            className={`w-27 py-3 flex items-center gap-2 justify-center text-sm font-semibold rounded-md transition-colors z-10 cursor-pointer ${billingCycle === 'Monthly' ? 'text-[#1E4841] bg-[#BBF49C] ' : 'text-gray-500'
+                            className={`md:w-27 w-20 md:py-3 py-2 flex items-center gap-2 justify-center text-sm font-semibold rounded-md transition-colors z-10 cursor-pointer ${billingCycle === 'Monthly' ? 'text-[#1E4841] bg-[#BBF49C] ' : 'text-gray-500'
                                 }`}
                             onClick={() => setBillingCycle('Monthly')}
                         >
@@ -101,7 +100,7 @@ const Pricing = ({title,description , className}: {title : string, description :
                             Monthly
                         </button>
                         <button
-                            className={`w-27 py-3 flex items-center gap-2 justify-center text-sm font-semibold rounded-md transition-colors z-10 cursor-pointer ${billingCycle === 'Annual' ? 'text-[#1E4841] bg-[#BBF49C]' : 'text-gray-500'
+                            className={`md:w-27 w-20 md:py-3 py-2 flex items-center gap-2 justify-center text-sm font-semibold rounded-md transition-colors z-10 cursor-pointer ${billingCycle === 'Annual' ? 'text-[#1E4841] bg-[#BBF49C]' : 'text-gray-500'
                                 }`}
                             onClick={() => setBillingCycle('Annual')}
                         >
@@ -116,7 +115,7 @@ const Pricing = ({title,description , className}: {title : string, description :
             </div>
 
             {/* Pricing Grid */}
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-8">
                 {pricingPlans?.map(plan => (
                     <PricingCard key={plan.id} plan={plan} billingCycle={billingCycle} />
                 ))}

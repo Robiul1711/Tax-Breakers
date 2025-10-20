@@ -123,7 +123,7 @@ export default function DashboardLayout({
         </header>
 
         {/* Page Content */}
-        <section className="h-auto w-full container py-5">
+        <section className="h-auto w-full container m-8">
           <div>{children}</div>
         </section>
       </main>

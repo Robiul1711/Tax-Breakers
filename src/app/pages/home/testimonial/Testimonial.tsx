@@ -98,23 +98,23 @@ const Testimonial = () => {
             <SectionHeader title="Testimonial" main_title="Don't take our word for it. Take them." description="See how StoreX is transforming the way entrepreneurs around the world do business online." />
 
             <div className="marquee-row w-full mx-auto overflow-hidden relative mt-12">
-                <div className="absolute left-0 top-0 h-full w-130 z-10 pointer-events-none bg-gradient-to-r from-white to-transparent"></div>
+                <div className="absolute left-0 top-0 h-full xl:w-130 lg:w-36 md:w-24 w-10 z-10 pointer-events-none bg-gradient-to-r from-white to-transparent"></div>
                 <div className="marquee-inner flex transform-gpu min-w-[200%] mb-5">
                     {[...testimonialData, ...testimonialData].map((card, index) => (
                         <CreateCard key={index} card={card} />
                     ))}
                 </div>
-                <div className="absolute right-0 top-0 h-full w-130 z-10 pointer-events-none bg-gradient-to-l from-white to-transparent"></div>
+                <div className="absolute right-0 top-0 h-full xl:w-130 lg:w-36 md:w-24 w-10 z-10 pointer-events-none bg-gradient-to-l from-white to-transparent"></div>
             </div>
 
             <div className="marquee-row w-full mx-auto overflow-hidden relative">
-                <div className="absolute left-0 top-0 h-full w-130 z-10 pointer-events-none bg-gradient-to-r from-white to-transparent"></div>
+                <div className="absolute left-0 top-0 h-full xl:w-130 lg:w-36 md:w-24 w-10 z-10 pointer-events-none bg-gradient-to-r from-white to-transparent"></div>
                 <div className="marquee-inner marquee-reverse flex transform-gpu min-w-[200%] mb-5">
                     {[...testimonialData, ...testimonialData].map((card, index) => (
                         <CreateCard key={index} card={card} />
                     ))}
                 </div>
-                <div className="absolute right-0 top-0 h-full w-130 z-10 pointer-events-none bg-gradient-to-l from-white to-transparent"></div>
+                <div className="absolute right-0 top-0 h-full xl:w-130 lg:w-36 md:w-24 w-10 z-10 pointer-events-none bg-gradient-to-l from-white to-transparent"></div>
             </div>
         </div>
     )
