@@ -12,7 +12,7 @@ const OurTeam = async () => {
     return (
         <div className="mb-36">
             <SectionHeader title="Meet Out Team" main_title="Meet the Team Helping You Grow" />
-            <div className="grid lg:grid-cols-3 xl:grid-cols-4 gap-5">
+            <div className="grid md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-5 ">
                 {
                     teamMembers?.map(member => (
                         <div key={member?.id} style={{
