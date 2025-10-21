@@ -172,10 +172,12 @@ body {
 }
 
 .custom-scroll::-webkit-scrollbar {
-  height: 6px; 
+  height: 6px;
+  width: 6px; 
 }
 
 .custom-scroll::-webkit-scrollbar-thumb {
   background: #085441; 
   border-radius: 20px;
 }
+

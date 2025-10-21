@@ -25,31 +25,16 @@ import {
 } from "@/common/DashboardSvg/DashSVG";
 import { FiSearch } from "react-icons/fi";
 import UserProfileDropdown from "@/Shared/UserProfileDropdown";
+
 const menuItems = [
   { label: "Dashboard", href: "/dashboard", icon: <DashboardIcon className="size-5" /> },
   { label: "Invoices", href: "/dashboard/invoices", icon: <InvoiceIcon /> },
-  {
-    label: "Appointments",
-    href: "/dashboard/appointments",
-    icon: <ApoinmentIcon />,
-  },
+  { label: "Appointments", href: "/dashboard/appointments", icon: <ApoinmentIcon /> },
   { label: "Customer", href: "/dashboard/customer", icon: <CustomerIcon /> },
   { label: "Documents", href: "/dashboard/documents", icon: <DocumentIcon /> },
-  {
-    label: "Accounting Management ",
-    href: "/dashboard/accountingmanagement",
-    icon: <AccountingIcon />,
-  },
-  {
-    label: "Subscriptions & Payments",
-    href: "/dashboard/subscriptionsandayments",
-    icon: <SubscriptionIcon />,
-  },
-  {
-    label: "Help & Ticketing",
-    href: "/dashboard/helpandticketing",
-    icon: <HelpIcon />,
-  },
+  { label: "Accounting Management ", href: "/dashboard/accountingmanagement", icon: <AccountingIcon /> },
+  { label: "Subscriptions & Payments", href: "/dashboard/subscriptionsandayments", icon: <SubscriptionIcon /> },
+  { label: "Help & Ticketing", href: "/dashboard/helpandticketing", icon: <HelpIcon /> },
   { label: "Settings", href: "/dashboard/settings", icon: <SettingsIcon /> },
 ];
 
@@ -70,12 +55,13 @@ export default function DashboardLayout({
   };
 
   return (
-    <section className="min-h-screen w-full flex bg-[#FFF] px-8 gap-10">
-      <div>
+    <section className="min-h-screen w-full px-8 flex bg-[#FFF] gap-10 overflow-hidden">
+      <div className="sticky top-0 h-screen">
         {/* Sidebar */}
-        <Link href="/" className="mb-4  block">
+        <Link href="/" className="mb-4 block">
           <Image src={Logo} alt="Logo" width={140} height={72} />
         </Link>
+
         <aside className="w-[320px] h-[calc(100vh-6rem)] bg-[#E7F9DE] rounded-3xl md:flex hidden flex-col justify-between overflow-hidden">
           {/* Scrollable upper section */}
           <div className="flex-1 overflow-y-auto p-8 space-y-5">
@@ -127,20 +113,18 @@ export default function DashboardLayout({
       </div>
 
       {/* Main Content */}
-      <main className="flex-grow flex flex-col py-4">
-        {/* Top Navbar */}
-        <header className="h-16 w-full  flex items-center justify-between">
+      <main className="flex-grow flex flex-col py-4 h-screen overflow-hidden">
+        {/* Sticky Top Navbar */}
+        <header className="h-16 w-full flex items-center justify-between sticky top-0 bg-white z-10">
           <div className="max-w-xl w-full relative">
-            {/* Icon positioned absolutely */}
             <FiSearch className="absolute left-4 top-1/2 -translate-y-1/2 text-gray-500 text-lg" />
-
-            {/* Input field with extra left padding to avoid overlap */}
             <input
               type="text"
               placeholder="Search..."
               className="w-full bg-[#EFF0F0] rounded-full pl-10 pr-4 py-2 outline-none placeholder:text-gray-500 text-gray-700 focus:ring-2 focus:ring-blue-500 transition"
             />
           </div>
+
           <div className="flex items-center gap-4">
             <p className="p-2 bg-[#ECF4E9] rounded-full">
               <MessageIcon />
@@ -150,14 +134,12 @@ export default function DashboardLayout({
               <NotificationIcon />
             </p>
 
-            {/* Placeholder for user avatar */}
-            <UserProfileDropdown  logout={handleLogout}/>
+            <UserProfileDropdown logout={handleLogout} />
           </div>
         </header>
 
-        {/* Page Content */}
-        <section className="h-auto w-full container m-8">
-          <div>{children}</div>
+        <section className="flex-1 overflow-y-auto w-full container my-8 custom-scroll">
+          {children}
         </section>
       </main>
     </section>
