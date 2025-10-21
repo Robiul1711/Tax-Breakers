@@ -41,8 +41,8 @@ const FaqSection = () => {
         <div className="mt-[145px]">
             <SectionHeader title="FAQ" main_title="Frequently Asked Questions" description="Got questions? We’ve got you covered—here are some quick answers to help you get the most out of Coinest." />
 
-            <div className="flex gap-5 mt-12 w-full">
-                <div className="space-y-5 w-[65%]">
+            <div className="flex xl:flex-row flex-col gap-5 mt-12 w-full">
+                <div className="space-y-5 xl:w-[65%]">
                     {faqData?.map((faq, index) => (
                         <div
                             key={index}
@@ -50,7 +50,7 @@ const FaqSection = () => {
                         >
                             <button
                                 onClick={() => toggleFaq(index)}
-                                className="flex justify-between items-center cursor-pointer w-full text-left focus:outline-none mb-3 px-6 pb-3 pt-5"
+                                className="flex justify-between items-center cursor-pointer w-full text-left focus:outline-none mb-3 md:px-6 px-4 pb-3 pt-5"
                             >
                                 <h3 className="text-xl font-semibold text-[#1E4841]">
                                     {faq?.question}
@@ -83,18 +83,18 @@ const FaqSection = () => {
                         </div>
                     ))}
                 </div>
-                <div className="w-[35%] bg-[#FBFBFB]  border border-[#E5E5E5] rounded-3xl p-8 flex flex-col items-center">
+                <div className="xl:w-[35%] bg-[#FBFBFB]  border border-[#E5E5E5] rounded-3xl md:p-8 p-4 flex flex-col items-center">
                     <Image className="mb-8" src={MessagePngImg} alt="Message icon" width={116} height={116} />
-                    <Title level="title24" children="Do you have more questions?" />
+                    <Title level="title24" children="Do you have more questions?"  className="text-center"/>
                     <p className="text-[#515151] text-center mt-4">End-to-end payments and financial management in a single solution. Meet the right platform to help realize.</p>
                     <div className="flex justify-center items-center w-full gap-4 mt-8" >
                         <CommonButton
-                            className="!px-8 !py-[22px] !w-full !border !rounded-xl !text-[18px] font-semibold"
+                            className="md:!px-8 py-3 md:!py-[22px] !w-full !border !rounded-xl md:!text-[18px] font-semibold"
                             variant="secondary"
                         >View More</CommonButton>
                         <CommonButton
                             variant="primary"
-                            className="!px-8 !py-[22px] !w-full !rounded-2xl !text-[18px] !font-semibold"
+                            className="md:!px-8 py-3 md:!py-[22px] !w-full !rounded-2xl md:!text-[18px] !font-semibold"
 
                         >
                             Live Chat

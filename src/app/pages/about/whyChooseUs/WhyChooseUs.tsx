@@ -6,9 +6,9 @@ const WhyChooseUs = () => {
         <div className="my-36">
             <SectionHeader title="Why Choose Us" main_title="What Sets Us Apart" />
             <div className="mt-12">
-                <div className="flex gap-5">
+                <div className="flex flex-col xl:flex-row gap-5">
                     <div className="bg-[#004D3F] flex justify-center items-center rounded-3xl p-13">
-                        <h2 className="text-[#FFF] text-[64px] font-bold text-center">24/7 Support</h2>
+                        <h2 className="text-[#FFF] text-[28px] sm:text-[32px] md:text-[36px] lg:text-[48px] xl:text-[56px] 2xl:text-[64px] font-bold text-center">24/7 Support</h2>
                     </div>
                     <div className="bg-[#FBFBFB] rounded-3xl p-8">
                         <Title level="title32" children="Personalized Solutions" />
@@ -17,15 +17,15 @@ const WhyChooseUs = () => {
                         <p className="text-[#677489] mt-[18px]">Our team consists of certified accountants, tax consultants, and financial advisors with years of experience helping individuals and businesses succeed. You can rely on our knowledge to handle even the most complex financial matters with precision.</p>
                     </div>
                     <div className="bg-[#FBFBFB] flex justify-center items-center rounded-3xl p-13">
-                        <h2 className="text-[#101115] text-[64px] font-bold text-center">Proactive Advice</h2>
+                        <h2 className="text-[#101115] text-[28px] sm:text-[32px] md:text-[36px] lg:text-[48px] xl:text-[56px] 2xl:text-[64px] font-bold text-center">Proactive Advice</h2>
                     </div>
                 </div>
-                <div className="flex gap-5 mt-5">
+                <div className="flex flex-col xl:flex-row gap-5 mt-5">
                     <div className="bg-[#FBFBFB] flex justify-center items-center rounded-3xl p-13">
-                        <h2 className="text-[#101115] text-[64px] font-bold text-center">Trust & Integrity</h2>
+                        <h2 className="text-[#101115] text-[28px] sm:text-[32px] md:text-[36px] lg:text-[48px] xl:text-[56px] 2xl:text-[64px] font-bold text-center">Trust & Integrity</h2>
                     </div>
                     <div className="bg-[#E7F9DE] flex justify-center items-center rounded-3xl p-13">
-                        <h2 className="text-[#004D3F] text-[64px] font-bold text-center">Proactive Advice</h2>
+                        <h2 className="text-[#004D3F] text-[28px] sm:text-[32px] md:text-[36px] lg:text-[48px] xl:text-[56px] 2xl:text-[64px] font-bold text-center">Proactive Advice</h2>
                     </div>
                     <div className="bg-[#FBFBFB] rounded-3xl p-8">
                         <Title level="title32" children="Technology-Driven" />
