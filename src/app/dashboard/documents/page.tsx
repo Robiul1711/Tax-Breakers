@@ -1,19 +1,17 @@
 import CommonButton from "@/common/CommonButton";
-import { CreateNewFolderIcon, FolderIcon, UploadFileIcon } from "@/Components/SvgContainer/SvgContainer";
+import { FolderIcon, UploadFileIcon } from "@/Components/SvgContainer/SvgContainer";
 import { getAllFolder } from "@/services/dashboard/folder/folder";
 import GreenFolderImg from "@/assets/images/green_folder_icon.png"
 import Image from "next/image";
 import MyFileTable from "@/app/pages/dashboard/myFileTable/MyFileTable";
+import CreateNewFolderModal from "@/app/pages/dashboard/createNewFolderModal/CreateNewFolderModal";
+import Link from "next/link";
 type IFolder = { name: string; size: string; items: string; last_opened: string; color_style: string; }
 
 
 const DashboardDocumentPage = async () => {
     const result = await getAllFolder();
     const folders: IFolder[] = result instanceof Error ? [] : result;
-
-
-
-
     return (
         <div>
             <div className="bg-[#FBFBFB] rounded-3xl p-8">
@@ -23,8 +21,8 @@ const DashboardDocumentPage = async () => {
                         <p className="text-[#677489] text-[18px] mt-4">Access and organize all your personal and work files in one place.</p>
                     </div>
                     <div className="flex items-center gap-4">
-                        <CommonButton variant="secondary" className="!text-[18px] hover:!text-white !font-semibold !text-[#004D3F] !border-[#004D3F] !flex !items-center gap-[10px]"><UploadFileIcon /> Upload File</CommonButton>
-                        <CommonButton variant="primary" className="!text-[18px] !font-semibold hover:!text-[#004D3F] !border-[#004D3F] !flex !items-center gap-[10px]"><CreateNewFolderIcon /> Create New Folder</CommonButton>
+                        <Link href={'/dashboard/documents/upload-file'}><CommonButton  variant="secondary" className="!text-[18px] hover:!text-white !font-semibold !text-[#004D3F] !border-[#004D3F] !flex !items-center gap-[10px]"><UploadFileIcon /> Upload File</CommonButton></Link>
+                        <CreateNewFolderModal />
                     </div>
                 </div>
                 {/* Add your document listing and management UI here */}
@@ -32,7 +30,7 @@ const DashboardDocumentPage = async () => {
                     <div className="flex items-center gap-2 text-[#191919] text-[18px] font-medium">
                         <FolderIcon /> <h2>My Folder</h2>
                     </div>
-                    <div className="grid grid-cols-8 gap-8 mt-6">
+                    <div className="grid grid-cols-8 gap-6 mt-6 p-8 rounded-3xl bg-[#FFF]">
                         {folders.map((folder, index) => (
                             <div key={index} className="mt-4">
                                 <div className="relative">
@@ -42,7 +40,13 @@ const DashboardDocumentPage = async () => {
                                         <p>{folder?.items}</p>
                                     </div>
                                 </div>
-                                <h3 className="mt-4 font-medium text-[#191919] text-[16px]">{folder.name}</h3>
+                                <h3 className="mt-4 font-medium text-[#191919] text-[16px]">
+                                    {
+                                        folder?.name.length > 12
+                                            ? folder?.name.slice(0, 12) + "..."
+                                            : folder?.name
+                                    }
+                                </h3>
                                 <p className="text-[#7F7F7F] mt-1">{folder.last_opened}</p>
                             </div>
                         ))}

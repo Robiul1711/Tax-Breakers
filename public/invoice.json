@@ -1,82 +1,92 @@
 [
   {
+    "id": 1,
     "doc_id": "INV-TEST-001",
     "date": "09-09-2025",
     "sender": "Flora Lindgren",
     "recipient": "Leigh Kemmer",
-    "status": "Sent",
+    "status": "paid",
     "total": 122.00
   },
   {
+    "id": 2,
     "doc_id": "INV-TEST-001",
     "date": "09-09-2025",
     "sender": "Bennie Hudson",
     "recipient": "Leland Halvorson",
-    "status": "Rejected",
+    "status": "unpaid",
     "total": 2317.60
   },
   {
+    "id": 3,
     "doc_id": "INV-TEST-001",
     "date": "09-09-2025",
     "sender": "Leslie Pagac",
     "recipient": "Olive Fahey",
-    "status": "Draft",
+    "status": "overdue",
     "total": 635.00
   },
   {
+    "id": 4,
     "doc_id": "INV-TEST-001",
     "date": "09-09-2025",
     "sender": "Kenneth Goyette",
     "recipient": "Malcolm Russel",
-    "status": "Sent",
+    "status": "paid",
     "total": 635.00
   },
   {
+    "id": 5,
     "doc_id": "INV-TEST-001",
     "date": "09-09-2025",
     "sender": "Felicia Emser",
     "recipient": "Alexandra Pfeffer",
-    "status": "Sent",
+    "status": "paid",
     "total": 635.00
   },
   {
+    "id": 6,
     "doc_id": "INV-TEST-001",
     "date": "09-09-2025",
     "sender": "Jack Hill",
     "recipient": "Myron Wuckert",
-    "status": "Draft",
+    "status": "overdue",
     "total": 635.00
   },
   {
+    "id": 7,
     "doc_id": "INV-TEST-001",
     "date": "09-09-2025",
     "sender": "Krystal Anderson",
     "recipient": "Regina Prohaska",
-    "status": "Sent",
+    "status": "paid",
     "total": 635.00
   },
   {
+    "id": 8,
     "doc_id": "INV-TEST-001",
     "date": "09-09-2025",
     "sender": "Clinton Gusikowski",
     "recipient": "Tim Morar",
-    "status": "Sent",
+    "status": "paid",
     "total": 635.00
   },
   {
+    "id": 9,
     "doc_id": "INV-TEST-001",
     "date": "09-09-2025",
     "sender": "Alexandra Littel",
     "recipient": "Shelley Koss",
-    "status": "Rejected",
+    "status": "unpaid",
     "total": 635.00
   },
   {
+    "id": 10,
     "doc_id": "INV-TEST-001",
     "date": "09-09-2025",
     "sender": "Toby Ortiz",
     "recipient": "Rudy Fay",
-    "status": "Sent",
+    "status": "paid",
     "total": 635.00
   }
 ]
