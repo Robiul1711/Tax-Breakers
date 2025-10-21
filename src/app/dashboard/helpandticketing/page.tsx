@@ -1,9 +1,15 @@
 import AllTickets from '@/app/pages/dashboard/AllTickets/AllTickets'
 import CommonButton from '@/common/CommonButton'
+import { getAllTickets } from '@/services/dashboard/ticket/ticket'
+import { TTickets } from '@/Types'
 import React from 'react'
 import { FiPlus } from 'react-icons/fi'
 
-const page = () => {
+
+const DashboardTicketingPage = async () => {
+
+  const data = await getAllTickets()
+  const ticketData: TTickets[] = data instanceof Error ? [] : data;
   return (
     <div>
       <div className='bg-[#FBFBFB] p-8 rounded-2xl'>
@@ -23,10 +29,10 @@ const page = () => {
 
       {/* table */}
       <div className='mt-10'>
-          <AllTickets/>
+        <AllTickets ticketData={ticketData} />
       </div>
     </div>
   )
 }
 
-export default page
+export default DashboardTicketingPage
