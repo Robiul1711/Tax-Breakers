@@ -17,6 +17,23 @@ interface IItemInputProps {
     defaultValue?: number;
 }
 
+interface IFormSelectProps {
+    label: string;
+    name: string;
+    register: UseFormRegister<any>;
+    errors: FieldErrors;
+    options: { value: string; label: string }[]; // dynamic options
+    defaultValue?: string;
+}
+
+interface IFormDatePickerProps {
+    label: string;
+    name: string;
+    register: any;
+    errors: any;
+    defaultValue?: string;
+}
+
 // Helper component for common text input fields
 const FormInput: React.FC<IFormInputProps> = ({ label, name, register, errors, defaultValue = '' }) => (
     <div className="flex flex-col">
@@ -29,6 +46,54 @@ const FormInput: React.FC<IFormInputProps> = ({ label, name, register, errors, d
         />
     </div>
 );
+
+const FormSelect: React.FC<IFormSelectProps> = ({
+    label,
+    name,
+    register,
+    errors,
+    options,
+    defaultValue = "",
+}) => (
+    <div className="flex flex-col">
+        <label className="text-[#0A0A0A] text-[14px] mb-3">{label}</label>
+        <select
+            {...register(name, { value: defaultValue })}
+            className={`p-3 border rounded-md text-[#717182] text-[14px] transition ${errors[name] ? "border-red-500" : "border-[rgba(0,0,0,0.10)]"
+                }`}
+            defaultValue={defaultValue}
+        >
+            <option value="" disabled>
+                Select {label}
+            </option>
+            {options.map((opt) => (
+                <option key={opt.value} value={opt.value}>
+                    {opt.label}
+                </option>
+            ))}
+        </select>
+    </div>
+);
+
+
+const FormDatePicker: React.FC<IFormDatePickerProps> = ({ label, name, register, errors, defaultValue }) => {
+    return (
+        <div className="flex flex-col">
+            <label className="text-[#0A0A0A] text-[14px] mb-2">{label}</label>
+            <input
+                type="date"
+                {...register(name)}
+                defaultValue={defaultValue}
+                className={`p-3 border rounded-md text-[#717182] text-[14px] transition ${errors[name] ? "border-red-500" : "border-[rgba(0,0,0,0.10)]"
+                    }`}
+            />
+            {errors[name] && (
+                <span className="text-red-500 text-xs mt-1">{errors[name].message}</span>
+            )}
+        </div>
+    );
+};
+
 
 // Helper component for Item Table inputs (numeric fields)
 const ItemInput: React.FC<IItemInputProps> = ({ name, register, errors, defaultValue = 0.0 }) => (
@@ -144,10 +209,22 @@ const InvoiceCreateForm = () => {
                     <div className="grid grid-cols-3 gap-4 mb-4">
                         <FormInput label="Invoice Number *" name="basic_information.invoice_number" register={register} errors={errors} />
                         <FormInput label="Invoice ID" name="basic_information.invoice_id" register={register} errors={errors} />
-                        <FormInput label="Issue Date *" name="basic_information.issue_date" register={register} errors={errors} />
+                        <FormDatePicker label="Issue Date *" name="basic_information.issue_date" register={register} errors={errors} />
                         <FormInput label="Due Date *" name="basic_information.due_date" register={register} errors={errors} />
-                        <FormInput label="Currency" name="basic_information.currency" register={register} errors={errors} />
-                        <FormInput label="Document Type" name="basic_information.document_type" register={register} errors={errors} />
+                        <FormSelect label="Currency" name="basic_information.currency" register={register} errors={errors}
+                            options={[
+                                { value: "usd", label: "USD - Dollar" },
+                                { value: "eur", label: "EUR - Euro" },
+                                { value: "bdt", label: "BDT - Taka" },
+                            ]}
+                        />
+                        <FormSelect label="Document Type" name="basic_information.document_type" register={register} errors={errors}
+                            options={[
+                                { value: "nid", label: "National ID (NID)" },
+                                { value: "passport", label: "Passport" },
+                                { value: "driving_license", label: "Driving License" },
+                            ]}
+                        />
                     </div>
                     <FormInput label="Payment Terms" name="basic_information.payment_terms" register={register} errors={errors} />
                     <div className="grid grid-cols-2 gap-4 mt-4">
@@ -167,7 +244,17 @@ const InvoiceCreateForm = () => {
                         <FormInput label="Email" name="issuer_details.email" register={register} errors={errors} />
                         <FormInput label="Phone" name="issuer_details.phone" register={register} errors={errors} />
                         <FormInput label="Street Address" name="issuer_details.street_address" register={register} errors={errors} />
-                        <FormInput label="City" name="issuer_details.city" register={register} errors={errors} />
+
+                        <FormSelect label="City" name="issuer_details.city" register={register} errors={errors}
+                            options={[
+                                { value: "dhaka", label: "Dhaka" },
+                                { value: "chittagong", label: "Chittagong" },
+                                { value: "rajshahi", label: "Rajshahi" },
+                                { value: "khulna", label: "Khulna" },
+                                { value: "sylhet", label: "Sylhet" },
+                            ]}
+                        />
+
                         <FormInput label="ZIP Code" name="issuer_details.zip_code" register={register} errors={errors} />
                         <FormInput label="Province" name="issuer_details.province" register={register} errors={errors} />
                     </div>
@@ -187,7 +274,15 @@ const InvoiceCreateForm = () => {
                         <FormInput label="Email" name="recipient_details.recipient_email" register={register} errors={errors} />
                         <FormInput label="Phone" name="recipient_details.recipient_phone" register={register} errors={errors} />
                         <FormInput label="Street Address" name="recipient_details.recipient_street_address" register={register} errors={errors} />
-                        <FormInput label="City" name="recipient_details.recipient_city" register={register} errors={errors} />
+                        <FormSelect label="City" name="recipient_details.recipient_city" register={register} errors={errors}
+                            options={[
+                                { value: "dhaka", label: "Dhaka" },
+                                { value: "chittagong", label: "Chittagong" },
+                                { value: "rajshahi", label: "Rajshahi" },
+                                { value: "khulna", label: "Khulna" },
+                                { value: "sylhet", label: "Sylhet" },
+                            ]}
+                        />
                         <FormInput label="ZIP Code" name="recipient_details.recipient_zip_code" register={register} errors={errors} />
                         <FormInput label="Province" name="recipient_details.recipient_province" register={register} errors={errors} />
                     </div>
@@ -294,7 +389,15 @@ const InvoiceCreateForm = () => {
                         <FormInput label="Withholding Amount" name="additional_costs_deductions.withholding_amount" register={register} errors={errors} />
                         <FormInput label="Shipping Cost" name="additional_costs_deductions.shipping_cost" register={register} errors={errors} />
                     </div>
-                    <FormInput label="Payment Method" name="additional_costs_deductions.payment_method" register={register} errors={errors} />
+                    <FormSelect label="Payment Method" name="additional_costs_deductions.payment_method" register={register} errors={errors}
+                        options={[
+                            { value: "cash", label: "Cash" },
+                            { value: "bank_transfer", label: "Bank Transfer" },
+                            { value: "credit_card", label: "Credit Card" },
+                            { value: "paypal", label: "PayPal" },
+                            { value: "mobile_banking", label: "Mobile Banking" },
+                        ]}
+                    />
                     <div className="mt-8">
                         <SectionHeader title="Invoice totals" />
                         <div>

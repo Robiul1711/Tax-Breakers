@@ -30,7 +30,7 @@ const menuItems = [
   { label: "Dashboard", href: "/dashboard", icon: <DashboardIcon className="size-5" /> },
   { label: "Invoices", href: "/dashboard/invoices", icon: <InvoiceIcon /> },
   { label: "Appointments", href: "/dashboard/appointments", icon: <ApoinmentIcon /> },
-  { label: "Customer", href: "/dashboard/customer", icon: <CustomerIcon /> },
+  // { label: "Customer", href: "/dashboard/customer", icon: <CustomerIcon /> },
   { label: "Documents", href: "/dashboard/documents", icon: <DocumentIcon /> },
   { label: "Accounting Management ", href: "/dashboard/accountingmanagement", icon: <AccountingIcon /> },
   { label: "Subscriptions & Payments", href: "/dashboard/subscriptionsandayments", icon: <SubscriptionIcon /> },
@@ -64,9 +64,9 @@ export default function DashboardLayout({
 
         <aside className="w-[320px] h-[calc(100vh-6rem)] bg-[#E7F9DE] rounded-3xl md:flex hidden flex-col justify-between overflow-hidden">
           {/* Scrollable upper section */}
-          <div className="flex-1 overflow-y-auto p-8 space-y-5">
+          <div className="flex-1 overflow-y-auto custom-scroll p-8 space-y-5">
             <nav className="flex flex-col gap-3">
-              {menuItems.map((item) => {
+              {menuItems?.map((item) => {
                 const isActive = pathname === item.href;
                 return (
                   <Link

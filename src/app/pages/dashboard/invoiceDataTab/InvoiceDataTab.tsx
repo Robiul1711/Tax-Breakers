@@ -1,6 +1,4 @@
 "use client";
-
-import CommonButton from "@/common/CommonButton";
 import { DropdownMenu, DropdownMenuContent, DropdownMenuLabel, DropdownMenuTrigger } from "@/Components/ui/dropdown-menu";
 import Pagination from "@/Shared/Pagination";
 import { TInvoice } from "@/Types";
@@ -10,10 +8,7 @@ import {
     getCoreRowModel,
     useReactTable,
 } from "@tanstack/react-table";
-import { Link } from "lucide-react";
 import React, { useState, useEffect, useRef, useCallback } from "react";
-import { FaPlus } from "react-icons/fa";
-
 const columnHelper = createColumnHelper<TInvoice>();
 
 const InvoiceDataTab = ({ invoices }: { invoices: TInvoice[] }) => {
