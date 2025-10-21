@@ -1,5 +1,7 @@
 "use client";
 
+import CommonButton from "@/common/CommonButton";
+import { DropdownMenu, DropdownMenuContent, DropdownMenuLabel, DropdownMenuTrigger } from "@/Components/ui/dropdown-menu";
 import Pagination from "@/Shared/Pagination";
 import { TInvoice } from "@/Types";
 import {
@@ -8,7 +10,9 @@ import {
     getCoreRowModel,
     useReactTable,
 } from "@tanstack/react-table";
+import { Link } from "lucide-react";
 import React, { useState, useEffect, useRef, useCallback } from "react";
+import { FaPlus } from "react-icons/fa";
 
 const columnHelper = createColumnHelper<TInvoice>();
 
@@ -126,7 +130,28 @@ const InvoiceDataTab = ({ invoices }: { invoices: TInvoice[] }) => {
             )
         }),
         columnHelper.accessor("total", { header: () => "Total (€)", cell: (info) => <span className="text-[#363B54]">{info.getValue()}</span> }),
-        columnHelper.accessor("id", { header: () => "Action", cell: () => <button className="text-[#071431] font-bold text-xl">...</button> })
+        columnHelper.accessor("id", {
+            header: () => "Action", cell: () =>
+            (
+                <DropdownMenu>
+                    <DropdownMenuTrigger asChild>
+                        <button className="text-[#071431] text-xl font-medium cursor-pointer">...</button>
+                    </DropdownMenuTrigger>
+
+                    <DropdownMenuContent >
+                        <DropdownMenuLabel>
+                            <button className="text-black hover:bg-[#004D3F] w-full cursor-pointer hover:text-white py-2 px-3 rounded-3xl">View Details</button>
+                        </DropdownMenuLabel>
+                        <DropdownMenuLabel>
+                            <button className="bg-white hover:bg-[#004D3F] hover:text-white text-black w-full cursor-pointer py-2 px-3 rounded-3xl">Edit</button>
+                        </DropdownMenuLabel>
+                        <DropdownMenuLabel>
+                            <button className="bg-white w-full cursor-pointer text-red-500 hover:bg-red-500 hover:text-white py-2 px-3 rounded-3xl">Delete</button>
+                        </DropdownMenuLabel>
+                    </DropdownMenuContent>
+                </DropdownMenu>
+            )
+        })
     ];
 
     const table = useReactTable({
