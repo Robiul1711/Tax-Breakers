@@ -1,8 +1,10 @@
 import InvoiceDataTab from "@/app/pages/dashboard/invoiceDataTab/InvoiceDataTab"
 import CommonButton from "@/common/CommonButton"
 import { ArrowDownIcon, ArrowUpIcon, CircleWaveCheckIcon, FolderIcon, NavInvoiceIcon, WarningOctagonIcon } from "@/Components/SvgContainer/SvgContainer"
+import { DropdownMenu, DropdownMenuContent, DropdownMenuItem, DropdownMenuLabel, DropdownMenuSeparator, DropdownMenuTrigger } from "@/Components/ui/dropdown-menu"
 import { getAllInvoice } from "@/services/dashboard/invoice/invoice"
 import { TInvoice } from "@/Types"
+import Link from "next/link"
 import { FaPlus } from "react-icons/fa"
 
 const invoicesData = [
@@ -55,9 +57,39 @@ const DashboardInvoicePage = async () => {
             <p className="text-[#677489] text-[18px] mt-4">Easily book a tax or accounting chat right from your dashboard and keep your finances in check!</p>
           </div>
           <div className="flex items-center gap-4">
-            <CommonButton
-              variant="primary" className="!text-[18px] !font-semibold hover:!text-[#004D3F] !border-[#004D3F] !flex !items-center gap-[10px]"><FaPlus /> Add Invoice
-            </CommonButton>
+
+            <DropdownMenu>
+              <DropdownMenuTrigger asChild>
+                <CommonButton
+                  variant="primary"
+                  className="!text-[18px] !font-semibold hover:!text-[#004D3F] !border-[#004D3F] !flex !items-center gap-[10px]"
+                >
+                  <FaPlus /> Add Invoice
+                </CommonButton>
+              </DropdownMenuTrigger>
+
+              <DropdownMenuContent>
+                <DropdownMenuLabel>
+                 <Link href={'/dashboard/invoices/invoice-create'}>
+                  <CommonButton
+                    variant="primary"
+                    className="!font-semibold hover:!text-[#004D3F] !border-[#004D3F] !flex !items-center gap-[10px]"
+                  >
+                    <FaPlus /> Proforma Invoice
+                  </CommonButton></Link>
+                </DropdownMenuLabel>
+                <DropdownMenuLabel>
+                  <Link href={'/dashboard/invoices/invoice-create'}>
+                  <CommonButton
+                    variant="secondary"
+                    className="!font-semibold hover:!text-white !flex !items-center gap-[10px]"
+                  >
+                    <FaPlus /> Electronic Invoice
+                  </CommonButton>
+                  </Link>
+                </DropdownMenuLabel>
+              </DropdownMenuContent>
+            </DropdownMenu>
           </div>
         </div>
         <div className="grid grid-cols-3 gap-8">
@@ -90,7 +122,7 @@ const DashboardInvoicePage = async () => {
         </div>
 
       </div>
-      <div  className="mt-8 mr-8">
+      <div className="mt-8 mr-8">
         <InvoiceDataTab invoices={invoices} />
       </div>
     </div>

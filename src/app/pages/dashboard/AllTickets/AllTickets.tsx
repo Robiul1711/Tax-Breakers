@@ -127,7 +127,7 @@ const AllTickets = ({ ticketData = [] }: { ticketData?: TTickets[] }) => {
     });
 
     return (
-        <div className="w-full h-screen bg-gray-50 rounded-2xl">
+        <div className="w-full bg-gray-50 rounded-2xl">
             <div className="bg-white rounded-lg gith-full flex flex-col">
                 <div className=" flex-1">
                     <table className="w-full">
