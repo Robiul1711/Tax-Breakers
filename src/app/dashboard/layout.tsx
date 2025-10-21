@@ -55,7 +55,7 @@ export default function DashboardLayout({
   };
 
   return (
-    <section className="min-h-screen w-full flex bg-[#FFF] px-8 gap-10 overflow-hidden">
+    <section className="min-h-screen w-full px-8 flex bg-[#FFF] gap-10 overflow-hidden">
       <div className="sticky top-0 h-screen">
         {/* Sidebar */}
         <Link href="/" className="mb-4 block">
@@ -114,7 +114,7 @@ export default function DashboardLayout({
 
       {/* Main Content */}
       <main className="flex-grow flex flex-col py-4 h-screen overflow-hidden">
-        {/* ✅ Sticky Top Navbar */}
+        {/* Sticky Top Navbar */}
         <header className="h-16 w-full flex items-center justify-between sticky top-0 bg-white z-10">
           <div className="max-w-xl w-full relative">
             <FiSearch className="absolute left-4 top-1/2 -translate-y-1/2 text-gray-500 text-lg" />
@@ -138,8 +138,7 @@ export default function DashboardLayout({
           </div>
         </header>
 
-        {/* ✅ Scrollable Page Content */}
-        <section className="flex-1 overflow-y-auto w-full container m-8">
+        <section className="flex-1 overflow-y-auto w-full container my-8 custom-scroll">
           {children}
         </section>
       </main>
