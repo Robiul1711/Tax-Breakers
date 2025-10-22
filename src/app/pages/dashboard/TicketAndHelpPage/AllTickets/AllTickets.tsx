@@ -7,15 +7,16 @@ import {
     createColumnHelper,
 } from '@tanstack/react-table';
 import { TTickets } from '@/Types';
-import { HiOutlineDotsHorizontal } from 'react-icons/hi';
 import { TicketSVG } from '@/Components/SvgContainer/SvgContainer';
 import { DropdownMenu, DropdownMenuContent, DropdownMenuLabel, DropdownMenuTrigger } from '@/Components/ui/dropdown-menu';
+import { useRouter } from 'next/navigation';
 
 
 
 const columnHelper = createColumnHelper<TTickets>();
 
 const AllTickets = ({ ticketData = [] }: { ticketData?: TTickets[] }) => {
+    const router = useRouter()
 
     const getStatusColor = (status: string) => {
         switch (status.toLowerCase()) {
@@ -80,18 +81,18 @@ const AllTickets = ({ ticketData = [] }: { ticketData?: TTickets[] }) => {
         columnHelper.accessor('status', {
             header: 'Status',
             cell: info => (
-                    <span className={`flex justify-center px-3 py-1 rounded-2xl text-xs font-medium ${getStatusColor(info.getValue())}`}>
-                        {info.getValue()}
-                    </span>
+                <span className={`flex justify-center px-3 py-1 rounded-2xl text-xs font-medium ${getStatusColor(info.getValue())}`}>
+                    {info.getValue()}
+                </span>
             ),
         }),
 
         columnHelper.accessor('priority', {
             header: 'Priority',
             cell: info => (
-                    <span className={`flex justify-center px-3 py-1 rounded-2xl text-xs font-medium ${getPriorityColor(info.getValue())}`}>
-                        {info.getValue()}
-                    </span>
+                <span className={`flex justify-center px-3 py-1 rounded-2xl text-xs font-medium ${getPriorityColor(info.getValue())}`}>
+                    {info.getValue()}
+                </span>
             ),
         }),
         columnHelper.accessor('category', {
@@ -113,7 +114,7 @@ const AllTickets = ({ ticketData = [] }: { ticketData?: TTickets[] }) => {
         columnHelper.display({
             id: 'action',
             header: 'Action',
-            cell: () => (
+            cell: ({row}) => (
                 <DropdownMenu>
                     <DropdownMenuTrigger asChild>
                         <button className="text-[#071431] text-xl font-medium cursor-pointer">...</button>
@@ -121,7 +122,7 @@ const AllTickets = ({ ticketData = [] }: { ticketData?: TTickets[] }) => {
 
                     <DropdownMenuContent className="rounded-2xl duration-300 p-0">
                         <DropdownMenuLabel className="p-0">
-                            <button className="text-black hover:bg-[#004D3F] w-full cursor-pointer hover:text-white py-3 px-4 rounded-2xl duration-300">View Details</button>
+                            <button onClick={() => router.push(`/dashboard/helpandticketing/${row.original.ticket_id}`)} className="text-black hover:bg-[#004D3F] w-full cursor-pointer hover:text-white py-3 px-4 rounded-2xl duration-300">View Details</button>
                         </DropdownMenuLabel>
                         <DropdownMenuLabel className="p-0">
                             <button className="bg-white w-full cursor-pointer text-red-500 hover:bg-red-500 hover:text-white py-3 px-4 rounded-2xl duration-300">Delete</button>
@@ -139,10 +140,10 @@ const AllTickets = ({ ticketData = [] }: { ticketData?: TTickets[] }) => {
     });
 
     return (
-        <div className="w-full bg-gray-50 rounded-2xl">
-            <div className="bg-white rounded-lg gith-full flex flex-col">
-                <div className=" flex-1">
-                    <table className="w-full">
+        <div className="w-full">
+            <div className="rounded-lg flex flex-col">
+                <div className="flex-1">
+                    <table className="w-full rounded-2xl">
                         <thead className="sticky top-0 bg-[#E7F9DE] z-10">
                             {table.getHeaderGroups().map(headerGroup => (
                                 <tr key={headerGroup.id} className="border-b border-gray-200">
@@ -165,7 +166,7 @@ const AllTickets = ({ ticketData = [] }: { ticketData?: TTickets[] }) => {
                         </thead>
                         <tbody className="divide-y divide-gray-200">
                             {table.getRowModel().rows.map(row => (
-                                <tr key={row.id} className="hover:bg-gray-50 transition-colors">
+                                <tr key={row.id} className="hover:bg-gray-50 transition-colors cursor-pointer" onClick={() => router.push(`/dashboard/helpandticketing/${row.original.ticket_id}`)}>
                                     {row.getVisibleCells().map(cell => (
                                         <td key={cell.id} className="px-6 py-4">
                                             {flexRender(
