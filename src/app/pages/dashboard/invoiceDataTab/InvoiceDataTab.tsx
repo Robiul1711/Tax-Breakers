@@ -133,15 +133,15 @@ const InvoiceDataTab = ({ invoices }: { invoices: TInvoice[] }) => {
                         <button className="text-[#071431] text-xl font-medium cursor-pointer">...</button>
                     </DropdownMenuTrigger>
 
-                    <DropdownMenuContent >
-                        <DropdownMenuLabel>
-                            <button className="text-black hover:bg-[#004D3F] w-full cursor-pointer hover:text-white py-2 px-3 rounded-3xl">View Details</button>
+                    <DropdownMenuContent className="rounded-2xl duration-300 p-0">
+                        <DropdownMenuLabel className="p-0">
+                            <button className="text-black hover:bg-[#004D3F] w-full cursor-pointer hover:text-white py-3 px-4 rounded-2xl duration-300">View Details</button>
                         </DropdownMenuLabel>
-                        <DropdownMenuLabel>
-                            <button className="bg-white hover:bg-[#004D3F] hover:text-white text-black w-full cursor-pointer py-2 px-3 rounded-3xl">Edit</button>
+                        <DropdownMenuLabel className="p-0">
+                            <button className="bg-white hover:bg-[#004D3F] hover:text-white text-black w-full cursor-pointer py-3 px-4 rounded-2xl duration-300">Edit</button>
                         </DropdownMenuLabel>
-                        <DropdownMenuLabel>
-                            <button className="bg-white w-full cursor-pointer text-red-500 hover:bg-red-500 hover:text-white py-2 px-3 rounded-3xl">Delete</button>
+                        <DropdownMenuLabel className="p-0">
+                            <button className="bg-white w-full cursor-pointer text-red-500 hover:bg-red-500 hover:text-white py-3 px-4 rounded-2xl duration-300">Delete</button>
                         </DropdownMenuLabel>
                     </DropdownMenuContent>
                 </DropdownMenu>

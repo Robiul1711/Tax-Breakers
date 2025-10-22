@@ -96,7 +96,7 @@ const CreateTicketModal: React.FC<CreateTicketModalProps> = ({ onClose }) => {
                     </label>
                     <select
                       {...register("category", { required: "Category is required" })}
-                      className={`w-full px-4 py-2 border rounded-md focus:ring-1 focus:ring-[#1E4841] outline-none appearance-none bg-white hover:bg-[#E7F9DE] transition-colors ${errors.category ? "border-red-500" : "border-gray-300"
+                      className={`w-full px-4 py-2 border rounded-md focus:ring-1 focus:ring-[#1E4841] outline-none appearance-none bg-white transition-colors ${errors.category ? "border-red-500" : "border-gray-300"
                         }`}
                       style={{
                         backgroundImage:
@@ -122,7 +122,7 @@ const CreateTicketModal: React.FC<CreateTicketModalProps> = ({ onClose }) => {
                   <label className="block text-lg font-medium text-gray-700 mb-2">Priority</label>
                   <select
                     {...register("priority", { required: "Priority is required" })}
-                    className={`w-full px-4 py-2 border rounded-md focus:ring-2 focus:ring-teal-500 outline-none appearance-none bg-white hover:bg-[#E7F9DE] transition-colors ${errors.priority ? "border-red-500" : "border-gray-300"
+                    className={`w-full px-4 py-2 border rounded-md focus:ring-2 focus:ring-[#1E4841] focus:ring-[#1E4841] outline-none appearance-none bg-white transition-colors ${errors.priority ? "border-red-500" : "border-gray-300"
                       }`}
                     style={{
                       backgroundImage:

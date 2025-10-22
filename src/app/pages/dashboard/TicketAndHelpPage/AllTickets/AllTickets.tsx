@@ -9,6 +9,7 @@ import {
 import { TTickets } from '@/Types';
 import { HiOutlineDotsHorizontal } from 'react-icons/hi';
 import { TicketSVG } from '@/Components/SvgContainer/SvgContainer';
+import { DropdownMenu, DropdownMenuContent, DropdownMenuLabel, DropdownMenuTrigger } from '@/Components/ui/dropdown-menu';
 
 
 
@@ -113,9 +114,20 @@ const AllTickets = ({ ticketData = [] }: { ticketData?: TTickets[] }) => {
             id: 'action',
             header: 'Action',
             cell: () => (
-                <button className="text-gray-400 hover:text-gray-600">
-                    <HiOutlineDotsHorizontal className="w-5 h-5" />
-                </button>
+                <DropdownMenu>
+                    <DropdownMenuTrigger asChild>
+                        <button className="text-[#071431] text-xl font-medium cursor-pointer">...</button>
+                    </DropdownMenuTrigger>
+
+                    <DropdownMenuContent className="rounded-2xl duration-300 p-0">
+                        <DropdownMenuLabel className="p-0">
+                            <button className="text-black hover:bg-[#004D3F] w-full cursor-pointer hover:text-white py-3 px-4 rounded-2xl duration-300">View Details</button>
+                        </DropdownMenuLabel>
+                        <DropdownMenuLabel className="p-0">
+                            <button className="bg-white w-full cursor-pointer text-red-500 hover:bg-red-500 hover:text-white py-3 px-4 rounded-2xl duration-300">Delete</button>
+                        </DropdownMenuLabel>
+                    </DropdownMenuContent>
+                </DropdownMenu>
             ),
         }),
     ];
