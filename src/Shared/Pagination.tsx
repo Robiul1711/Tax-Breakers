@@ -56,13 +56,10 @@ const Pagination = <T,>({ data, dataPerPage, renderItem }: PaginationProps<T>) =
                                     : "bg-[#ECF4E9] hover:bg-[#004D3F] hover:text-white text-[#004D3F]"
                             }`}
                         >
-                            {
-                                pages.length > 99 ? page.toString().padStart(2, '0') : page
-                            }
+                           {page}
                         </button>
                     ))}
                 </div>
-
                 <button disabled={currentPage === totalPages } onClick={handleNext} type="button" aria-label="Next" className={`ml-4 cursor-pointer  hover:bg-[#004D3F] hover:text-white text-[#004D3F] w-8 h-8 rounded-md flex items-center justify-center ${currentPage === totalPages ? 'opacity-50 cursor-not-allowed' : ''}`}>
                     <svg width="9" height="16" viewBox="0 0 12 18" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <path d="M1 1L10 9.24242L1 17" stroke="currentColor" strokeOpacity="0.7" strokeWidth="2" strokeLinecap="round" />
