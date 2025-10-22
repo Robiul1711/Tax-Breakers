@@ -3,7 +3,6 @@
 @import "tw-animate-css";
 @tailwind utilities;
 
-
 @custom-variant dark (&:is(.dark *));
 
 :root {
@@ -291,3 +290,6 @@ body {
   }
 }
 
+button{
+  cursor: pointer;
+}

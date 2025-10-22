@@ -42,10 +42,10 @@ const Banner = () => {
                             <div className="flex-1 xl:w-full lg:w-[40%] md:w-[40%] w-full rounded-2xl md:p-4 p-2 bg-white">
                                 <div className="bg-[#F4F4F4] md:p-4 p-2 rounded-2xl h-full">
                                     <div className="flex justify-center items-center">
-                                        <h2 className=" border bg-[#FFF] border-[#095641] text-[#000] font-semibold px-2 rounded-full shadow-[0_0_4px_rgba(9,86,65,1)] ">Live Chat</h2>
+                                        <h2 className=" border bg-[#FFF] border-[#095641] text-[#000000] font-semibold px-2 rounded-full shadow-[0_0_4px_rgba(9,86,65,1)] ">Live Chat</h2>
                                     </div>
                                     <div className="flex justify-end items-center mt-6 gap-2">
-                                        <p className="text-[#000] font-medium text-left">Lorem ipsum dolor sit amet consectetur.</p>
+                                        <p className="text-[#000000] font-medium text-left">Lorem ipsum dolor sit amet consectetur.</p>
                                         <Image src={UserImg} alt="User Image" width={44} height={44} />
                                     </div>
                                     <div className="flex items-center gap-2 mt-2">
