@@ -11,7 +11,7 @@ const TicketAndHelpPage = ({ ticketData }: { ticketData: TTickets[] }) => {
 
 
   const [currentPageData, setCurrentPageData] = useState(ticketData);
-  const [dataPerPage ,setDataPerPage] = useState(10)
+  const [dataPerPage ,setDataPerPage] = useState(5)
 
 
   const handlePageData = useCallback((pageData: TTickets[]) => {
