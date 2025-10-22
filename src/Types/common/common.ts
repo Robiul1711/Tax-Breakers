@@ -29,6 +29,7 @@ export type TTitleSize = {
   title56: string;
   title48: string;
   title40: string;
+  title36: string;
   title32: string;
   title28: string;
   title24: string;
