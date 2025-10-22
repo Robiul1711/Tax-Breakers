@@ -291,3 +291,6 @@ body {
   }
 }
 
+button{
+  cursor: pointer;
+}
