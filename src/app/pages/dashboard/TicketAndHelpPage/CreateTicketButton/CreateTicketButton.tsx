@@ -6,7 +6,7 @@ import CreateTicketModal from '../CreateTicketModal/CreateTicketModal';
 
 const CreateTicketButton = () => {
     const [isModalOpen, setIsModalOpen] = useState(false);
-    console.log("modal opens?", isModalOpen);
+    // console.log("modal opens?", isModalOpen);
     return (
         <>
             <CommonButton onClick={() => setIsModalOpen(true)} className='flex'>

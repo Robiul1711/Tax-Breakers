@@ -32,7 +32,7 @@ const BlogDetails = ({ id }: { id: string }) => {
     useEffect(() => {
         const fetchData = async () => {
             const result = await getAllBlog();
-            console.log(result);
+            // console.log(result);
             if (!(result instanceof Error)) {
                 const selectedBlog = result.find((b: TBlog) => (b.id) === Number(id));
                 setBlog(selectedBlog ?? null);

@@ -2,8 +2,8 @@
 import Pagination from '@/Shared/Pagination';
 import { TTickets } from '@/Types'
 import { useCallback, useState } from 'react';
-import AllTickets from '../AllTickets/AllTickets';
-import CreateTicketButton from '../AllTickets/CreateTicketButton/CreateTicketButton';
+import AllTickets from './AllTickets/AllTickets';
+import CreateTicketButton from './CreateTicketButton/CreateTicketButton';
 
 
 const TicketAndHelpPage = ({ ticketData }: { ticketData: TTickets[] }) => {
@@ -11,6 +11,7 @@ const TicketAndHelpPage = ({ ticketData }: { ticketData: TTickets[] }) => {
 
 
   const [currentPageData, setCurrentPageData] = useState(ticketData);
+  const [dataPerPage ,setDataPerPage] = useState(10)
 
 
   const handlePageData = useCallback((pageData: TTickets[]) => {
@@ -36,12 +37,28 @@ const TicketAndHelpPage = ({ ticketData }: { ticketData: TTickets[] }) => {
         <AllTickets ticketData={currentPageData} />
       </div>
 
-      <div className="mt-10">
-        <Pagination
-          data={ticketData}
-          dataPerPage={4}
-          renderItem={handlePageData}
-        />
+      <div className='flex justify-between items-center'>
+        <div>
+          <h2 className="text-[#6B7271] text-[12px]">Showing
+            <select className="bg-[#ECF4E9] border-none mx-2 px-3 py-2 rounded-md cursor-pointer" value={currentPageData.length} onChange={(e) => {
+              const value = parseInt(e.target.value);
+              setDataPerPage(value);
+            }
+            }>
+              <option>5</option>
+              <option>10</option>
+              <option>15</option>
+              <option>20</option>
+            </select> out of {ticketData?.length}</h2>
+        </div>
+
+        <div className="mt-10">
+          <Pagination
+            data={ticketData}
+            dataPerPage={dataPerPage}
+            renderItem={handlePageData}
+          />
+        </div>
       </div>
     </div>
   )
