@@ -1,7 +1,7 @@
 import InvoiceDataTab from "@/app/pages/dashboard/invoiceDataTab/InvoiceDataTab"
 import CommonButton from "@/common/CommonButton"
-import { ArrowDownIcon, ArrowUpIcon, CircleWaveCheckIcon, FolderIcon, NavInvoiceIcon, WarningOctagonIcon } from "@/Components/SvgContainer/SvgContainer"
-import { DropdownMenu, DropdownMenuContent, DropdownMenuItem, DropdownMenuLabel, DropdownMenuSeparator, DropdownMenuTrigger } from "@/Components/ui/dropdown-menu"
+import { ArrowDownIcon, ArrowUpIcon, CircleWaveCheckIcon, NavInvoiceIcon, WarningOctagonIcon } from "@/Components/SvgContainer/SvgContainer"
+import { DropdownMenu, DropdownMenuContent, DropdownMenuLabel, DropdownMenuTrigger } from "@/Components/ui/dropdown-menu"
 import { getAllInvoice } from "@/services/dashboard/invoice/invoice"
 import { TInvoice } from "@/Types"
 import Link from "next/link"
@@ -45,8 +45,8 @@ const invoicesData = [
 
 const DashboardInvoicePage = async () => {
   const result = await getAllInvoice();
-
-  const invoices: TInvoice[] = result instanceof Error ? [] : result;
+  const invoices : TInvoice[] = result instanceof Error ? [] : result;
+  console.log(invoices);
 
   return (
     <div>
@@ -73,7 +73,7 @@ const DashboardInvoicePage = async () => {
                  <Link href={'/dashboard/invoices/invoice-create'}>
                   <CommonButton
                     variant="primary"
-                    className="!font-semibold hover:!text-[#004D3F] !border-[#004D3F] !flex !items-center gap-[10px]"
+                    className="font-semibold! hover:text-[#004D3F]! border-[#004D3F]! !flex !items-center gap-[10px]"
                   >
                     <FaPlus /> Proforma Invoice
                   </CommonButton></Link>

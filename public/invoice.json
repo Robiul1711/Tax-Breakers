@@ -1,272 +1,967 @@
 [
   {
     "id": 1,
-    "doc_id": "INV-TEST-001",
-    "date": "09-09-2025",
-    "sender": "Flora Lindgren",
-    "recipient": "Leigh Kemmer",
-    "status": "paid",
-    "total": 122.00
+    "basic_information": {
+      "invoice_number": "INV-2025-001",
+      "invoice_id": "INV-TEST-001",
+      "issue_date": "2025-09-09",
+      "due_date": "2025-09-30",
+      "currency": "EUR",
+      "document_type": "TAXES",
+      "payment_terms": "Net 30 days",
+      "order_reference": "ORD-4596",
+      "ddt_reference": "DDT-102"
+    },
+    "issuer_details": {
+      "company_name": "Flora Lindgren Enterprises",
+      "vat_number": "IT56789012345",
+      "fiscal_code": "155497960",
+      "email": "billing@floralindgren.com",
+      "phone": "+39 06 9876 5432",
+      "street_address": "98 North 102 Avenue",
+      "city": "Milan",
+      "zip_code": "20100",
+      "province": "MI"
+    },
+    "recipient_details": {
+      "recipient_name": "Leigh Kemmer Ltd.",
+      "recipient_vat_number": "IT34567890123",
+      "recipient_fiscal_code": "200458123",
+      "recipient_code": "LK-2025-01",
+      "recipient_pec_address": "accounts@leighkemmer.it",
+      "recipient_email": "admin@company.it",
+      "recipient_phone": "+39 06 2345 6789",
+      "recipient_street_address": "Via Roma 45",
+      "recipient_city": "Rome",
+      "recipient_zip_code": "00100",
+      "recipient_province": "RM"
+    },
+    "item_table": [
+      {
+        "description": "Website Development Service",
+        "quantity": 1,
+        "unit_price": 100.0,
+        "discount": 0,
+        "tax_rate": 22
+      },
+      {
+        "description": "Domain Registration (1 Year)",
+        "quantity": 1,
+        "unit_price": 12.0,
+        "discount": 0,
+        "tax_rate": 22
+      },
+      {
+        "description": "Monthly Hosting (September)",
+        "quantity": 1,
+        "unit_price": 10.0,
+        "discount": 0,
+        "tax_rate": 22
+      }
+    ],
+    "net_total": 122.0,
+    "tax_amount": 26.84,
+    "gross_total": 148.84,
+    "additional_costs_deductions": {
+      "withholding_amount": 0,
+      "shipping_cost": 0,
+      "payment_method": "Bank Transfer - 5 Days"
+    },
+    "invoice_totals": {
+      "net_total": 122.0,
+      "discount_total": 0,
+      "vat_total": 26.84,
+      "gross_total": 148.84
+    },
+    "status": "paid"
   },
   {
     "id": 2,
-    "doc_id": "INV-TEST-001",
-    "date": "09-09-2025",
-    "sender": "Bennie Hudson",
-    "recipient": "Leland Halvorson",
-    "status": "unpaid",
-    "total": 2317.60
+    "basic_information": {
+      "invoice_number": "INV-2025-002",
+      "invoice_id": "INV-TEST-002",
+      "issue_date": "2025-09-10",
+      "due_date": "2025-09-25",
+      "currency": "EUR",
+      "document_type": "TAXES",
+      "payment_terms": "Net 15 days",
+      "order_reference": "ORD-4597",
+      "ddt_reference": "DDT-103"
+    },
+    "issuer_details": {
+      "company_name": "Green Leaf Studio",
+      "vat_number": "IT99887766554",
+      "fiscal_code": "155497961",
+      "email": "info@greenleaf.it",
+      "phone": "+39 02 3456 9876",
+      "street_address": "Via Milano 120",
+      "city": "Turin",
+      "zip_code": "10100",
+      "province": "TO"
+    },
+    "recipient_details": {
+      "recipient_name": "Aurora Digital Ltd.",
+      "recipient_vat_number": "IT90807060504",
+      "recipient_fiscal_code": "305478992",
+      "recipient_code": "AD-2025-09",
+      "recipient_pec_address": "finance@auroradigital.it",
+      "recipient_email": "support@aurora.it",
+      "recipient_phone": "+39 06 9823 1155",
+      "recipient_street_address": "Piazza Venezia 10",
+      "recipient_city": "Rome",
+      "recipient_zip_code": "00187",
+      "recipient_province": "RM"
+    },
+    "item_table": [
+      {
+        "description": "Graphic Design Services",
+        "quantity": 5,
+        "unit_price": 50.0,
+        "discount": 10,
+        "tax_rate": 22
+      }
+    ],
+    "net_total": 225.0,
+    "tax_amount": 49.5,
+    "gross_total": 274.5,
+    "additional_costs_deductions": {
+      "withholding_amount": 0,
+      "shipping_cost": 0,
+      "payment_method": "Credit Card"
+    },
+    "invoice_totals": {
+      "net_total": 225.0,
+      "discount_total": 25.0,
+      "vat_total": 49.5,
+      "gross_total": 274.5
+    },
+    "status": "unpaid"
   },
   {
     "id": 3,
-    "doc_id": "INV-TEST-001",
-    "date": "09-09-2025",
-    "sender": "Leslie Pagac",
-    "recipient": "Olive Fahey",
-    "status": "overdue",
-    "total": 635.00
+    "basic_information": {
+      "invoice_number": "INV-2025-003",
+      "invoice_id": "INV-TEST-003",
+      "issue_date": "2025-09-12",
+      "due_date": "2025-10-12",
+      "currency": "USD",
+      "document_type": "TAXES",
+      "payment_terms": "Net 30 days",
+      "order_reference": "ORD-5001",
+      "ddt_reference": "DDT-104"
+    },
+    "issuer_details": {
+      "company_name": "TechNova Solutions",
+      "vat_number": "US123456789",
+      "fiscal_code": "987654321",
+      "email": "sales@technova.com",
+      "phone": "+1 202 555 0175",
+      "street_address": "45 Innovation Park",
+      "city": "San Francisco",
+      "zip_code": "94105",
+      "province": "CA"
+    },
+    "recipient_details": {
+      "recipient_name": "BlueOcean Inc.",
+      "recipient_vat_number": "US112233445",
+      "recipient_fiscal_code": "201458963",
+      "recipient_code": "BO-001",
+      "recipient_pec_address": "finance@blueocean.com",
+      "recipient_email": "info@blueocean.com",
+      "recipient_phone": "+1 202 555 0125",
+      "recipient_street_address": "10 Harbor Street",
+      "recipient_city": "New York",
+      "recipient_zip_code": "10001",
+      "recipient_province": "NY"
+    },
+    "item_table": [
+      {
+        "description": "SaaS Subscription (Monthly)",
+        "quantity": 1,
+        "unit_price": 300.0,
+        "discount": 0,
+        "tax_rate": 10
+      }
+    ],
+    "net_total": 300.0,
+    "tax_amount": 30.0,
+    "gross_total": 330.0,
+    "additional_costs_deductions": {
+      "withholding_amount": 0,
+      "shipping_cost": 0,
+      "payment_method": "PayPal"
+    },
+    "invoice_totals": {
+      "net_total": 300.0,
+      "discount_total": 0,
+      "vat_total": 30.0,
+      "gross_total": 330.0
+    },
+    "status": "paid"
   },
   {
     "id": 4,
-    "doc_id": "INV-TEST-001",
-    "date": "09-09-2025",
-    "sender": "Kenneth Goyette",
-    "recipient": "Malcolm Russel",
-    "status": "paid",
-    "total": 635.00
+    "basic_information": {
+      "invoice_number": "INV-2025-004",
+      "invoice_id": "INV-TEST-004",
+      "issue_date": "2025-09-13",
+      "due_date": "2025-09-28",
+      "currency": "EUR",
+      "document_type": "TAXES",
+      "payment_terms": "Net 15 days",
+      "order_reference": "ORD-5100",
+      "ddt_reference": "DDT-110"
+    },
+    "issuer_details": {
+      "company_name": "Elite Printworks",
+      "vat_number": "IT55667788990",
+      "fiscal_code": "300155470",
+      "email": "info@eliteprint.it",
+      "phone": "+39 06 3456 2211",
+      "street_address": "Corso Italia 12",
+      "city": "Florence",
+      "zip_code": "50100",
+      "province": "FI"
+    },
+    "recipient_details": {
+      "recipient_name": "Metro Marketing",
+      "recipient_vat_number": "IT66778899001",
+      "recipient_fiscal_code": "301478990",
+      "recipient_code": "MM-2025-09",
+      "recipient_pec_address": "billing@metromkt.it",
+      "recipient_email": "admin@metromkt.it",
+      "recipient_phone": "+39 02 4578 1122",
+      "recipient_street_address": "Via Dante 22",
+      "recipient_city": "Milan",
+      "recipient_zip_code": "20121",
+      "recipient_province": "MI"
+    },
+    "item_table": [
+      {
+        "description": "Poster Printing (A1)",
+        "quantity": 50,
+        "unit_price": 2.5,
+        "discount": 5,
+        "tax_rate": 22
+      },
+      {
+        "description": "Poster Printing (A1)",
+        "quantity": 50,
+        "unit_price": 2.5,
+        "discount": 5,
+        "tax_rate": 22
+      },
+      {
+        "description": "Poster Printing (A1)",
+        "quantity": 50,
+        "unit_price": 2.5,
+        "discount": 5,
+        "tax_rate": 22
+      },
+      {
+        "description": "Poster Printing (A1)",
+        "quantity": 50,
+        "unit_price": 2.5,
+        "discount": 5,
+        "tax_rate": 22
+      }
+    ],
+    "net_total": 118.75,
+    "tax_amount": 26.12,
+    "gross_total": 144.87,
+    "additional_costs_deductions": {
+      "withholding_amount": 0,
+      "shipping_cost": 10,
+      "payment_method": "Cash on Delivery"
+    },
+    "invoice_totals": {
+      "net_total": 118.75,
+      "discount_total": 6.25,
+      "vat_total": 26.12,
+      "gross_total": 144.87
+    },
+    "status": "overdue"
   },
   {
     "id": 5,
-    "doc_id": "INV-TEST-001",
-    "date": "09-09-2025",
-    "sender": "Felicia Emser",
-    "recipient": "Alexandra Pfeffer",
-    "status": "paid",
-    "total": 635.00
+    "basic_information": {
+      "invoice_number": "INV-2025-005",
+      "invoice_id": "INV-TEST-005",
+      "issue_date": "2025-09-15",
+      "due_date": "2025-10-15",
+      "currency": "EUR",
+      "document_type": "TAXES",
+      "payment_terms": "Net 30 days",
+      "order_reference": "ORD-5200",
+      "ddt_reference": "DDT-120"
+    },
+    "issuer_details": {
+      "company_name": "EcoWorld Supplies",
+      "vat_number": "IT66770099012",
+      "fiscal_code": "320145796",
+      "email": "orders@ecoworld.it",
+      "phone": "+39 06 5544 8899",
+      "street_address": "Via Verdi 88",
+      "city": "Naples",
+      "zip_code": "80100",
+      "province": "NA"
+    },
+    "recipient_details": {
+      "recipient_name": "BioHealth Ltd.",
+      "recipient_vat_number": "IT88001223344",
+      "recipient_fiscal_code": "402011233",
+      "recipient_code": "BH-2025",
+      "recipient_pec_address": "contact@biohealth.it",
+      "recipient_email": "info@biohealth.it",
+      "recipient_phone": "+39 06 7712 3334",
+      "recipient_street_address": "Via Manzoni 44",
+      "recipient_city": "Rome",
+      "recipient_zip_code": "00184",
+      "recipient_province": "RM"
+    },
+    "item_table": [
+      {
+        "description": "Eco-friendly Office Paper (Ream)",
+        "quantity": 100,
+        "unit_price": 3.0,
+        "discount": 10,
+        "tax_rate": 22
+      }
+    ],
+    "net_total": 270.0,
+    "tax_amount": 59.4,
+    "gross_total": 329.4,
+    "additional_costs_deductions": {
+      "withholding_amount": 0,
+      "shipping_cost": 15,
+      "payment_method": "Bank Transfer - 10 Days"
+    },
+    "invoice_totals": {
+      "net_total": 270.0,
+      "discount_total": 30.0,
+      "vat_total": 59.4,
+      "gross_total": 329.4
+    },
+    "status": "paid"
   },
   {
     "id": 6,
-    "doc_id": "INV-TEST-001",
-    "date": "09-09-2025",
-    "sender": "Jack Hill",
-    "recipient": "Myron Wuckert",
-    "status": "overdue",
-    "total": 635.00
+    "basic_information": {
+      "invoice_number": "INV-2025-006",
+      "invoice_id": "INV-TEST-006",
+      "issue_date": "2025-09-16",
+      "due_date": "2025-09-30",
+      "currency": "USD",
+      "document_type": "TAXES",
+      "payment_terms": "Net 14 days",
+      "order_reference": "ORD-5300",
+      "ddt_reference": "DDT-130"
+    },
+    "issuer_details": {
+      "company_name": "NextVision Agency",
+      "vat_number": "US987654321",
+      "fiscal_code": "111222333",
+      "email": "finance@nextvision.com",
+      "phone": "+1 310 555 1478",
+      "street_address": "420 Market Street",
+      "city": "Los Angeles",
+      "zip_code": "90017",
+      "province": "CA"
+    },
+    "recipient_details": {
+      "recipient_name": "Skyline Media",
+      "recipient_vat_number": "US554433221",
+      "recipient_fiscal_code": "220114785",
+      "recipient_code": "SKY-009",
+      "recipient_pec_address": "billing@skylinemedia.com",
+      "recipient_email": "contact@skylinemedia.com",
+      "recipient_phone": "+1 202 555 1120",
+      "recipient_street_address": "88 West 9th Ave",
+      "recipient_city": "New York",
+      "recipient_zip_code": "10011",
+      "recipient_province": "NY"
+    },
+    "item_table": [
+      {
+        "description": "Video Ad Campaign",
+        "quantity": 1,
+        "unit_price": 500.0,
+        "discount": 5,
+        "tax_rate": 10
+      }
+    ],
+    "net_total": 475.0,
+    "tax_amount": 47.5,
+    "gross_total": 522.5,
+    "additional_costs_deductions": {
+      "withholding_amount": 0,
+      "shipping_cost": 0,
+      "payment_method": "Wire Transfer"
+    },
+    "invoice_totals": {
+      "net_total": 475.0,
+      "discount_total": 25.0,
+      "vat_total": 47.5,
+      "gross_total": 522.5
+    },
+    "status": "paid"
   },
   {
     "id": 7,
-    "doc_id": "INV-TEST-001",
-    "date": "09-09-2025",
-    "sender": "Krystal Anderson",
-    "recipient": "Regina Prohaska",
-    "status": "paid",
-    "total": 635.00
+    "basic_information": {
+      "invoice_number": "INV-2025-007",
+      "invoice_id": "INV-TEST-007",
+      "issue_date": "2025-09-18",
+      "due_date": "2025-10-03",
+      "currency": "EUR",
+      "document_type": "TAXES",
+      "payment_terms": "Net 15 days",
+      "order_reference": "ORD-5400",
+      "ddt_reference": "DDT-140"
+    },
+    "issuer_details": {
+      "company_name": "BrightPath Consulting",
+      "vat_number": "IT99911122233",
+      "fiscal_code": "145978450",
+      "email": "info@brightpath.it",
+      "phone": "+39 06 7788 2233",
+      "street_address": "Via Roma 120",
+      "city": "Turin",
+      "zip_code": "10100",
+      "province": "TO"
+    },
+    "recipient_details": {
+      "recipient_name": "Apex Industries",
+      "recipient_vat_number": "IT44455566677",
+      "recipient_fiscal_code": "302145897",
+      "recipient_code": "APX-2025",
+      "recipient_pec_address": "billing@apex.it",
+      "recipient_email": "contact@apex.it",
+      "recipient_phone": "+39 06 4455 6677",
+      "recipient_street_address": "Corso Umberto 22",
+      "recipient_city": "Milan",
+      "recipient_zip_code": "20121",
+      "recipient_province": "MI"
+    },
+    "item_table": [
+      {
+        "description": "Business Strategy Consultation",
+        "quantity": 2,
+        "unit_price": 250.0,
+        "discount": 0,
+        "tax_rate": 22
+      }
+    ],
+    "net_total": 500.0,
+    "tax_amount": 110.0,
+    "gross_total": 610.0,
+    "additional_costs_deductions": {
+      "withholding_amount": 0,
+      "shipping_cost": 0,
+      "payment_method": "Bank Transfer"
+    },
+    "invoice_totals": {
+      "net_total": 500.0,
+      "discount_total": 0,
+      "vat_total": 110.0,
+      "gross_total": 610.0
+    },
+    "status": "overdue"
   },
   {
     "id": 8,
-    "doc_id": "INV-TEST-001",
-    "date": "09-09-2025",
-    "sender": "Clinton Gusikowski",
-    "recipient": "Tim Morar",
-    "status": "paid",
-    "total": 635.00
+    "basic_information": {
+      "invoice_number": "INV-2025-008",
+      "invoice_id": "INV-TEST-008",
+      "issue_date": "2025-09-19",
+      "due_date": "2025-10-04",
+      "currency": "EUR",
+      "document_type": "TAXES",
+      "payment_terms": "Net 15 days",
+      "order_reference": "ORD-5500",
+      "ddt_reference": "DDT-150"
+    },
+    "issuer_details": {
+      "company_name": "PixelWave Studio",
+      "vat_number": "IT33344455566",
+      "fiscal_code": "401223569",
+      "email": "admin@pixelwave.it",
+      "phone": "+39 06 3334 5678",
+      "street_address": "Via Leonardo 88",
+      "city": "Florence",
+      "zip_code": "50100",
+      "province": "FI"
+    },
+    "recipient_details": {
+      "recipient_name": "VisionCraft Ltd.",
+      "recipient_vat_number": "IT90908070605",
+      "recipient_fiscal_code": "309874123",
+      "recipient_code": "VC-88",
+      "recipient_pec_address": "finance@visioncraft.it",
+      "recipient_email": "support@visioncraft.it",
+      "recipient_phone": "+39 02 4567 8910",
+      "recipient_street_address": "Via della Pace 9",
+      "recipient_city": "Rome",
+      "recipient_zip_code": "00184",
+      "recipient_province": "RM"
+    },
+    "item_table": [
+      {
+        "description": "UI/UX Design Service",
+        "quantity": 1,
+        "unit_price": 400.0,
+        "discount": 0,
+        "tax_rate": 22
+      }
+    ],
+    "net_total": 400.0,
+    "tax_amount": 88.0,
+    "gross_total": 488.0,
+    "additional_costs_deductions": {
+      "withholding_amount": 0,
+      "shipping_cost": 0,
+      "payment_method": "PayPal"
+    },
+    "invoice_totals": {
+      "net_total": 400.0,
+      "discount_total": 0,
+      "vat_total": 88.0,
+      "gross_total": 488.0
+    },
+    "status": "unpaid"
   },
   {
     "id": 9,
-    "doc_id": "INV-TEST-001",
-    "date": "09-09-2025",
-    "sender": "Alexandra Littel",
-    "recipient": "Shelley Koss",
-    "status": "unpaid",
-    "total": 635.00
+    "basic_information": {
+      "invoice_number": "INV-2025-009",
+      "invoice_id": "INV-TEST-009",
+      "issue_date": "2025-09-20",
+      "due_date": "2025-10-05",
+      "currency": "EUR",
+      "document_type": "TAXES",
+      "payment_terms": "Net 15 days",
+      "order_reference": "ORD-5600",
+      "ddt_reference": "DDT-160"
+    },
+    "issuer_details": {
+      "company_name": "SkyHigh Logistics",
+      "vat_number": "IT22233344455",
+      "fiscal_code": "512478963",
+      "email": "sales@skyhighlogistics.it",
+      "phone": "+39 06 5566 7788",
+      "street_address": "Via Europa 55",
+      "city": "Naples",
+      "zip_code": "80100",
+      "province": "NA"
+    },
+    "recipient_details": {
+      "recipient_name": "Global Imports Ltd.",
+      "recipient_vat_number": "IT11223344556",
+      "recipient_fiscal_code": "405789632",
+      "recipient_code": "GI-25",
+      "recipient_pec_address": "accounts@globalimports.it",
+      "recipient_email": "info@globalimports.it",
+      "recipient_phone": "+39 06 9988 1122",
+      "recipient_street_address": "Via Venezia 44",
+      "recipient_city": "Rome",
+      "recipient_zip_code": "00187",
+      "recipient_province": "RM"
+    },
+    "item_table": [
+      {
+        "description": "International Shipping Service",
+        "quantity": 3,
+        "unit_price": 200.0,
+        "discount": 0,
+        "tax_rate": 22
+      }
+    ],
+    "net_total": 600.0,
+    "tax_amount": 132.0,
+    "gross_total": 732.0,
+    "additional_costs_deductions": {
+      "withholding_amount": 0,
+      "shipping_cost": 20,
+      "payment_method": "Bank Transfer - 7 Days"
+    },
+    "invoice_totals": {
+      "net_total": 600.0,
+      "discount_total": 0,
+      "vat_total": 132.0,
+      "gross_total": 732.0
+    },
+    "status": "paid"
   },
   {
     "id": 10,
-    "doc_id": "INV-TEST-001",
-    "date": "09-09-2025",
-    "sender": "Toby Ortiz",
-    "recipient": "Rudy Fay",
-    "status": "paid",
-    "total": 635.00
+    "basic_information": {
+      "invoice_number": "INV-2025-010",
+      "invoice_id": "INV-TEST-010",
+      "issue_date": "2025-09-21",
+      "due_date": "2025-10-06",
+      "currency": "USD",
+      "document_type": "TAXES",
+      "payment_terms": "Net 15 days",
+      "order_reference": "ORD-5700",
+      "ddt_reference": "DDT-170"
+    },
+    "issuer_details": {
+      "company_name": "NovaTech Systems",
+      "vat_number": "US2233445566",
+      "fiscal_code": "789654123",
+      "email": "billing@novatech.com",
+      "phone": "+1 415 555 8899",
+      "street_address": "500 Silicon Street",
+      "city": "San Jose",
+      "zip_code": "95112",
+      "province": "CA"
+    },
+    "recipient_details": {
+      "recipient_name": "Quantum Devices Inc.",
+      "recipient_vat_number": "US7788990011",
+      "recipient_fiscal_code": "605478963",
+      "recipient_code": "QD-2025",
+      "recipient_pec_address": "finance@quantumdevices.com",
+      "recipient_email": "info@quantumdevices.com",
+      "recipient_phone": "+1 202 555 6789",
+      "recipient_street_address": "123 Future Road",
+      "recipient_city": "Austin",
+      "recipient_zip_code": "73301",
+      "recipient_province": "TX"
+    },
+    "item_table": [
+      {
+        "description": "Software License (Annual)",
+        "quantity": 1,
+        "unit_price": 1200.0,
+        "discount": 0,
+        "tax_rate": 10
+      }
+    ],
+    "net_total": 1200.0,
+    "tax_amount": 120.0,
+    "gross_total": 1320.0,
+    "additional_costs_deductions": {
+      "withholding_amount": 0,
+      "shipping_cost": 0,
+      "payment_method": "Credit Card"
+    },
+    "invoice_totals": {
+      "net_total": 1200.0,
+      "discount_total": 0,
+      "vat_total": 120.0,
+      "gross_total": 1320.0
+    },
+    "status": "overdue"
   },
-   {
+  {
     "id": 11,
-    "doc_id": "INV-TEST-002",
-    "date": "10-09-2025",
-    "sender": "Darlene Weber",
-    "recipient": "Marvin Daniel",
-    "status": "unpaid",
-    "total": 450.00
+    "basic_information": {
+      "invoice_number": "INV-2025-011",
+      "invoice_id": "INV-TEST-011",
+      "issue_date": "2025-09-22",
+      "due_date": "2025-10-06",
+      "currency": "USD",
+      "document_type": "TAXES",
+      "payment_terms": "Net 14 days",
+      "order_reference": "ORD-6531",
+      "ddt_reference": "DDT-205"
+    },
+    "issuer_details": {
+      "company_name": "Summit Consulting",
+      "vat_number": "US331122554",
+      "fiscal_code": "FC-119933",
+      "email": "billing@summitconsult.com",
+      "phone": "+1 202 555 7723",
+      "street_address": "900 Hillview Avenue",
+      "city": "Palo Alto",
+      "zip_code": "94304",
+      "province": "CA"
+    },
+    "recipient_details": {
+      "recipient_name": "PeakTech Systems",
+      "recipient_vat_number": "US881223344",
+      "recipient_fiscal_code": "RFC-0021",
+      "recipient_code": "CPEAK-12",
+      "recipient_pec_address": "accounts@peaktech.com",
+      "recipient_email": "finance@peaktech.com",
+      "recipient_phone": "+1 202 555 7789",
+      "recipient_street_address": "100 Innovation Drive",
+      "recipient_city": "Austin",
+      "recipient_zip_code": "73301",
+      "recipient_province": "TX"
+    },
+    "item_table": [
+      {
+        "description": "Software subscription renewal",
+        "quantity": 1,
+        "unit_price": 350,
+        "discount": 0,
+        "tax_rate": 15
+      }
+    ],
+    "net_total": 350,
+    "tax_amount": 52.5,
+    "gross_total": 402.5,
+    "additional_costs_deductions": {
+      "withholding_amount": 0,
+      "shipping_cost": 0,
+      "payment_method": "Bank Transfer"
+    },
+    "invoice_totals": {
+      "net_total": 350,
+      "discount_total": 0,
+      "vat_total": 52.5,
+      "gross_total": 402.5
+    },
+    "status": "paid"
   },
   {
     "id": 12,
-    "doc_id": "INV-TEST-002",
-    "date": "10-09-2025",
-    "sender": "Brenda Koch",
-    "recipient": "Earl Hermann",
-    "status": "paid",
-    "total": 980.50
+    "basic_information": {
+      "invoice_number": "INV-2025-012",
+      "invoice_id": "INV-TEST-012",
+      "issue_date": "2025-09-25",
+      "due_date": "2025-10-09",
+      "currency": "EUR",
+      "document_type": "TAXES",
+      "payment_terms": "Net 15 days",
+      "order_reference": "ORD-6740",
+      "ddt_reference": "DDT-230"
+    },
+    "issuer_details": {
+      "company_name": "BlueWave Digital",
+      "vat_number": "EU11224455",
+      "fiscal_code": "FC-447722",
+      "email": "info@bluewavedigital.eu",
+      "phone": "+39 06 555 9854",
+      "street_address": "15 Via Roma",
+      "city": "Milan",
+      "zip_code": "20100",
+      "province": "MI"
+    },
+    "recipient_details": {
+      "recipient_name": "Bright Vision Ltd.",
+      "recipient_vat_number": "EU99887766",
+      "recipient_fiscal_code": "RFC-771122",
+      "recipient_code": "BRV-47",
+      "recipient_pec_address": "billing@brightvision.eu",
+      "recipient_email": "admin@brightvision.eu",
+      "recipient_phone": "+39 06 555 7841",
+      "recipient_street_address": "23 Corso Venezia",
+      "recipient_city": "Rome",
+      "recipient_zip_code": "00184",
+      "recipient_province": "RM"
+    },
+    "item_table": [
+      {
+        "description": "Ad campaign design",
+        "quantity": 3,
+        "unit_price": 220,
+        "discount": 10,
+        "tax_rate": 22
+      }
+    ],
+    "net_total": 594,
+    "tax_amount": 130.68,
+    "gross_total": 724.68,
+    "additional_costs_deductions": {
+      "withholding_amount": 0,
+      "shipping_cost": 0,
+      "payment_method": "Credit Card"
+    },
+    "invoice_totals": {
+      "net_total": 594,
+      "discount_total": 66,
+      "vat_total": 130.68,
+      "gross_total": 724.68
+    },
+    "status": "unpaid"
   },
   {
     "id": 13,
-    "doc_id": "INV-TEST-002",
-    "date": "10-09-2025",
-    "sender": "Matthew Schmidt",
-    "recipient": "Tracy Lebsack",
-    "status": "overdue",
-    "total": 1250.00
+    "basic_information": {
+      "invoice_number": "INV-2025-013",
+      "invoice_id": "INV-TEST-013",
+      "issue_date": "2025-09-28",
+      "due_date": "2025-10-12",
+      "currency": "USD",
+      "document_type": "TAXES",
+      "payment_terms": "Net 14 days",
+      "order_reference": "ORD-7012",
+      "ddt_reference": "DDT-250"
+    },
+    "issuer_details": {
+      "company_name": "Aurora Enterprises",
+      "vat_number": "US113355779",
+      "fiscal_code": "FC-552200",
+      "email": "accounts@auroraenterprises.com",
+      "phone": "+1 408 555 1234",
+      "street_address": "789 Sunset Blvd",
+      "city": "San Diego",
+      "zip_code": "92101",
+      "province": "CA"
+    },
+    "recipient_details": {
+      "recipient_name": "Momentum Corp.",
+      "recipient_vat_number": "US554433221",
+      "recipient_fiscal_code": "RFC-0099",
+      "recipient_code": "MOM-88",
+      "recipient_pec_address": "billing@momentum.com",
+      "recipient_email": "finance@momentum.com",
+      "recipient_phone": "+1 408 555 4321",
+      "recipient_street_address": "320 Harbor Drive",
+      "recipient_city": "San Diego",
+      "recipient_zip_code": "92101",
+      "recipient_province": "CA"
+    },
+    "item_table": [
+      {
+        "description": "Consulting session (3 hrs)",
+        "quantity": 3,
+        "unit_price": 150,
+        "discount": 0,
+        "tax_rate": 10
+      }
+    ],
+    "net_total": 450,
+    "tax_amount": 45,
+    "gross_total": 495,
+    "additional_costs_deductions": {
+      "withholding_amount": 0,
+      "shipping_cost": 0,
+      "payment_method": "Bank Transfer"
+    },
+    "invoice_totals": {
+      "net_total": 450,
+      "discount_total": 0,
+      "vat_total": 45,
+      "gross_total": 495
+    },
+    "status": "paid"
   },
   {
     "id": 14,
-    "doc_id": "INV-TEST-002",
-    "date": "10-09-2025",
-    "sender": "Gloria Stanton",
-    "recipient": "Ted Bosco",
-    "status": "paid",
-    "total": 320.00
+    "basic_information": {
+      "invoice_number": "INV-2025-014",
+      "invoice_id": "INV-TEST-014",
+      "issue_date": "2025-09-30",
+      "due_date": "2025-10-15",
+      "currency": "USD",
+      "document_type": "TAXES",
+      "payment_terms": "Net 15 days",
+      "order_reference": "ORD-7105",
+      "ddt_reference": "DDT-275"
+    },
+    "issuer_details": {
+      "company_name": "InnovateX Labs",
+      "vat_number": "US99221133",
+      "fiscal_code": "FC-778899",
+      "email": "billing@innovatex.com",
+      "phone": "+1 415 555 9876",
+      "street_address": "450 Silicon Road",
+      "city": "San Jose",
+      "zip_code": "95112",
+      "province": "CA"
+    },
+    "recipient_details": {
+      "recipient_name": "BrightWorks Inc.",
+      "recipient_vat_number": "US66110099",
+      "recipient_fiscal_code": "RFC-3300",
+      "recipient_code": "BRW-21",
+      "recipient_pec_address": "admin@brightworks.com",
+      "recipient_email": "finance@brightworks.com",
+      "recipient_phone": "+1 415 555 4533",
+      "recipient_street_address": "88 King Street",
+      "recipient_city": "San Francisco",
+      "recipient_zip_code": "94107",
+      "recipient_province": "CA"
+    },
+    "item_table": [
+      {
+        "description": "Mobile app prototype design",
+        "quantity": 1,
+        "unit_price": 850,
+        "discount": 50,
+        "tax_rate": 18
+      }
+    ],
+    "net_total": 800,
+    "tax_amount": 144,
+    "gross_total": 944,
+    "additional_costs_deductions": {
+      "withholding_amount": 0,
+      "shipping_cost": 0,
+      "payment_method": "Credit Card"
+    },
+    "invoice_totals": {
+      "net_total": 800,
+      "discount_total": 50,
+      "vat_total": 144,
+      "gross_total": 944
+    },
+    "status": "overdue"
   },
   {
     "id": 15,
-    "doc_id": "INV-TEST-002",
-    "date": "10-09-2025",
-    "sender": "Bryan Jacobs",
-    "recipient": "Daisy Wyman",
-    "status": "unpaid",
-    "total": 775.00
-  },
-  {
-    "id": 16,
-    "doc_id": "INV-TEST-002",
-    "date": "10-09-2025",
-    "sender": "Catherine Hill",
-    "recipient": "Oliver Ritchie",
-    "status": "paid",
-    "total": 640.00
-  },
-  {
-    "id": 17,
-    "doc_id": "INV-TEST-002",
-    "date": "10-09-2025",
-    "sender": "Dennis Hartman",
-    "recipient": "Sonia Larkin",
-    "status": "overdue",
-    "total": 920.00
-  },
-  {
-    "id": 18,
-    "doc_id": "INV-TEST-002",
-    "date": "10-09-2025",
-    "sender": "Lillian Olson",
-    "recipient": "Cameron Schulist",
-    "status": "paid",
-    "total": 580.00
-  },
-  {
-    "id": 19,
-    "doc_id": "INV-TEST-002",
-    "date": "10-09-2025",
-    "sender": "Evelyn Fisher",
-    "recipient": "Harvey Stokes",
-    "status": "unpaid",
-    "total": 1200.00
-  },
-  {
-    "id": 20,
-    "doc_id": "INV-TEST-002",
-    "date": "10-09-2025",
-    "sender": "Harold Boyd",
-    "recipient": "Mabel Beahan",
-    "status": "paid",
-    "total": 430.00
-  },
-  {
-    "id": 21,
-    "doc_id": "INV-TEST-003",
-    "date": "11-09-2025",
-    "sender": "Betty Robertson",
-    "recipient": "Quentin Harber",
-    "status": "overdue",
-    "total": 670.00
-  },
-  {
-    "id": 22,
-    "doc_id": "INV-TEST-003",
-    "date": "11-09-2025",
-    "sender": "Victor Jacobs",
-    "recipient": "Lydia Witting",
-    "status": "paid",
-    "total": 580.00
-  },
-  {
-    "id": 23,
-    "doc_id": "INV-TEST-003",
-    "date": "11-09-2025",
-    "sender": "Shawn Hayes",
-    "recipient": "Glenda Hegmann",
-    "status": "unpaid",
-    "total": 1025.00
-  },
-  {
-    "id": 24,
-    "doc_id": "INV-TEST-003",
-    "date": "11-09-2025",
-    "sender": "Cecilia Murray",
-    "recipient": "Darren Glover",
-    "status": "paid",
-    "total": 490.00
-  },
-  {
-    "id": 25,
-    "doc_id": "INV-TEST-003",
-    "date": "11-09-2025",
-    "sender": "Nathaniel Romero",
-    "recipient": "Julia Kunde",
-    "status": "overdue",
-    "total": 875.00
-  },
-  {
-    "id": 26,
-    "doc_id": "INV-TEST-003",
-    "date": "11-09-2025",
-    "sender": "Barbara Boyle",
-    "recipient": "Ramon Prosacco",
-    "status": "paid",
-    "total": 325.00
-  },
-  {
-    "id": 27,
-    "doc_id": "INV-TEST-003",
-    "date": "11-09-2025",
-    "sender": "Roger Elliott",
-    "recipient": "Viola Dach",
-    "status": "unpaid",
-    "total": 710.00
-  },
-  {
-    "id": 28,
-    "doc_id": "INV-TEST-003",
-    "date": "11-09-2025",
-    "sender": "Melinda Klein",
-    "recipient": "Shawn Kunze",
-    "status": "paid",
-    "total": 560.00
-  },
-  {
-    "id": 29,
-    "doc_id": "INV-TEST-003",
-    "date": "11-09-2025",
-    "sender": "Randall Doyle",
-    "recipient": "Carolyn Corkery",
-    "status": "overdue",
-    "total": 1020.00
-  },
-  {
-    "id": 30,
-    "doc_id": "INV-TEST-003",
-    "date": "11-09-2025",
-    "sender": "Janice Walter",
-    "recipient": "Clifford Reinger",
-    "status": "paid",
-    "total": 430.00
+    "basic_information": {
+      "invoice_number": "INV-2025-015",
+      "invoice_id": "INV-TEST-015",
+      "issue_date": "2025-10-02",
+      "due_date": "2025-10-16",
+      "currency": "EUR",
+      "document_type": "TAXES",
+      "payment_terms": "Net 14 days",
+      "order_reference": "ORD-7290",
+      "ddt_reference": "DDT-290"
+    },
+    "issuer_details": {
+      "company_name": "Visionary Creations",
+      "vat_number": "EU55667788",
+      "fiscal_code": "FC-112233",
+      "email": "accounts@visionarycreations.eu",
+      "phone": "+49 30 555 6000",
+      "street_address": "45 Alexanderplatz",
+      "city": "Berlin",
+      "zip_code": "10178",
+      "province": "BE"
+    },
+    "recipient_details": {
+      "recipient_name": "Core Media GmbH",
+      "recipient_vat_number": "EU33445566",
+      "recipient_fiscal_code": "RFC-7744",
+      "recipient_code": "CMD-56",
+      "recipient_pec_address": "finance@coremedia.eu",
+      "recipient_email": "contact@coremedia.eu",
+      "recipient_phone": "+49 30 555 6222",
+      "recipient_street_address": "77 Unter den Linden",
+      "recipient_city": "Berlin",
+      "recipient_zip_code": "10117",
+      "recipient_province": "BE"
+    },
+    "item_table": [
+      {
+        "description": "Corporate video editing",
+        "quantity": 2,
+        "unit_price": 400,
+        "discount": 20,
+        "tax_rate": 19
+      }
+    ],
+    "net_total": 760,
+    "tax_amount": 144.4,
+    "gross_total": 904.4,
+    "additional_costs_deductions": {
+      "withholding_amount": 0,
+      "shipping_cost": 0,
+      "payment_method": "PayPal"
+    },
+    "invoice_totals": {
+      "net_total": 760,
+      "discount_total": 40,
+      "vat_total": 144.4,
+      "gross_total": 904.4
+    },
+    "status": "paid"
   }
 ]
