@@ -1,6 +1,6 @@
 "use client";
 import CommonButton from "@/common/CommonButton";
-import { DownloadBoxIcon, FolderIcon } from "@/Components/SvgContainer/SvgContainer";
+import { CorrectIcon, CrossIcon, DownloadBoxIcon, FolderIcon, RightIcon } from "@/Components/SvgContainer/SvgContainer";
 import { useRef, useState } from "react";
 
 
@@ -38,11 +38,34 @@ const UploadFile = () => {
             </div>
             <div >
                 {file &&
-                    <div className="bg-[#E7F9DE] inline-block p-3 rounded-lg mx-8">
-                       <div className="flex items-center justify-center gap-2">
-                        <FolderIcon/> {file[0].name}
-                       </div>
-                    </div>}
+                    <div className="flex flex-col gap-4 mx-4">
+                        <div className="flex justify-between items-center bg-[#FBFBFB] rounded-2xl p-2">
+                            <div className="bg-[#E7F9DE] inline-block rounded-lg p-4">
+                                <div className="flex items-center justify-center gap-2">
+                                    <FolderIcon /> {file[0].name}
+                                </div>
+                            </div>
+                            <div>
+                                <RightIcon />
+                            </div>
+                        </div>
+                        <div className="flex justify-between items-center bg-[#FBFBFB] rounded-2xl p-2">
+                            <div className="bg-[#EDEDED] inline-block rounded-lg p-4">
+                                <div className="flex items-center justify-center gap-2">
+                                    <FolderIcon /> {file[0].name}
+                                </div>
+                            </div>
+                            <div className="flex items-center gap-12">
+                                <div className="bg-[#EDEDED] w-[355px] h-2 rounded-full">
+                                    <p className="bg-[#004D3F] w-[250px] h-2 rounded-full"></p>
+                                </div>
+                                <div className="cursor-pointer">
+                                    <CrossIcon width="30" height="30"/>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                }
             </div>
         </div>
     );
