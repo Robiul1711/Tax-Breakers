@@ -77,6 +77,21 @@ const FormSelect: React.FC<IFormSelectProps> = ({
     </div>
 );
 
+const services = [
+    { value: "tax", label: "Tax Preparation" },
+    { value: "investment_planning", label: "Investment Planning" },
+    { value: "internal_audit", label: "Internal Audit" },
+    { value: "accounts_management", label: "Accounts Management" },
+    { value: "payroll_management", label: "Payroll Management" },
+]
+
+const consultants = [
+    { value: "audit", label: "Audit Specialist" },
+    { value: "tax", label: "Tax Specialist" },
+    { value: "advisor", label: "Financial Advisor" },
+    { value: "bookkeeping", label: "Bookkeeping Expert" },
+]
+
 const AppointmentForm = () => {
     const fileInputRef = useRef<HTMLInputElement>(null!)
     const [file, setFile] = useState(null as FileList | null);
@@ -93,6 +108,8 @@ const AppointmentForm = () => {
     } = useForm();
 
     const onSubmit = (data: FieldValues) => {
+        const formData = new FormData()
+        
         console.log("Appointment Data:", data);
         reset();
     };
@@ -141,23 +158,14 @@ const AppointmentForm = () => {
                         name="consultant_type"
                         register={register}
                         errors={errors}
-                        options={[
-                            { value: "doctor", label: "Doctor" },
-                            { value: "lawyer", label: "Lawyer" },
-                            { value: "nutritionist", label: "Nutritionist" },
-                            { value: "therapist", label: "Therapist" },
-                        ]}
+                        options={consultants}
                     />
                     <FormSelect
                         label="Service Type"
                         name="service_type"
                         register={register}
                         errors={errors}
-                        options={[
-                            { value: "online", label: "Online Consultation" },
-                            { value: "in_person", label: "In-person Visit" },
-                            { value: "follow_up", label: "Follow-up Session" },
-                        ]}
+                        options={services}
                     />
                 </div>
 
@@ -211,13 +219,27 @@ const AppointmentForm = () => {
                     </div>
                 </div>
                 <div >
-                    {file &&
-                        <div className="bg-[#EDEDED] inline-block px-8 py-3 rounded-lg mx-8 relative">
-                            <button className="p-1 rounded-full bg-red-50 text-red-600 absolute top-1 right-1" onClick={() => setFile(null)}><FiX className="h-2 w-2"/></button>
-                            <div className="flex items-center justify-center gap-2">
-                                <FileUploadIcon /> {file[0].name}
-                            </div>
-                        </div>}
+                    {file && (
+                        <div className="flex flex-wrap gap-3 mt-3">
+                            {Array.from(file).map((f, index) => (
+                                <div
+                                    key={index}
+                                    className="bg-[#EDEDED] inline-block px-6 py-3 rounded-lg relative"
+                                >
+                                    <button
+                                        type="button"
+                                        className="p-1 rounded-full bg-red-50 text-red-600 absolute top-1 right-1"
+                                        onClick={() => setFile(null)}
+                                    >
+                                        <FiX className="h-2 w-2" />
+                                    </button>
+                                    <div className="flex items-center gap-2 text-sm text-[#727272]">
+                                        <FileUploadIcon /> {f.name}
+                                    </div>
+                                </div>
+                            ))}
+                        </div>
+                    )}
                 </div>
 
                 {/* Buttons */}
