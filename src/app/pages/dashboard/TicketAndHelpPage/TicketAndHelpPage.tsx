@@ -8,8 +8,6 @@ import CreateTicketButton from './CreateTicketButton/CreateTicketButton';
 
 const TicketAndHelpPage = ({ ticketData }: { ticketData: TTickets[] }) => {
 
-
-
   const [currentPageData, setCurrentPageData] = useState(ticketData);
   const [dataPerPage ,setDataPerPage] = useState(5)
 
