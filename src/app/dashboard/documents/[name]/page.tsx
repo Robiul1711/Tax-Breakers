@@ -9,7 +9,6 @@ import Link from "next/link";
 const DashboardDocumentFolderDetailsPage = async ({ params }: { params: Promise<{ name: string }> }) => {
     const { name } = await params;
     const folderName = name.replace(/-/g, ' ');
-    console.log(folderName);
     const folder = await getSingleFile(folderName)
 
     return (
