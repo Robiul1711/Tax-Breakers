@@ -37,6 +37,8 @@ const menuItems = [
   { label: "Subscriptions & Payments", href: "/dashboard/subscriptionsandayments", icon: <SubscriptionIcon /> },
   { label: "Help & Ticketing", href: "/dashboard/helpandticketing", icon: <HelpIcon /> },
   { label: "Settings", href: "/dashboard/settings", icon: <SettingsIcon /> },
+
+
 ];
 
 export type TNotification = {
@@ -473,9 +475,9 @@ export default function DashboardLayout({
           </div>
 
           <div className="flex items-center gap-4">
-            <p className="p-2 bg-[#ECF4E9] rounded-full">
+            <Link href={'/dashboard/message'} className="p-2 bg-[#ECF4E9] rounded-full">
               <MessageIcon />
-            </p>
+            </Link>
 
 
 
@@ -529,7 +531,7 @@ export default function DashboardLayout({
           </div>
         </header>
 
-        <section className="flex-1 overflow-y-auto w-full container my-8 custom-scroll">
+        <section className="flex-1 overflow-y-auto w-full container my-4 custom-scroll">
           {children}
         </section>
       </main>
