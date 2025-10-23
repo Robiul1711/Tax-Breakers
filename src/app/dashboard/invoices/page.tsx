@@ -46,7 +46,6 @@ const invoicesData = [
 const DashboardInvoicePage = async () => {
   const result = await getAllInvoice();
   const invoices : TInvoice[] = result instanceof Error ? [] : result;
-  console.log(invoices);
 
   return (
     <div>

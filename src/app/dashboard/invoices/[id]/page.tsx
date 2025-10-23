@@ -43,8 +43,8 @@ const getCountryFromAddress = (address: IAddress): string => {
     return "Country";
 }
 
-const DashboardInvoiceDetailsPage = async ({ params }: { params: { id: string | number } }) => {
-    const { id } = params;
+const DashboardInvoiceDetailsPage = async ({ params }: { params: Promise<{id : number}> }) => {
+    const { id } = await params;
 
     const data = await getAllInvoice();
     const result = data instanceof Error ? [] : data;

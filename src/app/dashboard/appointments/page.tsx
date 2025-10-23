@@ -32,8 +32,6 @@ const BookAppointmentPage = async () => {
       </div>
     )
   }
-
-  console.log(appointmentData);
   return (
     <div className='w-full'>
       <div className='bg-[#FBFBFB] p-8 rounded-2xl'>
