@@ -57,15 +57,15 @@ const FaqPage = () => {
                     main_title="Tax Breaks: FAQs  Key Tax Breaks."
                     description="Understanding tax breaks is crucial for savings. This section highlights strategies that can impact your financial planning."
                 />
-                <div className="absolute -bottom-1/2 left-1/2 -translate-x-1/3 w-full">
-                    <Image src={featureImage} height={1024} width={1320} alt="feature image" />
+                <div className="absolute -bottom-1/2 left-[41.5%] -translate-x-1/3 w-full lg:block hidden">
+                    <Image className="lg:w-[850px] xl:w-[1050px] 2xl:w-[1575px] lg:h-auto" src={featureImage} height={1024} width={1320} alt="feature image" />
                 </div>
             </div>
 
-            <div className="section-padding-x mt-120 mb-36">
-                <div className="flex flex-col lg:flex-row gap-12">
-                    <div className="w-full lg:w-[35%]">
-                        <ul className="bg-[#FBFBFB] rounded-[16px] py-6 px-12">
+            <div className="section-padding-x lg:mt-80 xl:mt-100 2xl:mt-120 mb-36">
+                <div className="flex flex-col lg:flex-row gap-6 xl:gap-12">
+                    <div className="w-full lg:w-[35%] lg:mt-0 mt-10">
+                        <ul className="bg-[#FBFBFB] rounded-2xl py-6 xl:px-12 px-6">
                             {faqData.navigation.map((navItem) => (
                                 <li key={navItem.slug}>
                                     <button
@@ -74,7 +74,7 @@ const FaqPage = () => {
                                             navItem?.title === "Chat & Support"
                                                 ? ""
                                                 : "border-b border-[#E5E5E5]"
-                                        } py-6 text-[26px] ${
+                                        } md:py-6 py-3 text-lg md:text-xl xl:text-[26px] ${
                                             activeCategorySlug === navItem.slug
                                                 ? "text-[#004D3F] font-semibold"
                                                 : "text-[#677489] hover:text-[#004D3F]"
@@ -90,7 +90,7 @@ const FaqPage = () => {
                     {/* FAQ Accordion Content */}
                     <div className="space-y-5 w-full lg:w-[65%]">
                         {currentCategory && (
-                            <h1 className="text-3xl font-bold text-[#1E4841] mb-6">
+                            <h1 className="md:text-3xl text-xl font-bold text-[#1E4841] mb-6">
                                 {currentCategory.categoryTitle}
                             </h1>
                         )}
@@ -107,7 +107,7 @@ const FaqPage = () => {
                                         onClick={() => toggleFaq(index)}
                                         className="flex justify-between items-center w-full text-left focus:outline-none px-6 py-5"
                                     >
-                                        <h3 className="text-xl font-semibold text-[#1E4841]">
+                                        <h3 className="md:text-xl font-semibold text-[#1E4841]">
                                             {faq.question}
                                         </h3>
                                         <motion.div
