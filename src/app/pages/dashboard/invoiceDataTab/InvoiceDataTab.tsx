@@ -1,5 +1,5 @@
 "use client";
-import { InvoiceFileIcon } from "@/Components/SvgContainer/SvgContainer";
+import { FilterIcon, InvoiceFileIcon } from "@/Components/SvgContainer/SvgContainer";
 import { DropdownMenu, DropdownMenuContent, DropdownMenuLabel, DropdownMenuTrigger } from "@/Components/ui/dropdown-menu";
 import Pagination from "@/Shared/Pagination";
 import { TInvoice } from "@/Types";
@@ -186,10 +186,10 @@ const InvoiceDataTab = ({ invoices }: { invoices: TInvoice[] }) => {
 
                     <div className="relative w-72">
                         <button
-                            className="px-4 py-2 border border-gray-300 rounded-md text-left bg-white flex justify-end gap-2 items-center shadow-sm"
+                            className="px-4 py-3 border border-gray-300 rounded-md text-left bg-white flex justify-end gap-2 items-center shadow-sm"
                             onClick={() => setIsOpen(!isOpen)}
                         >
-                            <span>{filterCycle}</span>
+                            <span className="flex items-center gap-2 text-[12px] text-[#004D3F] font-semibold"><FilterIcon/> {filterCycle} </span>
                             <svg className={`w-4 h-4 transform transition-transform ${isOpen ? "rotate-180" : ""}`} fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
                             </svg>
@@ -199,13 +199,13 @@ const InvoiceDataTab = ({ invoices }: { invoices: TInvoice[] }) => {
                                 {filterOptions.map((option) => (
                                     <li
                                         key={option}
-                                        className="px-4 py-2 hover:bg-[#004D3F] hover:text-white cursor-pointer transition"
+                                        className="px-4 py-2 hover:bg-[#004D3F] hover:text-white text-[12px] cursor-pointer transition"
                                         onClick={() => {
                                             setFilterCycle(option);
                                             setIsOpen(false);
                                         }}
                                     >
-                                        {option}
+                                         {option}
                                     </li>
                                 ))}
                             </ul>

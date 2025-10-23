@@ -28,11 +28,11 @@ const DashboardNotificationPage = () => {
             />
 
             <div className="bg-[#FBFBFB] px-6 py-8 rounded-3xl">
-                <div className="flex items-center border pl-4 gap-2 border-gray-500/30 h-[46px] rounded-full overflow-hidden max-w-[200px] w-full">
+                <div className="flex items-center border pl-4 gap-2 border-gray-500/30 h-[46px] rounded-full overflow-hidden max-w-[250px] w-full">
                     <SearchIcon color="#1A1C1E" />
                     <input
                         type="text"
-                        placeholder="Search"
+                        placeholder="Search Notification"
                         className="w-full h-full outline-none text-gray-500 bg-transparent placeholder-gray-500 text-sm"
                         value={searchText}
                         onChange={(e) => setSearchText(e.target.value)}

@@ -1,5 +1,6 @@
 [
     {
+        "id" : 1,
         "name": "Project 2025",
         "size": "5 Mb",
         "items": "6 items",
@@ -7,13 +8,15 @@
         "color_style": "dark_green"
     },
     {
-        "name": "Project 2025",
+        "id" : 2,
+        "name": "Project 2024",
         "size": "5 Mb",
         "items": "6 items",
         "last_opened": "Opened 4 hours ago",
         "color_style": "dark_green"
     },
     {
+        "id" : 3,
         "name": "Company Documents",
         "size": "5 Mb",
         "items": "6 items",
@@ -21,13 +24,15 @@
         "color_style": "dark_green"
     },
     {
-        "name": "Legal & Compliance",
+        "id" : 4,
+        "name": "Legal and Compliance",
         "size": "5 Mb",
         "items": "29 items",
         "last_opened": "Opened today",
         "color_style": "light_green"
     },
     {
+        "id" : 5,
         "name": "Product Designs",
         "size": "5 Mb",
         "items": "29 items",
@@ -35,6 +40,7 @@
         "color_style": "light_green"
     },
     {
+        "id" : 6,
         "name": "Travel Receipts",
         "size": "5 Mb",
         "items": "6 items",
@@ -42,27 +48,31 @@
         "color_style": "dark_green"
     },
     {
-        "name": "Travel Receipts",
+        "id" : 7,
+        "name": "Travel Receipts 2",
         "size": "5 Mb",
         "items": "6 items",
         "last_opened": "Opened today",
         "color_style": "dark_green"
     },
     {
-        "name": "Travel Receipts",
+        "id" : 8,
+        "name": "Travel Receipts 3",
         "size": "5 Mb",
         "items": "29 items",
         "last_opened": "Opened today",
         "color_style": "red"
     },
     {
-        "name": "Project 2025",
+        "id" : 9,
+        "name": "Project 2023",
         "size": "5 Mb",
         "items": "6 items",
         "last_opened": "Opened 4 hours ago",
         "color_style": "dark_green"
     },
     {
+        "id" : 10,
         "name": "Monthly Reports",
         "size": "5 Mb",
         "items": "29 items",
@@ -70,16 +80,18 @@
         "color_style": "light_green"
     },
     {
-        "name": "Company Documents",
+        "id" : 11,
+        "name": "Agency Documents",
         "size": "5 Mb",
         "items": "29 items",
         "last_opened": "Opened 3 hours ago",
         "color_style": "light_green"
     },
     {
-        "name": "Legal & Compliance",
-        "size": "5 Mb",
-        "items": "6 items",
+        "id" : 12,
+        "name": "Legal and Compliance 2",
+        "size": "0 Mb",
+        "items": "0 items",
         "last_opened": "Opened today",
         "color_style": "dark_green"
     }

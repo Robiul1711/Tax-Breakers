@@ -88,7 +88,7 @@ const DashboardInvoiceDetailsPage = async ({ params }: { params: { id: string | 
 
 
     return (
-        <div className=" bg-gray-50 min-h-screen p-4 md:p-10">
+        <div className=" bg-gray-50 min-h-screen p-4 md:px-24">
             <div className="flex justify-center">
                 <div className="w-full bg-white py-12 px-18 shadow-lg border border-gray-100 print:shadow-none print:border-none">
                     <div className="flex justify-between items-start mb-10">
