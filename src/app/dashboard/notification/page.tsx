@@ -6,6 +6,7 @@ import PageHeading from "@/Components/PageHeading/PageHeading";
 import { useCallback, useState } from "react";
 import { SearchIcon } from "lucide-react";
 import Pagination from "@/Shared/Pagination";
+import DateRangePicker from "@/app/pages/dashboard/dateRangePicker/DateRangePicker";
 
 const DashboardNotificationPage = () => {
     const [searchText, setSearchText] = useState('')
@@ -28,15 +29,18 @@ const DashboardNotificationPage = () => {
             />
 
             <div className="bg-[#FBFBFB] px-6 py-8 rounded-3xl">
-                <div className="flex items-center border pl-4 gap-2 border-gray-500/30 h-[46px] rounded-full overflow-hidden max-w-[250px] w-full">
-                    <SearchIcon color="#1A1C1E" />
-                    <input
-                        type="text"
-                        placeholder="Search Notification"
-                        className="w-full h-full outline-none text-gray-500 bg-transparent placeholder-gray-500 text-sm"
-                        value={searchText}
-                        onChange={(e) => setSearchText(e.target.value)}
-                    />
+                <div className="flex justify-between items-center gap-8">
+                    <div className="flex items-center border pl-4 gap-2 border-gray-500/30 h-[46px] rounded-full overflow-hidden max-w-[250px] w-full">
+                        <SearchIcon color="#1A1C1E" />
+                        <input
+                            type="text"
+                            placeholder="Search Notification"
+                            className="w-full h-full outline-none text-gray-500 bg-transparent placeholder-gray-500 text-sm"
+                            value={searchText}
+                            onChange={(e) => setSearchText(e.target.value)}
+                        />
+                    </div>
+                    <DateRangePicker />
                 </div>
 
                 <div className="flex flex-col gap-6 mt-8">
