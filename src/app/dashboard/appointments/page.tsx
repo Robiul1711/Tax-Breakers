@@ -35,9 +35,9 @@ const BookAppointmentPage = async () => {
 
   console.log(appointmentData);
   return (
-    <div>
+    <div className='w-full'>
       <div className='bg-[#FBFBFB] p-8 rounded-2xl'>
-        <div className=' flex justify-between items-center'>
+        <div className='flex justify-between items-center'>
           <div>
             <h1 className='text-4xl font-semibold mb-2'>Upcoming  Appointments</h1>
             <p className='text-[#677489] tracking-widest'>Easily schedule tax or accounting chats from your dashboard to manage your finances!</p>
