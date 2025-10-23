@@ -9,7 +9,9 @@
     "service_type": "Tax Preparation",
     "time_and_date": "2025-10-25T10:00:00",
     "duration": "1 hour",
-    "message": "Need help with annual tax filing for small business"
+    "message": "Need help with annual tax filing for small business",
+    "status": "pending",
+    "files": ["business_license.pdf", "tax_documents.pdf", "financial_statements.pdf"]
   },
   {
     "id": 2,
@@ -21,7 +23,9 @@
     "service_type": "Investment Planning",
     "time_and_date": "2025-10-26T14:30:00",
     "duration": "2 hours",
-    "message": "Looking for retirement investment advice"
+    "message": "Looking for retirement investment advice",
+    "status": "completed",
+    "files": ["retirement_accounts.pdf", "investment_portfolio.pdf", "income_details.pdf"]
   },
   {
     "id": 3,
@@ -33,7 +37,9 @@
     "service_type": "Internal Audit",
     "time_and_date": "2025-10-27T09:15:00",
     "duration": "3 hours",
-    "message": "Require internal audit consultation for manufacturing company"
+    "message": "Require internal audit consultation for manufacturing company",
+    "status": "pending",
+    "files": ["internal_policies.pdf", "financial_records.pdf", "audit_reports.pdf"]
   },
   {
     "id": 4,
@@ -45,7 +51,9 @@
     "service_type": "Accounts Management",
     "time_and_date": "2025-10-28T11:00:00",
     "duration": "1.5 hours",
-    "message": "Need help setting up accounting software"
+    "message": "Need help setting up accounting software",
+    "status": "completed",
+    "files": ["chart_of_accounts.pdf", "business_details.pdf", "previous_records.pdf"]
   },
   {
     "id": 5,
@@ -57,7 +65,9 @@
     "service_type": "Tax Consultation",
     "time_and_date": "2025-10-29T13:45:00",
     "duration": "1 hour",
-    "message": "Questions about deductible business expenses"
+    "message": "Questions about deductible business expenses",
+    "status": "pending",
+    "files": ["expense_receipts.pdf", "business_log.pdf", "tax_queries.pdf"]
   },
   {
     "id": 6,
@@ -69,7 +79,9 @@
     "service_type": "Wealth Management",
     "time_and_date": "2025-10-30T15:00:00",
     "duration": "2 hours",
-    "message": "Estate planning and wealth transfer strategies"
+    "message": "Estate planning and wealth transfer strategies",
+    "status": "cancelled",
+    "files": ["estate_documents.pdf", "asset_list.pdf", "will_draft.pdf"]
   },
   {
     "id": 7,
@@ -81,7 +93,9 @@
     "service_type": "Compliance Audit",
     "time_and_date": "2025-11-01T10:30:00",
     "duration": "2.5 hours",
-    "message": "Need compliance audit for healthcare organization"
+    "message": "Need compliance audit for healthcare organization",
+    "status": "pending",
+    "files": ["compliance_certificates.pdf", "healthcare_licenses.pdf", "regulatory_docs.pdf"]
   },
   {
     "id": 8,
@@ -93,7 +107,9 @@
     "service_type": "Payroll Management",
     "time_and_date": "2025-11-02T09:00:00",
     "duration": "1 hour",
-    "message": "Setting up payroll system for new restaurant"
+    "message": "Setting up payroll system for new restaurant",
+    "status": "completed",
+    "files": ["employee_data.pdf", "payroll_settings.pdf", "tax_forms.pdf"]
   },
   {
     "id": 9,
@@ -105,7 +121,9 @@
     "service_type": "IRS Representation",
     "time_and_date": "2025-11-03T14:00:00",
     "duration": "1.5 hours",
-    "message": "Need representation for IRS audit"
+    "message": "Need representation for IRS audit",
+    "status": "pending",
+    "files": ["irs_notice.pdf", "tax_returns.pdf", "supporting_docs.pdf"]
   },
   {
     "id": 10,
@@ -117,7 +135,9 @@
     "service_type": "Retirement Planning",
     "time_and_date": "2025-11-04T11:30:00",
     "duration": "2 hours",
-    "message": "Planning for early retirement at age 55"
+    "message": "Planning for early retirement at age 55",
+    "status": "completed",
+    "files": ["retirement_plan.pdf", "pension_details.pdf", "savings_info.pdf"]
   },
   {
     "id": 11,
@@ -129,7 +149,9 @@
     "service_type": "Financial Audit",
     "time_and_date": "2025-11-05T13:15:00",
     "duration": "3 hours",
-    "message": "Annual financial audit for tech startup"
+    "message": "Annual financial audit for tech startup",
+    "status": "pending",
+    "files": ["financial_statements.pdf", "bank_statements.pdf", "invoice_records.pdf"]
   },
   {
     "id": 12,
@@ -141,7 +163,9 @@
     "service_type": "QuickBooks Setup",
     "time_and_date": "2025-11-06T10:45:00",
     "duration": "2 hours",
-    "message": "Need QuickBooks setup and training"
+    "message": "Need QuickBooks setup and training",
+    "status": "cancelled",
+    "files": ["current_records.pdf", "business_info.pdf", "accounting_needs.pdf"]
   },
   {
     "id": 13,
@@ -153,7 +177,9 @@
     "service_type": "Business Tax Planning",
     "time_and_date": "2025-11-07T15:30:00",
     "duration": "1 hour",
-    "message": "Tax strategy for LLC conversion to S-Corp"
+    "message": "Tax strategy for LLC conversion to S-Corp",
+    "status": "pending",
+    "files": ["llc_documents.pdf", "business_structure.pdf", "tax_history.pdf"]
   },
   {
     "id": 14,
@@ -165,7 +191,9 @@
     "service_type": "College Planning",
     "time_and_date": "2025-11-08T09:30:00",
     "duration": "1.5 hours",
-    "message": "Education funding strategies for three children"
+    "message": "Education funding strategies for three children",
+    "status": "completed",
+    "files": ["college_savings.pdf", "family_finances.pdf", "education_plans.pdf"]
   },
   {
     "id": 15,
@@ -177,7 +205,9 @@
     "service_type": "Operational Audit",
     "time_and_date": "2025-11-09T11:00:00",
     "duration": "2 hours",
-    "message": "Operational efficiency audit for manufacturing plant"
+    "message": "Operational efficiency audit for manufacturing plant",
+    "status": "pending",
+    "files": ["operational_data.pdf", "process_flows.pdf", "efficiency_metrics.pdf"]
   },
   {
     "id": 16,
@@ -189,7 +219,9 @@
     "service_type": "Accounts Reconciliation",
     "time_and_date": "2025-11-10T14:15:00",
     "duration": "1 hour",
-    "message": "Bank reconciliation issues for small business"
+    "message": "Bank reconciliation issues for small business",
+    "status": "completed",
+    "files": ["bank_statements.pdf", "ledger_records.pdf", "reconciliation_report.pdf"]
   },
   {
     "id": 17,
@@ -201,7 +233,9 @@
     "service_type": "International Tax",
     "time_and_date": "2025-11-11T10:00:00",
     "duration": "2 hours",
-    "message": "Tax implications of overseas business operations"
+    "message": "Tax implications of overseas business operations",
+    "status": "pending",
+    "files": ["international_operations.pdf", "foreign_accounts.pdf", "tax_treaties.pdf"]
   },
   {
     "id": 18,
@@ -213,7 +247,9 @@
     "service_type": "Debt Management",
     "time_and_date": "2025-11-12T13:45:00",
     "duration": "1.5 hours",
-    "message": "Strategies to pay off business and personal debt"
+    "message": "Strategies to pay off business and personal debt",
+    "status": "cancelled",
+    "files": ["debt_statements.pdf", "income_details.pdf", "budget_plan.pdf"]
   },
   {
     "id": 19,
@@ -225,7 +261,9 @@
     "service_type": "IT Audit",
     "time_and_date": "2025-11-13T15:00:00",
     "duration": "3 hours",
-    "message": "Cybersecurity and IT controls audit"
+    "message": "Cybersecurity and IT controls audit",
+    "status": "pending",
+    "files": ["it_policies.pdf", "security_protocols.pdf", "system_diagrams.pdf"]
   },
   {
     "id": 20,
@@ -237,7 +275,9 @@
     "service_type": "Financial Reporting",
     "time_and_date": "2025-11-14T09:15:00",
     "duration": "2 hours",
-    "message": "Monthly financial statement preparation help"
+    "message": "Monthly financial statement preparation help",
+    "status": "completed",
+    "files": ["trial_balance.pdf", "transaction_data.pdf", "report_templates.pdf"]
   },
   {
     "id": 21,
@@ -249,7 +289,9 @@
     "service_type": "Estate Tax Planning",
     "time_and_date": "2025-11-15T11:30:00",
     "duration": "2 hours",
-    "message": "Estate tax minimization strategies"
+    "message": "Estate tax minimization strategies",
+    "status": "pending",
+    "files": ["estate_assets.pdf", "will_documents.pdf", "tax_estimates.pdf"]
   },
   {
     "id": 22,
@@ -261,7 +303,9 @@
     "service_type": "Risk Management",
     "time_and_date": "2025-11-16T14:00:00",
     "duration": "1 hour",
-    "message": "Insurance and risk assessment for family business"
+    "message": "Insurance and risk assessment for family business",
+    "status": "completed",
+    "files": ["insurance_policies.pdf", "risk_assessment.pdf", "business_assets.pdf"]
   },
   {
     "id": 23,
@@ -273,7 +317,9 @@
     "service_type": "Forensic Audit",
     "time_and_date": "2025-11-17T10:45:00",
     "duration": "4 hours",
-    "message": "Suspected embezzlement investigation required"
+    "message": "Suspected embezzlement investigation required",
+    "status": "pending",
+    "files": ["suspicious_transactions.pdf", "employee_records.pdf", "financial_trails.pdf"]
   },
   {
     "id": 24,
@@ -285,7 +331,9 @@
     "service_type": "Inventory Management",
     "time_and_date": "2025-11-18T13:00:00",
     "duration": "1.5 hours",
-    "message": "Inventory tracking and accounting system setup"
+    "message": "Inventory tracking and accounting system setup",
+    "status": "cancelled",
+    "files": ["inventory_list.pdf", "current_system.pdf", "requirements_list.pdf"]
   },
   {
     "id": 25,
@@ -297,7 +345,9 @@
     "service_type": "Non-Profit Tax",
     "time_and_date": "2025-11-19T15:30:00",
     "duration": "1 hour",
-    "message": "Tax exemption application for new non-profit"
+    "message": "Tax exemption application for new non-profit",
+    "status": "pending",
+    "files": ["nonprofit_docs.pdf", "mission_statement.pdf", "board_resolution.pdf"]
   },
   {
     "id": 26,
@@ -309,7 +359,9 @@
     "service_type": "Cash Flow Management",
     "time_and_date": "2025-11-20T09:00:00",
     "duration": "2 hours",
-    "message": "Improving cash flow for seasonal business"
+    "message": "Improving cash flow for seasonal business",
+    "status": "completed",
+    "files": ["cash_flow_statements.pdf", "seasonal_data.pdf", "business_plan.pdf"]
   },
   {
     "id": 27,
@@ -321,7 +373,9 @@
     "service_type": "Quality Audit",
     "time_and_date": "2025-11-21T11:15:00",
     "duration": "2.5 hours",
-    "message": "ISO 9001 quality management system audit"
+    "message": "ISO 9001 quality management system audit",
+    "status": "pending",
+    "files": ["quality_manual.pdf", "process_docs.pdf", "previous_audits.pdf"]
   },
   {
     "id": 28,
@@ -333,7 +387,9 @@
     "service_type": "Budget Preparation",
     "time_and_date": "2025-11-22T14:30:00",
     "duration": "2 hours",
-    "message": "Annual budget preparation assistance"
+    "message": "Annual budget preparation assistance",
+    "status": "completed",
+    "files": ["historical_data.pdf", "revenue_projections.pdf", "expense_forecasts.pdf"]
   },
   {
     "id": 29,
@@ -345,7 +401,9 @@
     "service_type": "Sales Tax",
     "time_and_date": "2025-11-23T10:00:00",
     "duration": "1 hour",
-    "message": "Multi-state sales tax compliance questions"
+    "message": "Multi-state sales tax compliance questions",
+    "status": "pending",
+    "files": ["multi_state_sales.pdf", "nexus_analysis.pdf", "tax_certificates.pdf"]
   },
   {
     "id": 30,
@@ -357,6 +415,8 @@
     "service_type": "Business Valuation",
     "time_and_date": "2025-11-24T13:45:00",
     "duration": "3 hours",
-    "message": "Business valuation for potential sale"
+    "message": "Business valuation for potential sale",
+    "status": "cancelled",
+    "files": ["financial_history.pdf", "asset_appraisal.pdf", "market_analysis.pdf"]
   }
 ]

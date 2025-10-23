@@ -20,6 +20,17 @@ const AppointmentTable = ({
 }) => {
     const router = useRouter();
 
+    const getStatusColor = (status: string) => {
+        switch (status) {
+            case 'Cancelled':
+                return 'bg-[#FDCED1] w-full text-[#F73541]';
+            case 'Pending':
+                return 'bg-[#FFE3B4] text-[#B27000] w-full';
+            case 'Completed':
+                return 'bg-[#004D3F] text-[#A7EB94] w-full';
+        }
+    };
+
     const formatDate = (dateString: string) => {
         const date = new Date(dateString);
         return date.toLocaleString("en-US", {
@@ -32,33 +43,10 @@ const AppointmentTable = ({
         });
     };
 
+
     const columns = [
-        columnHelper.accessor("id", {
-            header: "ID",
-            cell: (info) => <span>{info.getValue()}</span>,
-        }),
-        columnHelper.accessor("full_name", {
-            header: "Full Name",
-            cell: (info) => (
-                <span className="font-medium text-gray-800">{info.getValue()}</span>
-            ),
-        }),
-        columnHelper.accessor("email_address", {
-            header: "Email",
-            cell: (info) => (
-                <span className="text-gray-600">{info.getValue()}</span>
-            ),
-        }),
-        columnHelper.accessor("phone_number", {
-            header: "Phone",
-            cell: (info) => (
-                <span className="text-gray-600">{info.getValue()}</span>
-            ),
-        }),
-        columnHelper.accessor("location", {
-            header: "Location",
-            cell: (info) => <span>{info.getValue()}</span>,
-        }),
+
+
         columnHelper.accessor("consultant_type", {
             header: "Consultant Type",
             cell: (info) => <span>{info.getValue()}</span>,
@@ -67,15 +55,25 @@ const AppointmentTable = ({
             header: "Service Type",
             cell: (info) => <span>{info.getValue()}</span>,
         }),
+        columnHelper.accessor("duration", {
+            header: "Duration",
+            cell: (info) => <span className="text-[#004D3F]">{info.getValue()}</span>,
+        }),
         columnHelper.accessor("time_and_date", {
-            header: "Appointment Time",
+            header: "Date & Time",
             cell: (info) => (
                 <span className="text-gray-700">{formatDate(info.getValue())}</span>
             ),
         }),
-        columnHelper.accessor("duration", {
-            header: "Duration",
-            cell: (info) => <span>{info.getValue()}</span>,
+        columnHelper.accessor("status", {
+            header: "Status",
+            cell: (info) => (
+                <span
+                    className={`${getStatusColor(info.getValue())} py-1 rounded-full text-sm font-medium inline-block`}
+                >
+                    {info.getValue()}
+                </span>
+            ),
         }),
         columnHelper.display({
             id: "action",
@@ -138,7 +136,7 @@ const AppointmentTable = ({
 
     return (
         <div className="w-full overflow-x-auto">
-            <table className="w-full text-sm text-left border-collapse">
+            <table className="w-full text-sm text-center border-collapse">
                 <thead className="bg-[#E7F9DE] text-gray-700 font-semibold">
                     {table.getHeaderGroups().map((headerGroup) => (
                         <tr key={headerGroup.id}>
