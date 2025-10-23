@@ -9,4 +9,6 @@ export type TAppointments = {
   time_and_date: string;
   duration: string;
   message: string;
+  status: string;
+  files: string[];
 };
