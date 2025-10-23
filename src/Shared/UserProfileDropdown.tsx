@@ -130,7 +130,7 @@ const DropdownMenu = ({ children, trigger }: DropdownMenuProps) => {
       </div>
       {isOpen && (
         <div
-          className="origin-top-right absolute right-0 mt-2 w-72 rounded-xl shadow-xl bg-white dark:bg-zinc-900 ring-1 ring-black ring-opacity-5 focus:outline-none z-50 animate-in fade-in-0 zoom-in-95 p-2"
+          className="origin-top-right absolute right-0 mt-2 w-72 rounded-xl shadow bg-white border border-gray-200   z-50 animate-in fade-in-0 zoom-in-95 p-2"
           role="menu"
           aria-orientation="vertical"
         >
@@ -169,7 +169,7 @@ export default function UserProfileDropdown({logout}: {logout: () => void}) {
    
       <DropdownMenu
         trigger={
-          <button className="flex items-center space-x-3 p-2 rounded-lg hover:bg-[#ECF4E9] d transition-colors">
+          <button className="flex items-center space-x-3 p-2 rounded-lg hover:bg-[#ECF4E9] transition-colors">
             <div className="w-8 h-8 bg-gradient-to-br from-blue-500 to-purple-600 rounded-full flex items-center justify-center text-white font-semibold text-sm">
               JD
             </div>
@@ -184,7 +184,7 @@ export default function UserProfileDropdown({logout}: {logout: () => void}) {
           </button>
         }
       >
-        <div className="px-3 py-3 border-b border-zinc-200 dark:border-zinc-700">
+        <div className="px-3 py-3 border-b border-zinc-200 ">
           <div className="flex items-center space-x-3">
             <div className="w-10 h-10 bg-gradient-to-br from-blue-500 to-purple-600 rounded-full flex items-center justify-center text-white font-semibold">
               JD
