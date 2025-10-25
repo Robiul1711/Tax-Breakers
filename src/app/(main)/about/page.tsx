@@ -57,8 +57,7 @@ const AboutPage = () => {
                             className="mt-4 sm:mt-6 text-center sm:text-left"
                         />
                         <p className="text-[#677489] mt-4 sm:mt-6 text-center sm:text-left text-sm sm:text-base">
-                            At
-                            <span className="text-[#101115] font-semibold">MY TAX BREAKER</span>
+                            At <span className="text-[#101115] font-semibold">MY TAX BREAKER</span>
                             , we believe that financial management doesn’t have to be
                             complicated. Our mission is simple: to simplify finance so you can
                             focus on what truly matters—growing your success.

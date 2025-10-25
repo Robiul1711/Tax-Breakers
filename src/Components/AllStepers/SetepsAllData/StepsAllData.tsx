@@ -9,6 +9,7 @@ import img7 from "@/assets/stepsimages/7.png";
 import img8 from "@/assets/stepsimages/8.png";
 import img9 from "@/assets/stepsimages/9.png";
 import img10 from "@/assets/stepsimages/10.png";
+
 interface StepData {
   id: number;
   title: string;
