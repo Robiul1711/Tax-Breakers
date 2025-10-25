@@ -5,6 +5,8 @@ import { useForm, FieldValues } from "react-hook-form";
 import CommonButton from "@/common/CommonButton";
 import { DownloadBoxIcon, FileUploadIcon } from "@/Components/SvgContainer/SvgContainer";
 import { FiX } from "react-icons/fi";
+import { AnimatePresence, motion } from "framer-motion";
+import AppointmentSuccessModal from "../appointmentSuccessModal/AppointmentSuccessModal";
 
 interface IFormInputProps {
     label: string;
@@ -95,6 +97,9 @@ const consultants = [
 const AppointmentForm = () => {
     const fileInputRef = useRef<HTMLInputElement>(null!)
     const [file, setFile] = useState(null as FileList | null);
+    const [isSubmitting, setIsSubmitting] = useState(false)
+    const [showSuccess, setShowSuccess] = useState(false)
+    const [formData, setFormData] = useState<Record<string, any> | null>(null);
 
     const handleUpload = () => {
         fileInputRef.current.click();
@@ -108,14 +113,40 @@ const AppointmentForm = () => {
     } = useForm();
 
     const onSubmit = (data: FieldValues) => {
-        const formData = new FormData()
-        
-        console.log("Appointment Data:", data);
-        reset();
+        try {
+            setIsSubmitting(true);
+
+            // store plain form data (for modal display)
+            setFormData(data);
+
+            // create FormData only if you need to send files somewhere
+            const formPayload = new FormData();
+            Object.entries(data).forEach(([key, value]) => {
+                formPayload.append(key, value as string);
+            });
+
+            if (file) {
+                Array.from(file).forEach((f) => formPayload.append("files", f));
+            }
+
+            console.log("FormData entries:");
+            for (const [key, value] of formPayload.entries()) {
+                console.log(key, value);
+            }
+
+            // show modal after storing form data
+            setShowSuccess(true);
+            reset();
+            setFile(null);
+        } catch (error) {
+            console.log(error);
+        } finally {
+            setIsSubmitting(false);
+        }
     };
 
     return (
-        <div className="bg-[#FBFBFB] rounded-3xl p-8">
+        <div className="bg-[#FBFBFB] rounded-3xl p-8 relative">
             <form onSubmit={handleSubmit(onSubmit)} className="space-y-6">
 
                 {/* Basic Info */}
@@ -251,6 +282,9 @@ const AppointmentForm = () => {
             </form>
 
 
+            {showSuccess && formData && (
+                <AppointmentSuccessModal formData={formData} onClose={() => setShowSuccess(false)} />
+            )}
         </div>
     );
 };
