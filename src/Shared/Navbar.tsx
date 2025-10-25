@@ -6,6 +6,17 @@ import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { FiMenu, FiX } from "react-icons/fi";
+import { motion, AnimatePresence } from "framer-motion";
+
+
+
+const languages = [
+  { code: "en", label: "English" },
+  { code: "bn", label: "বাংলা" },
+  { code: "es", label: "Español" },
+  { code: "fr", label: "Français" },
+  { code: "de", label: "Deutsch" },
+];
 
 const navLinks = [
   { path: "/", name: "Home" },
@@ -21,7 +32,8 @@ const navLinks = [
 const Navbar = () => {
   const pathname = usePathname();
   const [isOpen, setIsOpen] = useState(false);
-
+  const [open, setOpen] = useState(false);
+  const [selected, setSelected] = useState("en");
   const closeDrawer = () => setIsOpen(false);
 
   return (
@@ -38,11 +50,10 @@ const Navbar = () => {
               <Link
                 key={nav.path}
                 href={nav.path}
-                className={`font-medium transition-all duration-300 ${
-                  pathname === nav.path
-                    ? "text-[#085441] text-[18px] font-semibold"
-                    : "text-[#595959]"
-                } hover:text-[#085441]`}
+                className={`font-medium transition-all duration-300 ${pathname === nav.path
+                  ? "text-[#085441] text-[18px] font-semibold"
+                  : "text-[#595959]"
+                  } hover:text-[#085441]`}
               >
                 {nav.name}
               </Link>
@@ -52,14 +63,53 @@ const Navbar = () => {
           {/* Desktop Right */}
           <div className="hidden lg:flex justify-center items-center gap-[18px]">
             <Link
-              href={"/auth/stepers"}
+              href={"/auth/login"}
               className="bg-[#ECF4E9] hover:bg-[#085441] text-[#085441] transition-all duration-300 hover:text-white w-[50px] h-[50px] rounded-full flex items-center justify-center"
             >
               <UserICon />
             </Link>
-            <button className="bg-[#ECF4E9] hover:bg-[#085441] text-[#085441] transition-all duration-300 hover:text-white rounded-full px-4 py-3 flex justify-center items-center gap-[6px]">
-              <GlobIcon /> <span>EN</span>
-            </button>
+
+
+            <div className="relative inline-block">
+              {/* Select Trigger */}
+              <motion.button
+                whileTap={{ scale: 0.97 }}
+                onClick={() => setOpen(!open)}
+                className="bg-[#ECF4E9] hover:bg-[#085441] text-[#085441] hover:text-white transition-all duration-300 rounded-full px-4 py-3 flex items-center gap-2 shadow-md"
+              >
+                <GlobIcon />
+                <span className="font-medium uppercase">{selected}</span>
+              </motion.button>
+
+              {/* Dropdown */}
+              <AnimatePresence>
+                {open && (
+                  <motion.ul
+                    initial={{ opacity: 0, y: -10, scale: 0.95 }}
+                    animate={{ opacity: 1, y: 0, scale: 1 }}
+                    exit={{ opacity: 0, y: -10, scale: 0.95 }}
+                    transition={{ duration: 0.2 }}
+                    className="absolute mt-3 right-0 bg-white/80 backdrop-blur-lg shadow-xl rounded-2xl overflow-hidden border border-white/40 w-40 z-50"
+                  >
+                    {languages.map((lang) => (
+                      <motion.li
+                        key={lang.code}
+                        whileHover={{ backgroundColor: "#085441", color: "#fff" }}
+                        onClick={() => {
+                          setSelected(lang.code);
+                          setOpen(false);
+                        }}
+                        className="px-4 py-2 text-sm text-[#085441] cursor-pointer transition-all"
+                      >
+                        {lang.label}
+                      </motion.li>
+                    ))}
+                  </motion.ul>
+                )}
+              </AnimatePresence>
+            </div>
+
+
           </div>
 
           {/* Mobile Menu Button */}
@@ -82,9 +132,8 @@ const Navbar = () => {
 
       {/* ✅ Mobile Drawer Working */}
       <div
-        className={`fixed top-0 right-0 h-full w-[260px] bg-[#f8fdf4] shadow-lg z-50 transition-transform duration-300 ${
-          isOpen ? "translate-x-0" : "translate-x-full"
-        }`}
+        className={`fixed top-0 right-0 h-full w-[260px] bg-[#f8fdf4] shadow-lg z-50 transition-transform duration-300 ${isOpen ? "translate-x-0" : "translate-x-full"
+          }`}
       >
         <div className="flex justify-between items-center p-4 pt-12 border-b">
           <FiX className="text-xl cursor-pointer" onClick={closeDrawer} />
@@ -96,9 +145,8 @@ const Navbar = () => {
               key={nav.path}
               href={nav.path}
               onClick={closeDrawer}
-              className={`font-medium text-lg ${
-                pathname === nav.path ? "text-[#085441] font-semibold" : "text-[#595959]"
-              } hover:text-[#085441] transition-all duration-300`}
+              className={`font-medium text-lg ${pathname === nav.path ? "text-[#085441] font-semibold" : "text-[#595959]"
+                } hover:text-[#085441] transition-all duration-300`}
             >
               {nav.name}
             </Link>
