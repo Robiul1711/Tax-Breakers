@@ -5,10 +5,6 @@ import { motion, AnimatePresence } from "framer-motion";
 import CommonButton from "@/common/CommonButton";
 import { CreateNewFolderIcon } from "@/Components/SvgContainer/SvgContainer";
 
-type FormData = {
-    confirm: boolean;
-};
-
 const CreateNewFolderModal = () => {
     const [isOpen, setIsOpen] = useState(false);
 

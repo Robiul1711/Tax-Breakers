@@ -8,7 +8,7 @@ const PageHeading = ({
     title,
     breadcrumb,
 }: {
-    title: string;
+    title?: string;
     breadcrumb: BreadcrumbItem[];
 }) => {
     return (

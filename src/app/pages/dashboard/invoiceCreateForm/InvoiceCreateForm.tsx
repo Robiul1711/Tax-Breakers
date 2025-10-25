@@ -159,15 +159,15 @@ const InvoiceCreateForm = () => {
         tax_amount: 0,
         gross_total: 0,
         additional_costs_deductions: {
-            withholding_amount: '',
-            shipping_cost: '',
+            withholding_amount: 0,
+            shipping_cost: 0,
             payment_method: 'Bank 0-5 days',
         },
         invoice_totals: {
-            net_total: 0.00,
-            discount_total: 0.00,
-            vat_total: 0.00,
-            gross_total: 0.00,
+            net_total: 0,
+            discount_total: 0,
+            vat_total: 0,
+            gross_total: 0,
         }
     };
 
@@ -428,7 +428,8 @@ const InvoiceCreateForm = () => {
                     </button>
                     <div className="flex items-center gap-3">
                         <CommonButton variant="secondary">Save Draft</CommonButton>
-                        <CommonButton type="submit" variant="primary" className="ml-4"><SendInvoiceIcon /> Send Invoice</CommonButton>
+                       
+                    <CommonButton type="submit" variant="primary" className="ml-4"><SendInvoiceIcon /> Send Invoice</CommonButton>
                     </div>
                 </div>
             </form>

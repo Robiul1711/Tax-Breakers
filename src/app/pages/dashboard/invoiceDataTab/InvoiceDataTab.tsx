@@ -1,4 +1,5 @@
 "use client";
+import { FilterIcon, InvoiceFileIcon } from "@/Components/SvgContainer/SvgContainer";
 import { DropdownMenu, DropdownMenuContent, DropdownMenuLabel, DropdownMenuTrigger } from "@/Components/ui/dropdown-menu";
 import Pagination from "@/Shared/Pagination";
 import { TInvoice } from "@/Types";
@@ -8,7 +9,8 @@ import {
     getCoreRowModel,
     useReactTable,
 } from "@tanstack/react-table";
-import React, { useState, useEffect, useRef, useCallback } from "react";
+import { useRouter } from "next/navigation";
+import React, { useState, useEffect, useCallback } from "react";
 const columnHelper = createColumnHelper<TInvoice>();
 
 const InvoiceDataTab = ({ invoices }: { invoices: TInvoice[] }) => {
@@ -20,9 +22,8 @@ const InvoiceDataTab = ({ invoices }: { invoices: TInvoice[] }) => {
     const [currentPageData, setCurrentPageData] = useState<TInvoice[]>([]);
     const [dataPerPage, setDataPerPage] = useState(10);
     const [selectedRows, setSelectedRows] = useState<number[]>([]);
-    const headerCheckboxRef = useRef<HTMLInputElement>(null);
     const [isOpen, setIsOpen] = useState(false);
-
+    const router = useRouter()
 
     const handlePageData = useCallback((pageData: TInvoice[]) => {
         setCurrentPageData(pageData);
@@ -42,9 +43,9 @@ const InvoiceDataTab = ({ invoices }: { invoices: TInvoice[] }) => {
         if (searchText.trim() !== "") {
             tempData = tempData.filter(
                 (item) =>
-                    item.doc_id.toLowerCase().includes(searchText.toLowerCase()) ||
-                    item.sender.toLowerCase().includes(searchText.toLowerCase()) ||
-                    item.recipient.toLowerCase().includes(searchText.toLowerCase())
+                    item.basic_information.invoice_id.toLowerCase().includes(searchText.toLowerCase()) ||
+                    item.issuer_details.company_name.toLowerCase().includes(searchText.toLowerCase()) ||
+                    item.recipient_details.recipient_name.toLowerCase().includes(searchText.toLowerCase())
             );
         }
 
@@ -81,17 +82,10 @@ const InvoiceDataTab = ({ invoices }: { invoices: TInvoice[] }) => {
 
     // ✅ Table columns
     const columns = [
-        columnHelper.accessor("doc_id", {
+        columnHelper.accessor("basic_information.invoice_id", {
             id: "doc_id",
             header: () => (
                 <div className="flex items-center gap-2">
-                    <input
-                        ref={headerCheckboxRef}
-                        type="checkbox"
-                        className="checkbox checkbox-sm border-gray-400"
-                        checked={currentPageData.length > 0 && selectedRows.length === currentPageData.length}
-                        onChange={toggleSelectAll}
-                    />
                     <span>Doc ID</span>
                 </div>
             ),
@@ -99,24 +93,21 @@ const InvoiceDataTab = ({ invoices }: { invoices: TInvoice[] }) => {
                 const row = info.row.original;
                 return (
                     <div className="flex items-center gap-2">
-                        <input
-                            type="checkbox"
-                            className="checkbox checkbox-sm border-gray-400"
-                            checked={selectedRows.includes(row.id)}
-                            onChange={() => toggleRow(row.id)}
-                        />
-                        <span className="text-[#5E5E5E]">{row.doc_id}</span>
+                        <div className="bg-[#ECF4E9] rounded-full p-[6px] flex justify-center items-center">
+                            <InvoiceFileIcon />
+                        </div>
+                        <span className="text-[#5E5E5E]">{row.basic_information.invoice_id}</span>
                     </div>
                 );
             },
         }),
-        columnHelper.accessor("date", { header: () => "Date", cell: (info) => <span className="text-[#363B54]">{info.getValue()}</span> }),
-        columnHelper.accessor("sender", { header: () => "Sender", cell: (info) => <span className="text-[#363B54]">{info.getValue()}</span> }),
-        columnHelper.accessor("recipient", { header: () => "Recipient", cell: (info) => <span className="text-[#363B54]">{info.getValue()}</span> }),
+        columnHelper.accessor("basic_information.issue_date", { header: () => "Date", cell: (info) => <span className="text-[#363B54]">{info.getValue()}</span> }),
+        columnHelper.accessor("issuer_details.company_name", { header: () => "Sender", cell: (info) => <span className="text-[#363B54]">{info.getValue()}</span> }),
+        columnHelper.accessor("recipient_details.recipient_name", { header: () => "Recipient", cell: (info) => <span className="text-[#363B54]">{info.getValue()}</span> }),
         columnHelper.accessor("status", {
             header: () => "Status",
             cell: (info) => (
-                <div className={`px-3 py-[6px] text-xs capitalize font-semibold rounded-[6px] w-2/3 mx-auto text-center ${info.getValue() === "paid" ? "bg-[#E7F9DE] border border-[rgba(52,179,16,0.44)]" :
+                <div className={`px-3 py-1.5 text-xs capitalize font-semibold rounded-[6px] w-2/3 mx-auto text-center ${info.getValue() === "paid" ? "bg-[#E7F9DE] border border-[rgba(52,179,16,0.44)]" :
                     info.getValue() === "unpaid" ? "bg-[#FCEAEB] border border-[#F3ADAF]" :
                         info.getValue() === "overdue" ? "bg-[#FCFBEA] border border-[rgba(230,144,0,0.5)]" : "bg-gray-100 text-gray-700"
                     }`}>
@@ -124,28 +115,32 @@ const InvoiceDataTab = ({ invoices }: { invoices: TInvoice[] }) => {
                 </div>
             )
         }),
-        columnHelper.accessor("total", { header: () => "Total (€)", cell: (info) => <span className="text-[#363B54]">{info.getValue()}</span> }),
+        columnHelper.accessor("invoice_totals.gross_total", { header: () => "Total (€)", cell: (info) => <span className="text-[#363B54]">{info.getValue()}</span> }),
         columnHelper.accessor("id", {
-            header: () => "Action", cell: () =>
-            (
-                <DropdownMenu>
-                    <DropdownMenuTrigger asChild>
-                        <button className="text-[#071431] text-xl font-medium cursor-pointer">...</button>
-                    </DropdownMenuTrigger>
+            header: () => "Action",
+            cell: (info) => {
+                const row = info.row.original;
+                return (
+                    <DropdownMenu>
+                        <DropdownMenuTrigger asChild>
+                            <button className="text-[#071431] text-xl font-medium cursor-pointer">...</button>
+                        </DropdownMenuTrigger>
 
-                    <DropdownMenuContent >
-                        <DropdownMenuLabel>
-                            <button className="text-black hover:bg-[#004D3F] w-full cursor-pointer hover:text-white py-2 px-3 rounded-3xl">View Details</button>
-                        </DropdownMenuLabel>
-                        <DropdownMenuLabel>
-                            <button className="bg-white hover:bg-[#004D3F] hover:text-white text-black w-full cursor-pointer py-2 px-3 rounded-3xl">Edit</button>
-                        </DropdownMenuLabel>
-                        <DropdownMenuLabel>
-                            <button className="bg-white w-full cursor-pointer text-red-500 hover:bg-red-500 hover:text-white py-2 px-3 rounded-3xl">Delete</button>
-                        </DropdownMenuLabel>
-                    </DropdownMenuContent>
-                </DropdownMenu>
-            )
+                        <DropdownMenuContent className="rounded-2xl duration-300 p-0">
+                            <DropdownMenuLabel className="p-0">
+                                <button onClick={() => router.push(`/dashboard/invoices/${row?.id}`)} className="text-black hover:bg-[#004D3F] w-full cursor-pointer hover:text-white py-3 px-4 rounded-2xl duration-300">
+                                    View Details</button>
+                            </DropdownMenuLabel>
+                            <DropdownMenuLabel className="p-0">
+                                <button className="bg-white hover:bg-[#004D3F] hover:text-white text-black w-full cursor-pointer py-3 px-4 rounded-2xl duration-300">Edit</button>
+                            </DropdownMenuLabel>
+                            <DropdownMenuLabel className="p-0">
+                                <button className="bg-white w-full cursor-pointer text-red-500 hover:bg-red-500 hover:text-white py-3 px-4 rounded-2xl duration-300">Delete</button>
+                            </DropdownMenuLabel>
+                        </DropdownMenuContent>
+                    </DropdownMenu>
+                )
+            }
         })
     ];
 
@@ -178,7 +173,7 @@ const InvoiceDataTab = ({ invoices }: { invoices: TInvoice[] }) => {
                     ))}
                 </div>
 
-                <div className="flex items-center gap-4">
+                <div className="flex items-center gap-4 w-full justify-end">
                     <div className="flex items-center border pl-4 gap-2 border-gray-500/30 h-[46px] rounded-lg overflow-hidden max-w-[350px] w-full">
                         <input
                             type="text"
@@ -189,32 +184,34 @@ const InvoiceDataTab = ({ invoices }: { invoices: TInvoice[] }) => {
                         />
                     </div>
 
-                    <div className="relative w-72">
-                        <button
-                            className="px-4 py-2 border border-gray-300 rounded-md text-left bg-white flex justify-end gap-2 items-center shadow-sm"
-                            onClick={() => setIsOpen(!isOpen)}
-                        >
-                            <span>{filterCycle}</span>
-                            <svg className={`w-4 h-4 transform transition-transform ${isOpen ? "rotate-180" : ""}`} fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
-                            </svg>
-                        </button>
-                        {isOpen && (
-                            <ul className="absolute z-50 mt-1 w-full bg-white border border-gray-300 rounded-md shadow-lg overflow-hidden">
-                                {filterOptions.map((option) => (
-                                    <li
-                                        key={option}
-                                        className="px-4 py-2 hover:bg-[#004D3F] hover:text-white cursor-pointer transition"
-                                        onClick={() => {
-                                            setFilterCycle(option);
-                                            setIsOpen(false);
-                                        }}
-                                    >
-                                        {option}
-                                    </li>
-                                ))}
-                            </ul>
-                        )}
+                    <div className="relative max-w-[400px]">
+                        <div>
+                            <button
+                                className="px-4 py-3 border border-gray-300 rounded-md text-left bg-white flex justify-end gap-2 items-center shadow-sm"
+                                onClick={() => setIsOpen(!isOpen)}
+                            >
+                                <span className="flex items-center gap-2 text-[12px] text-[#004D3F] font-semibold"><FilterIcon /> {filterCycle} </span>
+                                <svg className={`w-4 h-4 transform transition-transform ${isOpen ? "rotate-180" : ""}`} fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+                                </svg>
+                            </button>
+                            {isOpen && (
+                                <ul className="absolute z-50 mt-1 w-full bg-white border border-gray-300 rounded-md shadow-lg overflow-hidden">
+                                    {filterOptions.map((option) => (
+                                        <li
+                                            key={option}
+                                            className="px-4 py-2 hover:bg-[#004D3F] hover:text-white text-[12px] cursor-pointer transition"
+                                            onClick={() => {
+                                                setFilterCycle(option);
+                                                setIsOpen(false);
+                                            }}
+                                        >
+                                            {option}
+                                        </li>
+                                    ))}
+                                </ul>
+                            )}
+                        </div>
                     </div>
                 </div>
             </div>
