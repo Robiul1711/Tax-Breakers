@@ -1,7 +1,7 @@
 "use client"
 import Image from "next/image";
 import React, { useState } from "react";
-import logo from "@/assets/logo/authLogo.png";
+import logo from "@/assets/images/logo.png";
 import { FieldValues, useForm } from "react-hook-form";
 import Link from "next/link";
 import { EmailIcon, PasswordIcon } from "@/Components/SvgContainer/SvgContainer";
@@ -22,9 +22,9 @@ const LoginForm = () => {
         // Handle login here 
     };
     return (
-        <div className="min-h-screen p-6">
-            <div className="p-4 rounded-2xl auth-bg h-[900px] flex items-center justify-center">
-                <div className="auth-form-bg shadow-[3px_3px_40px_0px_rgba(0,0,0,0.06)] rounded-2xl max-w-xl w-full mx-auto p-10">
+        <div className="min-h-screen auth-bg flex items-center justify-center">
+            <div className="md:p-6 rounded-2xl flex items-center justify-center w-full md:w-auto">
+                <div className="auth-form-bg shadow-[3px_3px_40px_0px_rgba(0,0,0,0.06)] rounded-2xl w-full h-screen md:h-auto md:min-w-xl mx-auto px-6 md:px-10 py-4 ">
                     {/* Top */}
                     <div className="w-full text-center mb-8">
                         <div className="flex justify-center mb-4">
@@ -32,10 +32,10 @@ const LoginForm = () => {
                                 <Image src={logo} height={180} width={160} alt="auth logo" />
                             </Link>
                         </div>
-                        <h1 className="text-3xl font-semibold mb-3 text-gray-800">
+                        <h1 className="lg:text-3xl text-2xl font-semibold mb-3 text-gray-800">
                             Welcome Back.
                         </h1>
-                        <p className="[color:rgba(145,153,146,1)] text-base">
+                        <p className="text-[rgba(145,153,146,1)] lg:text-base text-sm">
                             Welcome back! Please enter your details.
                         </p>
                     </div>
@@ -128,7 +128,7 @@ const LoginForm = () => {
                         </CommonButton>
 
                         {/* OR Separator */}
-                        <div className="flex px-24 items-center my-6">
+                        <div className="flex md:px-24 items-center my-6">
                             <hr className="flex-1 border-gray-300" />
                             <span className="px-3 text-gray-400 text-sm">Or with Sign in</span>
                             <hr className="flex-1 border-gray-300" />

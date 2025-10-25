@@ -49,11 +49,11 @@ const StepOne: React.FC = () => {
               <div
                 key={option.id}
                 onClick={() => field.onChange(option.id)}
-                className={`cursor-pointer select-none border rounded-xl p-5 min-h-[120px] flex gap-3 shadow-sm transition 
+                className={`cursor-pointer select-none border rounded-xl p-5 min-h-[120px] duration-300 flex gap-3 shadow-sm transition 
                   ${
                     field.value === option.id
-                      ? "border-blue-500 bg-blue-50"
-                      : "border-gray-200 hover:border-black/30 bg-white"
+                      ? "border-[#004d3f] bg-[#004d3f12] "
+                      : "border-gray-200 hover:border-[#004d3f] bg-white"
                   }`}
               >
                 <div>
@@ -61,7 +61,7 @@ const StepOne: React.FC = () => {
                     type="checkbox"
                     checked={field.value === option.id}
                     readOnly
-                    className="mt-1 h-5 w-5"
+                    className="mt-1 h-5 w-5 accent-[#004d3f]"
                   />
                   <p className="text-sm text-gray-800 leading-6">{option.label}</p>
                 </div>
@@ -85,7 +85,7 @@ const StepOne: React.FC = () => {
       <div className="bg-white rounded-2xl p-5 shadow-sm">
         <label className="block font-medium text-gray-700 mb-2">Add your Notes</label>
         <textarea
-          rows={4}
+          rows={5}
           placeholder="Write here..."
           className="w-full text-black focus:outline-none border p-2 rounded"
           {...register("stepOneNotes", {
