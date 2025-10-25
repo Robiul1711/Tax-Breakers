@@ -9,8 +9,9 @@ import React from "react";
 import LabelImg from "@/assets/images/Label Img File.png";
 import Image from "next/image";
 import { CopyIcon, CrossIcon, DeleteIcon, DownloadIcon, FolderIcon, MoveRightIcon, RightArrow } from "@/Components/SvgContainer/SvgContainer";
-import { TFile } from "@/Types";
+// import { TFile } from "@/Types";
 import UploadFile from "@/app/dashboard/documents/upload-file/page";
+import { TFile } from "@/Types/documents/documents";
 
 
 
