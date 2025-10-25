@@ -1,7 +1,8 @@
 'use client'
 import { FileUploadIcon } from '@/Components/SvgContainer/SvgContainer';
 import { getAllAppointment } from '@/services/dashboard/appointment/appointment';
-import { TAppointments } from '@/Types';
+import { TAppointments } from '@/Types/appointments/appointments';
+// import { TAppointments } from '@/Types';
 import React, { useEffect, useState } from 'react';
 
 const AppointmentDetails = ({ id }: { id: string }) => {

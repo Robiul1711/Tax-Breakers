@@ -3,7 +3,8 @@ import MyFileTable from "@/app/pages/dashboard/myFileTable/MyFileTable";
 import CommonButton from "@/common/CommonButton";
 import { UploadFileIcon } from "@/Components/SvgContainer/SvgContainer";
 import { getSingleFile } from "@/services/dashboard/file/file";
-import { TDocumentFolder } from "@/Types";
+import { TDocumentFolder } from "@/Types/documents/documents";
+// import { TDocumentFolder } from "@/Types";
 import Link from "next/link";
 
 const DashboardDocumentFolderDetailsPage = async ({ params }: { params: Promise<{ name: string }> }) => {

@@ -1,7 +1,7 @@
 import AppointmentTable from '@/app/pages/dashboard/appointments/AppointmentTable/AppointmentTable'
 import CommonButton from '@/common/CommonButton'
 import { getAllAppointment } from '@/services/dashboard/appointment/appointment'
-import { TAppointments } from '@/Types'
+// import { TAppointments } from '@/Types'
 import Link from 'next/link'
 import React from 'react'
 import Image from "next/image";
@@ -10,7 +10,7 @@ import AppointmentImage from '@/assets/images/OBJECTS.png'
 const BookAppointmentPage = async () => {
 
   const data = await getAllAppointment()
-  const appointmentData: TAppointments[] = data instanceof Error ? [] : data;
+  const appointmentData: any[] = data instanceof Error ? [] : data;
 
   //no data show text and button
   if (!appointmentData || appointmentData.length === 0) {

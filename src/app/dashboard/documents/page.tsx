@@ -6,7 +6,8 @@ import Image from "next/image";
 import MyFileTable from "@/app/pages/dashboard/myFileTable/MyFileTable";
 import CreateNewFolderModal from "@/app/pages/dashboard/createNewFolderModal/CreateNewFolderModal";
 import Link from "next/link";
-import { TFile } from "@/Types";
+import { TFile } from "@/Types/documents/documents";
+// import { TFile } from "@/Types";
 
 type IFolder = { id: number,name: string; size: string; items: string; last_opened: string; color_style: string; }
 

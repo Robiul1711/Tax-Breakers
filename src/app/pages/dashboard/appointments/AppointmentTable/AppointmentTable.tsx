@@ -7,8 +7,9 @@ import {
     createColumnHelper,
 } from "@tanstack/react-table";
 import { useRouter } from "next/navigation";
-import { TAppointments } from "@/Types";
+// import { TAppointments } from "@/Types";
 import { DropdownMenu, DropdownMenuContent, DropdownMenuLabel, DropdownMenuTrigger } from "@/Components/ui/dropdown-menu";
+import { TAppointments } from "@/Types/appointments/appointments";
 
 
 const columnHelper = createColumnHelper<TAppointments>();
