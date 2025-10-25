@@ -106,11 +106,12 @@ const Page = () => {
       <FormProvider {...methods}>
         <form
           onSubmit={methods.handleSubmit(onSubmit)}
-          className="w-full max-w-7xl mx-auto flex flex-col md:flex-row"
+          className="w-full max-w-7xl mx-auto flex flex-col gap-12 md:flex-row"
         >
           {/* Image */}
           <div className="flex-1 flex justify-center">
             <Image
+             className="w-full"
               src={stepsData[currentStep - 1].image}
               alt="Step Illustration"
               width={450}

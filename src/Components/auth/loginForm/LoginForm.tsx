@@ -152,7 +152,7 @@ const LoginForm = () => {
                     {/* Footer */}
                     <p className="text-center text-sm text-gray-600 mt-6">
                         Don’t have an account?{" "}
-                        <Link href="/auth/signup" className="text-green-500 font-medium underline">
+                        <Link href="/auth/stepers" className="text-green-500 font-medium underline">
                             Create Now
                         </Link>
                     </p>
