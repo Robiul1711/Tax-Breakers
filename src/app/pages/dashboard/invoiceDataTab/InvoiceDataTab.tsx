@@ -107,7 +107,7 @@ const InvoiceDataTab = ({ invoices }: { invoices: TInvoice[] }) => {
         columnHelper.accessor("status", {
             header: () => "Status",
             cell: (info) => (
-                <div className={`px-3 py-[6px] text-xs capitalize font-semibold rounded-[6px] w-2/3 mx-auto text-center ${info.getValue() === "paid" ? "bg-[#E7F9DE] border border-[rgba(52,179,16,0.44)]" :
+                <div className={`px-3 py-1.5 text-xs capitalize font-semibold rounded-[6px] w-2/3 mx-auto text-center ${info.getValue() === "paid" ? "bg-[#E7F9DE] border border-[rgba(52,179,16,0.44)]" :
                     info.getValue() === "unpaid" ? "bg-[#FCEAEB] border border-[#F3ADAF]" :
                         info.getValue() === "overdue" ? "bg-[#FCFBEA] border border-[rgba(230,144,0,0.5)]" : "bg-gray-100 text-gray-700"
                     }`}>
@@ -173,7 +173,7 @@ const InvoiceDataTab = ({ invoices }: { invoices: TInvoice[] }) => {
                     ))}
                 </div>
 
-                <div className="flex items-center gap-4">
+                <div className="flex items-center gap-4 w-full justify-end">
                     <div className="flex items-center border pl-4 gap-2 border-gray-500/30 h-[46px] rounded-lg overflow-hidden max-w-[350px] w-full">
                         <input
                             type="text"
@@ -184,32 +184,34 @@ const InvoiceDataTab = ({ invoices }: { invoices: TInvoice[] }) => {
                         />
                     </div>
 
-                    <div className="relative w-72">
-                        <button
-                            className="px-4 py-3 border border-gray-300 rounded-md text-left bg-white flex justify-end gap-2 items-center shadow-sm"
-                            onClick={() => setIsOpen(!isOpen)}
-                        >
-                            <span className="flex items-center gap-2 text-[12px] text-[#004D3F] font-semibold"><FilterIcon/> {filterCycle} </span>
-                            <svg className={`w-4 h-4 transform transition-transform ${isOpen ? "rotate-180" : ""}`} fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
-                            </svg>
-                        </button>
-                        {isOpen && (
-                            <ul className="absolute z-50 mt-1 w-full bg-white border border-gray-300 rounded-md shadow-lg overflow-hidden">
-                                {filterOptions.map((option) => (
-                                    <li
-                                        key={option}
-                                        className="px-4 py-2 hover:bg-[#004D3F] hover:text-white text-[12px] cursor-pointer transition"
-                                        onClick={() => {
-                                            setFilterCycle(option);
-                                            setIsOpen(false);
-                                        }}
-                                    >
-                                         {option}
-                                    </li>
-                                ))}
-                            </ul>
-                        )}
+                    <div className="relative max-w-[400px]">
+                        <div>
+                            <button
+                                className="px-4 py-3 border border-gray-300 rounded-md text-left bg-white flex justify-end gap-2 items-center shadow-sm"
+                                onClick={() => setIsOpen(!isOpen)}
+                            >
+                                <span className="flex items-center gap-2 text-[12px] text-[#004D3F] font-semibold"><FilterIcon /> {filterCycle} </span>
+                                <svg className={`w-4 h-4 transform transition-transform ${isOpen ? "rotate-180" : ""}`} fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+                                </svg>
+                            </button>
+                            {isOpen && (
+                                <ul className="absolute z-50 mt-1 w-full bg-white border border-gray-300 rounded-md shadow-lg overflow-hidden">
+                                    {filterOptions.map((option) => (
+                                        <li
+                                            key={option}
+                                            className="px-4 py-2 hover:bg-[#004D3F] hover:text-white text-[12px] cursor-pointer transition"
+                                            onClick={() => {
+                                                setFilterCycle(option);
+                                                setIsOpen(false);
+                                            }}
+                                        >
+                                            {option}
+                                        </li>
+                                    ))}
+                                </ul>
+                            )}
+                        </div>
                     </div>
                 </div>
             </div>

@@ -44,12 +44,12 @@ const BlogCard = () => {
     const totalPages = Math.ceil(blogs.length / blogsPerPage);
 
     return (
-        <div className="mt-[520px]">
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div className="mt-8 md:mt-24 lg:mt-86 xl:mt-[440px] 2xl:mt-[520px]">
+            <div className="grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 gap-6">
                 {currentBlogs.map((blog, index) => (
                     <div
                         key={index}
-                        className="p-5 border border-[#E5E5E5] bg-[#FBFBFB] rounded-3xl"
+                        className="lg:p-5 p-3 border border-[#E5E5E5] bg-[#FBFBFB] rounded-3xl"
                     >
                         <Image
                             className="w-full h-[358px] rounded-3xl mb-8 object-cover"

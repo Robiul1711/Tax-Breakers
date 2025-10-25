@@ -37,6 +37,8 @@ const menuItems = [
   { label: "Subscriptions & Payments", href: "/dashboard/subscriptionsandayments", icon: <SubscriptionIcon /> },
   { label: "Help & Ticketing", href: "/dashboard/helpandticketing", icon: <HelpIcon /> },
   { label: "Settings", href: "/dashboard/settings", icon: <SettingsIcon /> },
+
+
 ];
 
 export type TNotification = {
@@ -460,22 +462,22 @@ export default function DashboardLayout({
       </div>
 
       {/* Main Content */}
-      <main className="flex-grow flex flex-col py-4 h-screen overflow-hidden">
+      <main className="grow flex flex-col py-4 h-screen overflow-hidden">
         {/* Sticky Top Navbar */}
         <header className="h-16 w-full flex items-center justify-between sticky top-0 bg-white z-10">
-          <div className="max-w-xl w-full relative">
+          <div className="max-w-xl w-full relative ml-2">
             <FiSearch className="absolute left-4 top-1/2 -translate-y-1/2 text-gray-500 text-lg" />
             <input
               type="text"
               placeholder="Search..."
-              className="w-full bg-[#EFF0F0] rounded-full pl-10 pr-4 py-2 outline-none placeholder:text-gray-500 text-gray-700 focus:ring-2 focus:ring-blue-500 transition"
+              className="w-full bg-[#EFF0F0] rounded-full pl-10 pr-4 py-2 outline-none placeholder:text-gray-500 text-gray-700 focus:ring-2 focus:ring-[#004d3f] transition"
             />
           </div>
 
           <div className="flex items-center gap-4">
-            <p className="p-2 bg-[#ECF4E9] rounded-full">
+            <Link href={'/dashboard/message'} className="p-2 bg-[#ECF4E9] rounded-full">
               <MessageIcon />
-            </p>
+            </Link>
 
 
 
@@ -529,7 +531,7 @@ export default function DashboardLayout({
           </div>
         </header>
 
-        <section className="flex-1 overflow-y-auto w-full container my-8 custom-scroll">
+        <section className="flex-1 overflow-y-auto w-full container my-4 custom-scroll">
           {children}
         </section>
       </main>
