@@ -38,8 +38,8 @@ const ExploreMoreServices = () => {
                             <h2 className="text-3xl mt-6 mb-11 text-[#0C121D] font-semibold">{service?.title}</h2>
                             <p className="text-[#0C121D] text-[22px]"> {service?.description}</p>
 
-                            <Link href={`/services/${service?.title}`}>
-                                <button className="flex items-center gap-3 text-[#0C121D] text-[22px] cursor-pointer hover:underline font-medium mt-6">View More <FiArrowRight className="w-[20px] h-[20px]" /></button>
+                            <Link href={`/services/${service?.title.split(' ').join('-')}`}>
+                                <button className="flex items-center gap-3 text-[#0C121D] text-[22px] cursor-pointer hover:underline font-medium mt-6">View More <FiArrowRight className="w-5 h-5" /></button>
                             </Link>
                         </div>
                     ))

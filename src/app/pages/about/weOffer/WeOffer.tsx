@@ -19,6 +19,21 @@ const weOffersData = [
       "We offer strategic business consulting and comprehensive accounting services to help you manage finances, optimize operations, and make informed decisions that drive growth.",
   },
   {
+    question: "Business Consulting & Accounting",
+    answer:
+      "We offer strategic business consulting and comprehensive accounting services to help you manage finances, optimize operations, and make informed decisions that drive growth.",
+  },
+  {
+    question: "VAT Filing & Compliance",
+    answer:
+      "Our VAT experts ensure accurate filing and full compliance with regulatory requirements, helping you avoid penalties while maintaining smooth financial operations.",
+  },
+  {
+    question: "Audit & Assurance Services",
+    answer:
+      "We provide professional audit and assurance services to verify financial accuracy, enhance transparency, and build stakeholder confidence in your business processes.",
+  },
+  {
     question: "VAT Filing & Compliance",
     answer:
       "Our VAT experts ensure accurate filing and full compliance with regulatory requirements, helping you avoid penalties while maintaining smooth financial operations.",
