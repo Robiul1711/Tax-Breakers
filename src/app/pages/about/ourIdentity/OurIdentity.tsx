@@ -31,7 +31,7 @@ const OurIdentity = () => {
               alt="our identity img"
               width={730}
               height={510}
-              className="object-cover w-full md:h-[300px] h-[200px] rounded-2xl"
+              className="object-cover w-full xl:h-full md:h-[300px] h-[200px] rounded-2xl"
             />
           </div>
 
