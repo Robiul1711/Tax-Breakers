@@ -15,20 +15,20 @@ const Banner = () => {
             backgroundPosition: "center",
             backgroundRepeat: "no-repeat",
         }} className="lg:m-8 m-4 rounded-3xl">
-            <div className="section-padding-x py-20 mx-auto">
+            <div className="section-padding-x md:py-20 py-10 mx-auto">
 
                 <Title level="title72" children="Expert Accounting & Tax Solutions Anytime, Anywhere" className="max-w-6xl mx-auto text-center text-[#151515] mb-6" />
-                <p className="text-[#677489] text-[20px] font-medium max-w-[860px] mx-auto text-center">Streamline your finances with professional tax and accounting support. Simple, transparent, and tailored to your needs.</p>
+                <p className="text-[#677489] md:text-[20px] font-medium max-w-[860px] mx-auto text-center">Streamline your finances with professional tax and accounting support. Simple, transparent, and tailored to your needs.</p>
                 <div className="flex md:flex-row flex-col justify-center items-center gap-4 mt-8 mb-12" >
                     <CommonButton
                         variant="primary"
                         isLoading={false}
-                        className="!px-12 !py-3 !rounded-xl !text-[18px] !font-semibold hover:bg-white">
+                        className="!px-12 !py-3 !rounded-xl md:!text-[18px] !font-semibold hover:bg-white">
                         Get Started Free
                     </CommonButton>
                     <CommonButton
                         variant="secondary"
-                        isLoading={false} className="md:!px-12 !px-6 !py-3 !rounded-xl !text-[18px] !font-semibold">
+                        isLoading={false} className="md:!px-12 !px-6 !py-3 !rounded-xl md:!text-[18px] !font-semibold">
                         Book An Appointment
                     </CommonButton>
                 </div>

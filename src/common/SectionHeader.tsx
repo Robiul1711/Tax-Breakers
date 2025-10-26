@@ -8,8 +8,8 @@ const SectionHeader: React.FC<ISectionHeader> = ({ title, main_title, brandName,
             {
                 title && <CommonSubTitle title={title} />
             }
-            <h2 className="text-[#151515] text-3xl md:text-[36px] lg:text-[48px] font-bold text-center capitalize max-w-[830px] mx-auto mt-6 md:px-0 px-3">{main_title}</h2>
-            <p className="text-[#515151] text-center max-w-[1052px] leading-6 mx-auto mt-6 md:px-0 px-3">
+            <h2 className="text-[#151515] text-[22px] sm:text-[38px] md:text-[38px] lg:text-[48px] font-bold text-center capitalize max-w-[830px] mx-auto mt-3 lg:mt-6 md:px-0 px-3">{main_title}</h2>
+            <p className="text-[#515151] text-center max-w-[1052px] leading-6 mx-auto mt-3 lg:mt-6 md:px-0 px-3 lg:text-base text-sm">
                 <span className="text-[#151515] font-semibold">{brandName}</span> {companyName} {description}
             </p>
         </div>

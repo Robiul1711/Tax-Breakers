@@ -7,7 +7,7 @@ export type TTestimonial = {
     date: string;
 }
 
-const testimonialData : TTestimonial[] = [
+const testimonialData: TTestimonial[] = [
     {
         image: 'https://images.unsplash.com/photo-1633332755192-727a05c4013d?q=80&w=200',
         name: 'Briar Martin',
@@ -74,12 +74,27 @@ const testimonialData : TTestimonial[] = [
 
 const Testimonial = () => {
     return (
-        <div className="my-35">
+        <div className="my-18 lg:my-36">
             <style>{`
-            @keyframes marqueeScroll {
-                0% { transform: translateX(0%); }
-                100% { transform: translateX(-50%); }
-            }
+                    @keyframes marqueeScroll {
+                    0% { transform: translateX(0%); }
+                    100% { transform: translateX(-300%); }
+                    }
+
+                    @media (min-width: 640px) { /* sm */
+                    @keyframes marqueeScroll {
+                    0% { transform: translateX(0%); }
+                    100% { transform: translateX(-200%); }
+                    }
+                    }
+
+                    @media (min-width: 1024px) { /* lg */
+                    @keyframes marqueeScroll {
+                    0% { transform: translateX(0%); }
+                    100% { transform: translateX(-50%); }
+                    }
+                    }
+
 
             .marquee-inner {
                 animation: marqueeScroll 25s linear infinite;
@@ -98,23 +113,23 @@ const Testimonial = () => {
             <SectionHeader title="Testimonial" main_title="Don't take our word for it. Take them." description="See how StoreX is transforming the way entrepreneurs around the world do business online." />
 
             <div className="marquee-row w-full mx-auto overflow-hidden relative mt-12">
-                <div className="absolute left-0 top-0 h-full xl:w-130 lg:w-36 md:w-24 w-10 z-10 pointer-events-none bg-gradient-to-r from-white to-transparent"></div>
+                <div className="absolute left-0 top-0 h-full xl:w-130 lg:w-36 md:w-24 w-10 z-10 pointer-events-none bg-linear-to-r from-white to-transparent"></div>
                 <div className="marquee-inner flex transform-gpu min-w-[200%] mb-5">
                     {[...testimonialData, ...testimonialData].map((card, index) => (
                         <CreateCard key={index} card={card} />
                     ))}
                 </div>
-                <div className="absolute right-0 top-0 h-full xl:w-130 lg:w-36 md:w-24 w-10 z-10 pointer-events-none bg-gradient-to-l from-white to-transparent"></div>
+                <div className="absolute right-0 top-0 h-full xl:w-130 lg:w-36 md:w-24 w-10 z-10 pointer-events-none bg-linear-to-l from-white to-transparent"></div>
             </div>
 
             <div className="marquee-row w-full mx-auto overflow-hidden relative">
-                <div className="absolute left-0 top-0 h-full xl:w-130 lg:w-36 md:w-24 w-10 z-10 pointer-events-none bg-gradient-to-r from-white to-transparent"></div>
+                <div className="absolute left-0 top-0 h-full xl:w-130 lg:w-36 md:w-24 w-10 z-10 pointer-events-none bg-linear-to-r from-white to-transparent"></div>
                 <div className="marquee-inner marquee-reverse flex transform-gpu min-w-[200%] mb-5">
                     {[...testimonialData, ...testimonialData].map((card, index) => (
                         <CreateCard key={index} card={card} />
                     ))}
                 </div>
-                <div className="absolute right-0 top-0 h-full xl:w-130 lg:w-36 md:w-24 w-10 z-10 pointer-events-none bg-gradient-to-l from-white to-transparent"></div>
+                <div className="absolute right-0 top-0 h-full xl:w-130 lg:w-36 md:w-24 w-10 z-10 pointer-events-none bg-linear-to-l from-white to-transparent"></div>
             </div>
         </div>
     )

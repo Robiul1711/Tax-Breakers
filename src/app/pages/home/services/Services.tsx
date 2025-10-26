@@ -9,15 +9,15 @@ import Link from "next/link";
 
 const Services = () => {
     return (
-        <div className="mb-[120px]">
+        <div className="mb-18 lg:mb-36">
             <SectionHeader title="Services" main_title="Expert Financial Solutions Tailored to Your Needs" description="At My Tax Braker, At [Your Company Name], we offer a full range of accounting and tax consultancy services designed to simplify your financial journey. Whether you’re an individual or a business, our solutions are crafted to ensure accuracy, compliance, and peace of mind." />
             <div className="mt-12 flex xl:flex-row flex-col gap-5 w-full">
                 <div className="xl:w-[40%] flex xl:flex-col md:flex-row flex-col gap-5">
                     <Link  className="flex-1" href={'/services/personal-tax-consultation'}>
                         <div className="bg-[#FBFBFB] border border-[#E5E5E5] h-full rounded-3xl md:p-8 p-4 hover:border-[#004d3f] transition-all duration-300 hover:shadow-lg">
                             <Title level="title24" children='Personal Tax Consultation' />
-                            <p className="text-[#515151] mt-4 mb-[21px]">Get professional guidance on your personal taxes. From income tax filing to strategic tax planning, we help you stay compliant while maximizing your savings.</p>
-                            <h2 className="text-xl font-semibold text-[#000] capitalize">What’s Include</h2>
+                            <p className="md:text-base text-sm text-[#515151] mt-4 mb-[21px]">Get professional guidance on your personal taxes. From income tax filing to strategic tax planning, we help you stay compliant while maximizing your savings.</p>
+                            <h2 className="md:text-xl font-semibold text-[#000] capitalize">What’s Include</h2>
                             <div className="flex items-center gap-2 mt-4">
                                 <TaxAnalyticsIcon />
                                 <p className="text-[#000] font-medium">Income tax filing</p>
@@ -36,8 +36,8 @@ const Services = () => {
                         <div className="bg-[#FBFBFB] border border-[#E5E5E5] rounded-3xl md:p-8 p-4 hover:border-[#004d3f] transition-all duration-300 hover:shadow-lg">
                             <Image className="mb-8" src={ServicePhoneImg} alt="Service phone" width={573} height={278} />
                             <Title level="title24" children='Business Accounting Advice' />
-                            <p className="text-[#515151] mt-4 mb-[21px]">Manage your business finances with confidence. Our experts provide advice on bookkeeping, payroll management.</p>
-                            <h2 className="text-xl font-semibold text-[#000] capitalize">What’s Include</h2>
+                            <p className="md:text-base text-sm text-[#515151] mt-4 mb-[21px]">Manage your business finances with confidence. Our experts provide advice on bookkeeping, payroll management.</p>
+                            <h2 className="md:text-xl font-semibold text-[#000] capitalize">What’s Include</h2>
                             <div className="flex items-center gap-2 mt-4">
                                 <TaxAnalyticsIcon />
                                 <p className="text-[#000] font-medium">Bookkeeping & accounting</p>
@@ -55,11 +55,11 @@ const Services = () => {
                     </div>
                     <div className="flex md:flex-row flex-col gap-5 flex-1">
                         <Link className="flex-1" href={'/services/vAT-Filing-assistance'}>
-                            <div className="bg-[#FBFBFB] border border-[#E5E5E5] rounded-3xl md:p-8 p-4 hover:border-[#004d3f] transition-all duration-300 hover:shadow-lg">
+                            <div className="bg-[#FBFBFB] border border-[#E5E5E5] rounded-3xl h-full md:p-8 p-4 hover:border-[#004d3f] transition-all duration-300 hover:shadow-lg">
                                 <Title level="title24" children='VAT Filing Assistance' />
-                                <p className="text-[#515151] my-4">Hassle-free VAT registration and filing to ensure timely compliance with regulations.</p>
-                                <p className="text-[#515151] mb-[31px]">Stay on top of your VAT obligations with our hassle-free filing services. We ensure timely submissions, accurate calculations, and full compliance with regulations.</p>
-                                <h2 className="text-xl font-semibold text-[#000] capitalize">What’s Include</h2>
+                                <p className="md:text-base text-sm text-[#515151] my-4">Hassle-free VAT registration and filing to ensure timely compliance with regulations.</p>
+                                <p className="md:text-base text-sm text-[#515151] mb-[31px]">Stay on top of your VAT obligations with our hassle-free filing services. We ensure timely submissions, accurate calculations, and full compliance with regulations.</p>
+                                <h2 className="md:text-xl font-semibold text-[#000] capitalize">What’s Include</h2>
                                 <div className="flex items-center gap-2 mt-4">
                                     <TaxAnalyticsIcon />
                                     <p className="text-[#000] font-medium">VAT registration support</p>
@@ -79,11 +79,11 @@ const Services = () => {
                             </div>
                         </Link>
                         <Link className="flex-1" href={'/services/tailored-financial-planning'}>
-                            <div className="bg-[#FBFBFB] border border-[#E5E5E5] rounded-3xl md:p-8 p-4 hover:border-[#004d3f] transition-all duration-300 hover:shadow-lg">
+                            <div className="bg-[#FBFBFB] border border-[#E5E5E5] rounded-3xl md:p-8 h-full p-4 hover:border-[#004d3f] transition-all duration-300 hover:shadow-lg">
                                 <Title level="title24" children='Tailored Financial Planning' />
-                                <p className="text-[#515151] my-4">Customized strategies for budgeting, investments, and retirement to secure your future.</p>
-                                <p className="text-[#515151] mb-[31px]">Plan your future with confidence. Our experts craft personalized financial plans to help you achieve your long-term goals.</p>
-                                <h2 className="text-xl font-semibold text-[#000] capitalize">What’s Include</h2>
+                                <p className="md:text-base text-sm text-[#515151] my-4">Customized strategies for budgeting, investments, and retirement to secure your future.</p>
+                                <p className="md:text-base text-sm text-[#515151] mb-[31px]">Plan your future with confidence. Our experts craft personalized financial plans to help you achieve your long-term goals.</p>
+                                <h2 className="md:text-xl font-semibold text-[#000] capitalize">What’s Include</h2>
                                 <div className="flex items-center gap-2 mt-4">
                                     <TaxAnalyticsIcon />
                                     <p className="text-[#000] font-medium">Budgeting & savings plans</p>

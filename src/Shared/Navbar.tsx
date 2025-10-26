@@ -64,7 +64,7 @@ const Navbar = () => {
           <div className="hidden lg:flex justify-center items-center gap-[18px]">
             <Link
               href={"/auth/login"}
-              className="bg-[#ECF4E9] hover:bg-[#085441] text-[#085441] transition-all duration-300 hover:text-white w-[50px] h-[50px] rounded-full flex items-center justify-center"
+              className="bg-[#ECF4E9] hover:bg-[#085441] text-[#085441] transition-all duration-300 hover:text-white w-[50px] h-[50px] rounded-full flex items-center justify-center shadow-md"
             >
               <UserICon />
             </Link>

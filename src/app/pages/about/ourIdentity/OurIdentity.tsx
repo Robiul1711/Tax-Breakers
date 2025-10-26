@@ -5,12 +5,12 @@ import Image from "next/image";
 
 const OurIdentity = () => {
   return (
-    <div className="my-20 sm:my-28 lg:my-32">
+    <div className="my-18 lg:my-36">
       {/* Section Header */}
       <SectionHeader title="Who We Are" main_title="Our Identity" />
 
       {/* Main Content */}
-      <div className="flex flex-col lg:flex-col xl:flex-row gap-5 mt-8 sm:mt-12">
+      <div className="flex flex-col lg:flex-row gap-5 mt-8 sm:mt-12">
         {/* Left Image */}
         <div className="flex-1 w-full">
           <Image
@@ -18,7 +18,7 @@ const OurIdentity = () => {
             alt="our identity img"
             width={730}
             height={730}
-            className="object-cover w-full h-auto rounded-2xl"
+            className="object-cover w-full md:h-[300px] h-[200px] lg:h-full rounded-2xl"
           />
         </div>
 
@@ -31,13 +31,13 @@ const OurIdentity = () => {
               alt="our identity img"
               width={730}
               height={510}
-              className="object-cover w-full h-auto rounded-2xl"
+              className="object-cover w-full md:h-[300px] h-[200px] rounded-2xl"
             />
           </div>
 
           {/* Mission Box */}
-          <div className="bg-[#004D3F] rounded-3xl p-6 sm:p-8 flex-1">
-            <h2 className="text-2xl sm:text-3xl xl:text-4xl font-semibold text-white mb-4 sm:mb-6">
+          <div className="bg-[#004D3F] rounded-3xl p-6 lg:p-4 xl:p-6 flex-1">
+            <h2 className="text-[18px] sm:text-[24px] lg:text-[30px] xl:text-[36px] font-semibold text-white mb-4 sm:mb-6">
               Our Mission
             </h2>
             <p className="text-white/80 text-sm sm:text-base lg:text-lg leading-relaxed">

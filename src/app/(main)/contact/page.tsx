@@ -9,11 +9,11 @@ import { FaFacebook, FaInstagram, FaLinkedin, FaX } from "react-icons/fa6";
 const ContactPage = () => {
 
     return (
-        <div className="section-padding-x my-25">
+        <div className="section-padding-x my-18 lg:my-36">
             <SectionHeader title="Contact Us" main_title="We're here for you!" description="Got a question, need some help, or just wanna chat? Hit up the Coinest team anytime!" />
             <div className="flex lg:flex-row flex-col gap-8  mt-15">
                 <div className="flex-1 flex flex-col gap-8">
-                    <div className="bg-[#E7F9DE] border border-[#E5E5E5] h-full rounded-[16px] p-8">
+                    <div className="bg-[#E7F9DE] border border-[#E5E5E5] h-full rounded-2xl p-8">
                         <Title level="title24" children='Get in Touch' />
                         <p className="text-[#515151] mt-4 mb-[21px]">Connect with our support team or visit our office</p>
                         <div className="flex xl:flex-row lg:flex-col md:flex-row flex-col justify-between lg:items-start md:items-center gap-6 lg:gap-8 xl:gap-10 2xl:gap-15 md:gap-15 text-left mt-6">
@@ -46,7 +46,7 @@ const ContactPage = () => {
                         <ContactMap />
                     </div>
                 </div>
-                <div className="flex-1 bg-[#FAFAFA] rounded-[20px] md:p-8 p-4">
+                <div className="flex-1 bg-[#FAFAFA] rounded-[20px] md:p-8 p-4 border border-[#E5E5E5]">
                     <ContactForm />
                 </div>
             </div>

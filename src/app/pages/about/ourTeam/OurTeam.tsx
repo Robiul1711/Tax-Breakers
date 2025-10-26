@@ -10,9 +10,10 @@ const OurTeam = async () => {
     }
     const teamMembers: TTeamMember[] = result;
     return (
-        <div className="mb-36">
+        <div className="mb-18 lg:mb-36">
             <SectionHeader title="Meet Out Team" main_title="Meet the Team Helping You Grow" />
-            <div className="grid md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-5 ">
+
+            <div className="md:w-full w-4/5 mx-auto grid md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-5  mt-12">
                 {
                     teamMembers?.map(member => (
                         <div key={member?.id} style={{

@@ -62,7 +62,7 @@ const FaqPage = () => {
                 </div>
             </div>
 
-            <div className="section-padding-x lg:mt-80 xl:mt-100 2xl:mt-120 mb-36">
+            <div className="section-padding-x lg:mt-80 xl:mt-100 2xl:mt-120 mb-18">
                 <div className="flex flex-col lg:flex-row gap-6 xl:gap-12">
                     <div className="w-full lg:w-[35%] lg:mt-0 mt-10">
                         <ul className="bg-[#FBFBFB] rounded-2xl py-6 xl:px-12 px-6">
@@ -131,7 +131,7 @@ const FaqPage = () => {
                                                 exit={{ height: 0, opacity: 0 }}
                                                 transition={{ duration: 0.4, ease: "easeInOut" }}
                                             >
-                                                <div className="text-[#677489] text-lg leading-relaxed pb-6 px-6">
+                                                <div className="text-[#677489] text-sm md:text-lg leading-relaxed pb-6 px-6">
                                                     {faq.answer}
                                                 </div>
                                             </motion.div>

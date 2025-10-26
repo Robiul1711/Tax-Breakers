@@ -49,12 +49,6 @@
                     "question": "What Support Options Are Available For Free Users?",
                     "answer": "Starter (Free) users have access to our comprehensive Knowledge Base and community forums. Email Support and Priority Support are features exclusive to Pro and Premium subscribers.",
                     "isOpen": false
-                },
-                {
-                    "id": "gq_07",
-                    "question": "Can I Upgrade From The Free Plan?",
-                    "answer": "Absolutely. You can upgrade from the Starter plan to Pro or Premium at any time directly through your dashboard settings. Your new features and limits will be applied instantly.",
-                    "isOpen": false
                 }
             ]
         },
@@ -97,12 +91,6 @@
                     "question": "Storage Limit For The Free Plan?",
                     "answer": "The Starter (Free) plan includes storage for up to 6 months of transaction history. Pro and Premium plans include unlimited history storage.",
                     "isOpen": false
-                },
-                {
-                    "id": "ao_07",
-                    "question": "Can I Upgrade From The Free Plan?",
-                    "answer": "Absolutely. You can upgrade from the Starter plan to Pro or Premium at any time directly through your dashboard settings. Your new features and limits will be applied instantly.",
-                    "isOpen": false
                 }
             ]
         },
@@ -142,12 +130,6 @@
                 },
                 {
                     "id": "ip_06",
-                    "question": "Can I set up automatic late payment reminders?",
-                    "answer": "Yes. You can configure automated, friendly reminder emails to be sent to clients if an invoice remains unpaid a set number of days after the due date.",
-                    "isOpen": false
-                },
-                {
-                    "id": "ip_07",
                     "question": "Can I set up automatic late payment reminders?",
                     "answer": "Yes. You can configure automated, friendly reminder emails to be sent to clients if an invoice remains unpaid a set number of days after the due date.",
                     "isOpen": false
@@ -193,12 +175,6 @@
                     "question": "Does the app provide a 1099 or W-2 summary?",
                     "answer": "Coinest provides a detailed summary of contractor payments (1099) and payroll expenses (W-2) based on how you categorize those transactions. We do not generate the forms themselves, but provide the necessary data.",
                     "isOpen": false
-                },
-                {
-                    "id": "tm_07",
-                    "question": "Does the app provide a 1099 or W-2 summary?",
-                    "answer": "Coinest provides a detailed summary of contractor payments (1099) and payroll expenses (W-2) based on how you categorize those transactions. We do not generate the forms themselves, but provide the necessary data.",
-                    "isOpen": false
                 }
             ]
         },
@@ -238,12 +214,6 @@
                 },
                 {
                     "id": "eit_06",
-                    "question": "How long is my transaction history stored?",
-                    "answer": "Starter (Free) plans store history for up to 6 months. Pro and Premium plans include unlimited, searchable transaction history storage for as long as you maintain your subscription.",
-                    "isOpen": false
-                },
-                {
-                    "id": "eit_07",
                     "question": "How long is my transaction history stored?",
                     "answer": "Starter (Free) plans store history for up to 6 months. Pro and Premium plans include unlimited, searchable transaction history storage for as long as you maintain your subscription.",
                     "isOpen": false
@@ -289,12 +259,6 @@
                     "question": "What is the format of the consultation?",
                     "answer": "Consultations are typically conducted via video conference (Zoom or Google Meet), but phone calls can be requested depending on the advisor's availability.",
                     "isOpen": false
-                },
-                {
-                    "id": "ba_07",
-                    "question": "What is the format of the consultation?",
-                    "answer": "Consultations are typically conducted via video conference (Zoom or Google Meet), but phone calls can be requested depending on the advisor's availability.",
-                    "isOpen": false
                 }
             ]
         },
@@ -337,12 +301,6 @@
                     "question": "What payment methods do you accept for subscriptions?",
                     "answer": "We accept all major credit cards (Visa, MasterCard, Amex) and PayPal for all Pro and Premium subscription payments.",
                     "isOpen": false
-                },
-                {
-                    "id": "pr_07",
-                    "question": "What payment methods do you accept for subscriptions?",
-                    "answer": "We accept all major credit cards (Visa, MasterCard, Amex) and PayPal for all Pro and Premium subscription payments.",
-                    "isOpen": false
                 }
             ]
         },
@@ -382,12 +340,6 @@
                 },
                 {
                     "id": "cs_06",
-                    "question": "Where can I find tutorials and guides for using Coinest?",
-                    "answer": "All tutorials, video guides, and detailed articles on using features like budgeting, tracking, and reports are available in the dedicated **Knowledge Base** section, accessible from the main footer.",
-                    "isOpen": false
-                },
-                {
-                    "id": "cs_07",
                     "question": "Where can I find tutorials and guides for using Coinest?",
                     "answer": "All tutorials, video guides, and detailed articles on using features like budgeting, tracking, and reports are available in the dedicated **Knowledge Base** section, accessible from the main footer.",
                     "isOpen": false
