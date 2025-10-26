@@ -19,7 +19,7 @@ const CommonSubTitle = ({ title }: { title?: string }) => {
                 transition={{ duration: 0.6, delay: 0.1 }}
             >
                 <motion.span
-                    className="w-[56px] h-[1px] bg-gradient-to-r from-white to-[#095641]"
+                    className="w-14 h-[1px] bg-gradient-to-r from-white to-[#095641]"
                     initial={{ scaleX: 0 }}
                     whileInView={{ scaleX: 1 }}
                     transition={{ duration: 0.5 }}

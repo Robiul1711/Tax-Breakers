@@ -38,7 +38,7 @@ const FaqSection = () => {
         };
 
     return (
-        <div className="mt-[145px]">
+        <div>
             <SectionHeader title="FAQ" main_title="Frequently Asked Questions" description="Got questions? We’ve got you covered—here are some quick answers to help you get the most out of Coinest." />
 
             <div className="flex xl:flex-row flex-col gap-5 mt-12 w-full">
@@ -52,7 +52,7 @@ const FaqSection = () => {
                                 onClick={() => toggleFaq(index)}
                                 className="flex justify-between items-center cursor-pointer w-full text-left focus:outline-none mb-3 md:px-6 px-4 pb-3 pt-5"
                             >
-                                <h3 className="text-xl font-semibold text-[#1E4841]">
+                                <h3 className="md:text-xl font-semibold text-[#1E4841]">
                                     {faq?.question}
                                 </h3>
                                 <motion.div
@@ -74,7 +74,7 @@ const FaqSection = () => {
                                         exit={{ height: 0, opacity: 0 }}
                                         transition={{ duration: 0.4, ease: "easeInOut" }}
                                     >
-                                        <div className=" text-[#677489] text-lg leading-relaxed pb-6 px-6">
+                                        <div className=" text-[#677489] text-sm md:text-lg leading-relaxed pb-6 px-6">
                                             {faq?.answer}
                                         </div>
                                     </motion.div>
@@ -89,12 +89,12 @@ const FaqSection = () => {
                     <p className="text-[#515151] text-center mt-4">End-to-end payments and financial management in a single solution. Meet the right platform to help realize.</p>
                     <div className="flex justify-center items-center w-full gap-4 mt-8" >
                         <CommonButton
-                            className="md:!px-8 py-3 md:!py-[22px] !w-full !border !rounded-xl md:!text-[18px] font-semibold"
+                            className="md:!px-16 py-3 md:!py-[22px] md:!w-auto !w-full !border !rounded-xl md:!text-[18px] font-semibold"
                             variant="secondary"
                         >View More</CommonButton>
                         <CommonButton
                             variant="primary"
-                            className="md:!px-8 py-3 md:!py-[22px] !w-full !rounded-2xl md:!text-[18px] !font-semibold"
+                            className="md:!px-16 py-3 md:!py-[22px] md:!w-auto !w-full !rounded-2xl md:!text-[18px] !font-semibold"
 
                         >
                             Live Chat

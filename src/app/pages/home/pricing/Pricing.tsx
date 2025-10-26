@@ -76,7 +76,7 @@ const Pricing = ({title,description , className}: {title : string, description :
             <div>
                 <CommonSubTitle title='Pricing' />
                 <h2 className={`text-[#151515] text-3xl sm:text-4xl md:text-5xl lg:text-[48px] font-bold capitalize mt-6 ${className}`}>{title}</h2>
-                <p className={`text-[#515151] leading-6 max-w-[571px] mt-6 ${className}`}>
+                <p className={`text-[#515151] leading-6 max-w-[571px] mt-6 lg:text-base text-sm  ${className}`}>
                     {description}
                 </p>
 

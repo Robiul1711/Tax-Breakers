@@ -2,7 +2,7 @@ import { TTestimonial } from "../testimonial/Testimonial";
 
 
 const CreateCard = ({ card }:{ card  : TTestimonial}) => (
-    <div className="p-6 rounded-2xl mx-4 border border-[#E7E7E7] shadow hover:shadow-lg transition-all duration-200 w-72 shrink-0">
+    <div className="p-6 rounded-2xl mx-4 border border-[#E7E7E7] shadow hover:shadow-lg transition-all duration-200 w-64 md:w-72 shrink-0">
         <div className="flex gap-2">
             <img className="size-11 rounded-full object-cover" src={card.image} alt="User Image" />
             <div className="flex flex-col">

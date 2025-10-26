@@ -59,7 +59,7 @@ const WeOffer = () => {
         main_title="Solutions Tailored for You"
       />
 
-      <div className="mt-10 flex flex-col lg:flex-row gap-8">
+      <div className="mt-10 flex flex-col xl:flex-row gap-8">
         {/* Accordion Section */}
         <div className="flex-1 space-y-5">
           {weOffersData.map((faq, index) => (
@@ -71,7 +71,7 @@ const WeOffer = () => {
                 onClick={() => toggleFaq(index)}
                 className="flex justify-between items-center w-full text-left px-5 sm:px-6 py-4 sm:py-5 focus:outline-none"
               >
-                <h3 className="text-lg sm:text-xl font-semibold text-[#1E4841]">
+                <h3 className="md:text-xl font-semibold text-[#1E4841]">
                   {faq.question}
                 </h3>
                 <motion.div
@@ -111,7 +111,7 @@ const WeOffer = () => {
             alt="About img"
             width={725}
             height={680}
-            className="object-cover w-full h-auto rounded-2xl"
+            className="object-cover w-full xl:h-full lg:h-[350px] md:h-[300px] h-[200px] rounded-2xl"
           />
         </div>
       </div>

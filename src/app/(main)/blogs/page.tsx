@@ -2,7 +2,7 @@ import Banner from '@/app/pages/blogs/banner/Banner';
 import BlogCard from '@/app/pages/blogs/blogCard/BlogCard';
 import React from 'react';
 
-const page = () => {
+const BlogPage = () => {
     return (
         <div className='overflow-x-hidden'>
             <Banner/>
@@ -13,4 +13,4 @@ const page = () => {
     );
 };
 
-export default page;
+export default BlogPage;

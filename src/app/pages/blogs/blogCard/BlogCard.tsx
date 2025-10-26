@@ -45,29 +45,29 @@ const BlogCard = () => {
 
     return (
         <div className="mt-8 md:mt-24 lg:mt-86 xl:mt-[440px] 2xl:mt-[520px]">
-            <div className="grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 gap-6">
+            <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-6 md:gap-4 2xl:gap-6">
                 {currentBlogs.map((blog, index) => (
                     <div
                         key={index}
-                        className="lg:p-5 p-3 border border-[#E5E5E5] bg-[#FBFBFB] rounded-3xl"
+                        className="lg:p-5 p-4 border border-[#E5E5E5] bg-[#FBFBFB] rounded-3xl"
                     >
                         <Image
-                            className="w-full h-[358px] rounded-3xl mb-8 object-cover"
+                            className="w-full h-[200px] rounded-3xl mb-8 object-cover"
                             src={blog.thumbnail}
                             alt={blog.title}
                             width={429}
                             height={271}
                         />
                         <div>
-                            <Title level="title24">{blog.title}</Title>
-                            <p className="text-[#56595C] text-[18px] mt-4">
+                            <Title level="title24" className="line-clamp-2">{blog.title}</Title>
+                            <p className="text-[#56595C] md:text-[18px] text-sm mt-4 line-clamp-2">
                                 {blog.introduction}
                             </p>
                         </div>
 
                         <div className="flex justify-between items-center mt-8">
                             <p className="text-[#061929] text-lg">{blog.date}</p>
-                            <button onClick={() => router.push(`/blogs/${blog.id}`)} className="flex items-center justify-center gap-2 text-[#004D3F] font-medium text-xl cursor-pointer">
+                            <button onClick={() => router.push(`/blogs/${blog.id}`)} className="flex items-center justify-center gap-2 text-[#004D3F] font-medium text-[18px] md:text-xl cursor-pointer">
                                 Learn More
                                 <RightArrow />
                             </button>

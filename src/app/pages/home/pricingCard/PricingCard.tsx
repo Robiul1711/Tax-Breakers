@@ -10,9 +10,9 @@ const PricingCard = ({ plan, billingCycle }: { plan: TPricingPlan, billingCycle:
     const currentPrice = price[billingCycle];
 
     return (
-        <div className="rounded-3xl p-6 relative flex flex-col bg-[#FBFBFB] border border-[#E5E5E5] hover:bg-[#E7F9DE] transition-all duration-200">
+        <div className="rounded-3xl p-6 relative flex flex-col lg:mt-0 md:mt-4 mt-0 bg-[#FBFBFB] border border-[#E5E5E5] hover:bg-[#E7F9DE] transition-all duration-200">
            <div className="absolute -top-[26px] right-6 z-30">
-             <div className="relative w-[100px] h-[112px]">
+             <div className="relative w-[100px] h-28">
                 <Image className="h-[108px]" src={PricingShape} alt="Pricing Shape" width={100} height={112} />
                 <h2 className="absolute top-[40%] left-[58%] transform -translate-x-1/2 -translate-y-1/2 text-2xl font-semibold text-center text-[#004D3F] leading-4">
                     ${currentPrice?.amount} <br /> <span className="text-sm font-normal">{currentPrice?.period}</span>
@@ -22,13 +22,13 @@ const PricingCard = ({ plan, billingCycle }: { plan: TPricingPlan, billingCycle:
 
             <div>
 
-                <div className="p-2 bg-[#1E4841] md:w-[48px] w-[36px] md:h-[48px] h-[36px] rounded-lg flex items-center justify-center mb-6">
+                <div className="p-2 bg-[#1E4841] md:w-12 w-9 md:h-12 h-9 rounded-lg flex items-center justify-center mb-6">
                     {icon}
                 </div>
                 <div>
                     <Title level="title24" children={name} className="mb-3" />
-                    <p className="text-[#0C121D] md:text-xl text-lg">{tagline}</p>
-                    <p className="h-[1px] w-full bg-[#E5E5E5] mt-3"></p>
+                    <p className="text-[#0C121D] md:text-lg lg:text-xl">{tagline}</p>
+                    <p className="h-px w-full bg-[#E5E5E5] mt-3"></p>
                 </div>
             </div>
 
