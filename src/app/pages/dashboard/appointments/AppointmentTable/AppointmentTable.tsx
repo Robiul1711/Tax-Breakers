@@ -87,13 +87,13 @@ const AppointmentTable = ({
                         </button>
                     </DropdownMenuTrigger>
 
-                    <DropdownMenuContent className="rounded-2xl duration-300 p-0 w-44">
+                    <DropdownMenuContent className="rounded-2xl duration-300 p-0 md:w-44 w-full">
                         <DropdownMenuLabel className="p-0">
                             <button
                                 onClick={() =>
                                     router.push(`/dashboard/appointments/${row.original.id}`)
                                 }
-                                className="text-black hover:bg-[#004D3F] w-full cursor-pointer hover:text-white py-3 px-4 rounded-2xl duration-300"
+                                className="text-black hover:bg-[#004D3F] w-full cursor-pointer hover:text-white md:py-3 md:px-4 p-2 rounded-2xl duration-300"
                             >
                                 View Details
                             </button>
@@ -103,7 +103,7 @@ const AppointmentTable = ({
                                 onClick={() =>
                                     router.push(`/dashboard/appointments/${row.original.id}`)
                                 }
-                                className="text-black hover:bg-[#004D3F] w-full cursor-pointer hover:text-white py-3 px-4 rounded-2xl duration-300"
+                                className="text-black hover:bg-[#004D3F] w-full cursor-pointer hover:text-white md:py-3 md:px-4 p-2 rounded-2xl duration-300"
                             >
                                 Reschedule
                             </button>
@@ -113,13 +113,13 @@ const AppointmentTable = ({
                                 onClick={() =>
                                     router.push(`/dashboard/appointments/${row.original.id}`)
                                 }
-                                className="text-black hover:bg-[#004D3F] w-full cursor-pointer hover:text-white py-3 px-4 rounded-2xl duration-300"
+                                className="text-black hover:bg-[#004D3F] w-full cursor-pointer hover:text-white md:py-3 md:px-4 p-2 rounded-2xl duration-300"
                             >
                                 Send Message
                             </button>
                         </DropdownMenuLabel>
                         <DropdownMenuLabel className="p-0">
-                            <button className="bg-white w-full cursor-pointer text-red-500 hover:bg-red-500 hover:text-white py-3 px-4 rounded-2xl duration-300">
+                            <button className="bg-white w-full cursor-pointer text-red-500 hover:bg-red-500 hover:text-white md:py-3 md:px-4 p-2 rounded-2xl duration-300">
                                 Delete
                             </button>
                         </DropdownMenuLabel>
@@ -136,7 +136,7 @@ const AppointmentTable = ({
     });
 
     return (
-        <div className="w-full overflow-x-auto">
+        <div className="w-full overflow-x-auto custom-scroll">
             <table className="w-full text-sm text-center border-collapse">
                 <thead className="bg-[#E7F9DE] text-gray-700 font-semibold">
                     {table.getHeaderGroups().map((headerGroup) => (

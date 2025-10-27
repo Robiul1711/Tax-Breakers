@@ -76,7 +76,7 @@ const messagesEndRef = useRef<HTMLDivElement | null>(null);
 
       {/* Chat Window */}
       {open && (
-        <div className="fixed bottom-20 right-6 w-80 sm:w-96 h-[550px] bg-white rounded-2xl shadow-2xl border flex flex-col overflow-hidden">
+        <div className="fixed bottom-20 right-6 w-80 sm:w-96 h-[550px] bg-white rounded-2xl shadow-2xl border flex flex-col overflow-hidden z-30">
           {/* Header */}
           <div className="flex justify-between items-center px-4 py-4 border-b border-gray-200  text-black">
             <span className="font-semibold text-sm">

@@ -200,13 +200,13 @@ const InvoiceCreateForm = () => {
 
 
     return (
-        <div className="bg-[#FBFBFB] border border-[#E6E8E5] rounded-3xl p-8">
+        <div className="bg-[#FBFBFB] border border-[#E6E8E5] rounded-3xl lg:p-8 p-2">
             <form onSubmit={handleSubmit(onSubmit)}>
 
                 {/* Basic Information */}
-                <div className="bg-[#FFF] rounded-2xl py-7 px-9">
+                <div className="bg-[#FFF] rounded-2xl py-7 lg:px-9 px-4">
                     <SectionHeader title="Basic Information" />
-                    <div className="grid grid-cols-3 gap-4 mb-4">
+                    <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-4 mb-4">
                         <FormInput label="Invoice Number *" name="basic_information.invoice_number" register={register} errors={errors} />
                         <FormInput label="Invoice ID" name="basic_information.invoice_id" register={register} errors={errors} />
                         <FormDatePicker label="Issue Date *" name="basic_information.issue_date" register={register} errors={errors} />
@@ -227,20 +227,20 @@ const InvoiceCreateForm = () => {
                         />
                     </div>
                     <FormInput label="Payment Terms" name="basic_information.payment_terms" register={register} errors={errors} />
-                    <div className="grid grid-cols-2 gap-4 mt-4">
+                    <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mt-4">
                         <FormInput label="Order Reference" name="basic_information.order_reference" register={register} errors={errors} />
                         <FormInput label="DDT Reference" name="basic_information.ddt_reference" register={register} errors={errors} />
                     </div>
                 </div>
 
-                <div className="bg-[#FFF] rounded-2xl py-7 px-9 my-6">
+                <div className="bg-[#FFF] rounded-2xl py-7 lg:px-9 px-4 my-6">
                     <SectionHeader title="Issuer Details" />
-                    <div className="grid grid-cols-3 gap-4">
+                    <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-4">
                         <FormInput label="Company Name" name="issuer_details.company_name" register={register} errors={errors} />
                         <FormInput label="VAT Number" name="issuer_details.vat_number" register={register} errors={errors} />
                         <FormInput label="Fiscal Code" name="issuer_details.fiscal_code" register={register} errors={errors} />
                     </div>
-                    <div className="grid grid-cols-2 gap-4 mt-4">
+                    <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mt-4">
                         <FormInput label="Email" name="issuer_details.email" register={register} errors={errors} />
                         <FormInput label="Phone" name="issuer_details.phone" register={register} errors={errors} />
                         <FormInput label="Street Address" name="issuer_details.street_address" register={register} errors={errors} />
@@ -261,16 +261,16 @@ const InvoiceCreateForm = () => {
                 </div>
 
                 {/* Recipient Details */}
-                <div className="bg-[#FFF] rounded-2xl py-7 px-9">
+                <div className="bg-[#FFF] rounded-2xl py-7 lg:px-9 px-4">
                     <SectionHeader title="Recipient Details" />
-                    <div className="grid grid-cols-2 gap-4 mb-4">
+                    <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-4">
                         <FormInput label="Recipient Name" name="recipient_details.recipient_name" register={register} errors={errors} />
                         <FormInput label="VAT Number" name="recipient_details.recipient_vat_number" register={register} errors={errors} />
                         <FormInput label="Fiscal Code" name="recipient_details.recipient_fiscal_code" register={register} errors={errors} />
                         <FormInput label="Recipient Code" name="recipient_details.recipient_code" register={register} errors={errors} />
                     </div>
                     <FormInput label="PEC Address" name="recipient_details.recipient_pec_address" register={register} errors={errors} />
-                    <div className="grid grid-cols-2 gap-4 mt-4">
+                    <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mt-4">
                         <FormInput label="Email" name="recipient_details.recipient_email" register={register} errors={errors} />
                         <FormInput label="Phone" name="recipient_details.recipient_phone" register={register} errors={errors} />
                         <FormInput label="Street Address" name="recipient_details.recipient_street_address" register={register} errors={errors} />
@@ -289,22 +289,26 @@ const InvoiceCreateForm = () => {
                 </div>
 
                 {/* Item Table 1 */}
-                <div className="mt-4 bg-[#FFF] rounded-2xl py-7 px-9">
-                    <div className="flex justify-between items-center ">
-                        <SectionHeader title="Item Table" />
-                        <button
-                            type="button"
-                            onClick={() => appendItem({
-                                description: 'Description here',
-                                quantity: 0.0,
-                                unit_price: 0.0,
-                                discount: 0.0,
-                                tax_rate: 0.0
-                            })}
-                            className="bg-[#FFF] border border-[#E6E8E5] p-2 text-[#0C110F] text-[14px] rounded-md cursor-pointer"
-                        >
-                            + Add New Row
-                        </button>
+                <div className="mt-4 bg-[#FFF] rounded-2xl py-7 lg:px-9 px-4">
+                    <div className="flex justify-between items-center mb-4">
+                        <div>
+                            <h2 className="text-[#0A0A0A] font-semibold">Item Table</h2>
+                        </div>
+                        <div >
+                            <button
+                                type="button"
+                                onClick={() => appendItem({
+                                    description: 'Description here',
+                                    quantity: 0.0,
+                                    unit_price: 0.0,
+                                    discount: 0.0,
+                                    tax_rate: 0.0
+                                })}
+                                className="bg-[#FFF] border border-[#E6E8E5] p-2 text-[#0C110F] text-xs md:text-[14px] rounded-md cursor-pointer"
+                            >
+                                + Add New Row
+                            </button>
+                        </div>
                     </div>
 
                     {itemFields.map((item, index) => (
@@ -319,7 +323,7 @@ const InvoiceCreateForm = () => {
                                 />
 
                             </div>
-                            <div className="grid grid-cols-4 gap-4 mt-4">
+                            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 mt-4">
                                 <div className="col-span-1">
                                     <label className="text-xs font-medium text-gray-500 mb-1 block">Quantity</label>
                                     <ItemInput name={`item_table.${index}.quantity`} register={register} errors={errors} />
@@ -347,7 +351,7 @@ const InvoiceCreateForm = () => {
 
                     {/* Totals Section */}
                     <div className="mt-4 border-t-2 border-gray-300 pt-4">
-                        <div className="grid grid-cols-3 gap-4">
+                        <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
                             <div className="flex flex-col">
                                 <label className="text-[#0A0A0A] text-[14px] mb-3">Net Total</label>
                                 <input
@@ -383,9 +387,9 @@ const InvoiceCreateForm = () => {
 
 
                 {/* Additional Costs & Deductions */}
-                <div className="mt-4 bg-[#FFF] rounded-2xl py-7 px-9">
+                <div className="mt-4 bg-[#FFF] rounded-2xl py-7 lg:px-9 px-4">
                     <SectionHeader title="Additional Costs & Deductions" />
-                    <div className="grid grid-cols-2 gap-4 my-4">
+                    <div className="grid grid-cols-1 md:grid-cols-2 gap-4 my-4">
                         <FormInput label="Withholding Amount" name="additional_costs_deductions.withholding_amount" register={register} errors={errors} />
                         <FormInput label="Shipping Cost" name="additional_costs_deductions.shipping_cost" register={register} errors={errors} />
                     </div>
@@ -402,34 +406,38 @@ const InvoiceCreateForm = () => {
                         <SectionHeader title="Invoice totals" />
                         <div>
                             <div className="flex justify-between items-center mb-3">
-                                <span className="text-[#0A0A0A]">Net Total</span>
-                                <span className="font-medium text-[#0A0A0A]">€{defaultValues.invoice_totals.net_total.toFixed(2)}</span>
+                                <span className="text-[#0A0A0A] md:text-base text-sm">Net Total</span>
+                                <span className="font-medium text-[#0A0A0A] md:text-base text-sm">€{defaultValues.invoice_totals.net_total.toFixed(2)}</span>
                             </div>
                             <div className="flex justify-between items-center mb-3">
-                                <span className="text-[#0A0A0A]">Discount Total</span>
-                                <span className="font-medium text-[#0A0A0A]">€{defaultValues.invoice_totals.discount_total.toFixed(2)}</span>
+                                <span className="text-[#0A0A0A] md:text-base text-sm">Discount Total</span>
+                                <span className="font-medium text-[#0A0A0A] md:text-base text-sm">€{defaultValues.invoice_totals.discount_total.toFixed(2)}</span>
                             </div>
                             <div className="flex justify-between items-center mb-3">
-                                <span className="text-[#0A0A0A]">VAT Total</span>
-                                <span className="font-medium text-[#0A0A0A]">€{defaultValues.invoice_totals.vat_total.toFixed(2)}</span>
+                                <span className="text-[#0A0A0A] md:text-base text-sm">VAT Total</span>
+                                <span className="font-medium text-[#0A0A0A] md:text-base text-sm">€{defaultValues.invoice_totals.vat_total.toFixed(2)}</span>
                             </div>
-                            <div className="flex justify-between items-center text-lg pt-2 border-t border-gray-300 mt-2">
+                            <div className="flex justify-between items-center md:text-lg pt-2 border-t border-gray-300 mt-2">
                                 <span className=" text-[#0A0A0A]">Gross Total</span>
-                                <span className="font-medium text-[#0A0A0A] text-lg">€{defaultValues.invoice_totals.gross_total.toFixed(2)}</span>
+                                <span className="font-medium text-[#0A0A0A]">€{defaultValues.invoice_totals.gross_total.toFixed(2)}</span>
                             </div>
                         </div>
                     </div>
                 </div>
 
                 {/* Action Buttons */}
-                <div className="flex justify-between items-center mt-6">
-                    <button type="button" className="text-[#101115] text-lg font-medium hover:underline hover:text-red-700 cursor-pointer">
-                        cancel
-                    </button>
-                    <div className="flex items-center gap-3">
-                        <CommonButton variant="secondary">Save Draft</CommonButton>
-                       
-                    <CommonButton type="submit" variant="primary" className="ml-4"><SendInvoiceIcon /> Send Invoice</CommonButton>
+                <div className="md:flex justify-between items-center my-6">
+                    <div className="flex justify-between items-center gap-4">
+                        <button type="button" className="text-[#101115] text-lg md:block hidden font-medium hover:underline hover:text-red-700 cursor-pointer">
+                            cancel
+                        </button>
+                         <button className="md:hidden py-2 px-6 rounded-lg font-semibold text-sm transition duration-300 w-full border border-red-700 text-red-700 hover:bg-red-700 hover:text-white ">Cancel</button>
+                        <CommonButton variant="secondary" className="w-full md:hidden">Save Draft</CommonButton>
+                    </div>
+                    <div className="flex items-center gap-4">
+                        <CommonButton variant="secondary" className="md:block hidden md:w-[200px] w-full">Save Draft</CommonButton>
+
+                        <CommonButton type="submit" variant="primary" className="md:w-[200px] w-full md:mt-0 mt-4"><SendInvoiceIcon /> Send Invoice</CommonButton>
                     </div>
                 </div>
             </form>

@@ -2,13 +2,9 @@ import TicketAndHelpPage from "@/app/pages/dashboard/TicketAndHelpPage/TicketAnd
 import { getAllTickets } from "@/services/dashboard/ticket/ticket";
 import { TTickets } from "@/Types";
 
-
-
 const DashboardTicketingPage = async () => {
   const data = await getAllTickets()
   const ticketData: TTickets[] = data instanceof Error ? [] : data;
-
-
 
   return (
     <TicketAndHelpPage  ticketData={ticketData}/>

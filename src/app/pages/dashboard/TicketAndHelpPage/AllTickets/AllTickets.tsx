@@ -1,5 +1,5 @@
-"use client"
-import React, { useState } from 'react';
+"use client";
+import React from 'react';
 import {
     useReactTable,
     getCoreRowModel,
@@ -11,12 +11,10 @@ import { TicketSVG } from '@/Components/SvgContainer/SvgContainer';
 import { DropdownMenu, DropdownMenuContent, DropdownMenuLabel, DropdownMenuTrigger } from '@/Components/ui/dropdown-menu';
 import { useRouter } from 'next/navigation';
 
-
-
 const columnHelper = createColumnHelper<TTickets>();
 
 const AllTickets = ({ ticketData = [] }: { ticketData?: TTickets[] }) => {
-    const router = useRouter()
+    const router = useRouter();
 
     const getStatusColor = (status: string) => {
         switch (status.toLowerCase()) {
@@ -77,7 +75,6 @@ const AllTickets = ({ ticketData = [] }: { ticketData?: TTickets[] }) => {
             ),
             size: 400,
         }),
-
         columnHelper.accessor('status', {
             header: 'Status',
             cell: info => (
@@ -86,7 +83,6 @@ const AllTickets = ({ ticketData = [] }: { ticketData?: TTickets[] }) => {
                 </span>
             ),
         }),
-
         columnHelper.accessor('priority', {
             header: 'Priority',
             cell: info => (
@@ -114,7 +110,7 @@ const AllTickets = ({ ticketData = [] }: { ticketData?: TTickets[] }) => {
         columnHelper.display({
             id: 'action',
             header: 'Action',
-            cell: ({row}) => (
+            cell: ({ row }) => (
                 <DropdownMenu>
                     <DropdownMenuTrigger asChild>
                         <button className="text-[#071431] text-xl font-medium cursor-pointer">...</button>
@@ -122,10 +118,17 @@ const AllTickets = ({ ticketData = [] }: { ticketData?: TTickets[] }) => {
 
                     <DropdownMenuContent className="rounded-2xl duration-300 p-0">
                         <DropdownMenuLabel className="p-0">
-                            <button onClick={() => router.push(`/dashboard/helpandticketing/${row.original.ticket_id}`)} className="text-black hover:bg-[#004D3F] w-full cursor-pointer hover:text-white py-3 px-4 rounded-2xl duration-300">View Details</button>
+                            <button
+                                onClick={() => router.push(`/dashboard/helpandticketing/${row.original.ticket_id}`)}
+                                className="text-black hover:bg-[#004D3F] w-full cursor-pointer hover:text-white py-3 px-4 rounded-2xl duration-300"
+                            >
+                                View Details
+                            </button>
                         </DropdownMenuLabel>
                         <DropdownMenuLabel className="p-0">
-                            <button className="bg-white w-full cursor-pointer text-red-500 hover:bg-red-500 hover:text-white py-3 px-4 rounded-2xl duration-300">Delete</button>
+                            <button className="bg-white w-full cursor-pointer text-red-500 hover:bg-red-500 hover:text-white py-3 px-4 rounded-2xl duration-300">
+                                Delete
+                            </button>
                         </DropdownMenuLabel>
                     </DropdownMenuContent>
                 </DropdownMenu>
@@ -142,23 +145,20 @@ const AllTickets = ({ ticketData = [] }: { ticketData?: TTickets[] }) => {
     return (
         <div className="w-full">
             <div className="rounded-lg flex flex-col">
-                <div className="flex-1">
-                    <table className="w-full rounded-2xl">
+                <div className="overflow-x-scroll custom-scroll">
+                    <table className="w-full min-w-[800px] rounded-2xl">
                         <thead className="sticky top-0 bg-[#E7F9DE] z-10">
                             {table.getHeaderGroups().map(headerGroup => (
                                 <tr key={headerGroup.id} className="border-b border-gray-200">
                                     {headerGroup.headers.map(header => (
                                         <th
                                             key={header.id}
-                                            className="px-6 py-4 text-left text-sm font-semibold text-gray-700"
+                                            className="px-6 py-4 text-left text-sm font-semibold text-gray-700 whitespace-nowrap"
                                             style={{ width: header.getSize() }}
                                         >
                                             {header.isPlaceholder
                                                 ? null
-                                                : flexRender(
-                                                    header.column.columnDef.header,
-                                                    header.getContext()
-                                                )}
+                                                : flexRender(header.column.columnDef.header, header.getContext())}
                                         </th>
                                     ))}
                                 </tr>
@@ -166,13 +166,14 @@ const AllTickets = ({ ticketData = [] }: { ticketData?: TTickets[] }) => {
                         </thead>
                         <tbody className="divide-y divide-gray-200">
                             {table.getRowModel().rows.map(row => (
-                                <tr key={row.id} className="hover:bg-gray-50 transition-colors cursor-pointer" onClick={() => router.push(`/dashboard/helpandticketing/${row.original.ticket_id}`)}>
+                                <tr
+                                    key={row.id}
+                                    className="hover:bg-gray-50 transition-colors cursor-pointer"
+                                    onClick={() => router.push(`/dashboard/helpandticketing/${row.original.ticket_id}`)}
+                                >
                                     {row.getVisibleCells().map(cell => (
-                                        <td key={cell.id} className="px-6 py-4">
-                                            {flexRender(
-                                                cell.column.columnDef.cell,
-                                                cell.getContext()
-                                            )}
+                                        <td key={cell.id} className="px-6 py-4 whitespace-nowrap">
+                                            {flexRender(cell.column.columnDef.cell, cell.getContext())}
                                         </td>
                                     ))}
                                 </tr>

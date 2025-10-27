@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import { usePathname, useRouter } from "next/navigation";
-import React from "react";
+import React, { useState } from "react";
 import { RootState } from "@/redux/store";
 import { useDispatch, useSelector } from "react-redux";
 import { logout } from "@/redux/slices/authSlice";
@@ -22,7 +22,7 @@ import {
   SettingsIcon,
   SubscriptionIcon,
 } from "@/common/DashboardSvg/DashSVG";
-import { FiSearch } from "react-icons/fi";
+import { FiMenu, FiSearch, FiX } from "react-icons/fi";
 import UserProfileDropdown from "@/Shared/UserProfileDropdown";
 import { DropdownMenu, DropdownMenuContent, DropdownMenuTrigger } from "@/Components/ui/dropdown-menu";
 import Title from "@/common/Title";
@@ -398,21 +398,22 @@ export default function DashboardLayout({
   const dispatch = useDispatch();
 
   const userData = useSelector((state: RootState) => state.auth.user);
-
+  const [isOpen, setIsOpen] = useState(false)
+  const closeDrawer = () => setIsOpen(false);
   const handleLogout = () => {
     dispatch(logout());
     router.replace("/auth/login");
   };
 
   return (
-    <section className="min-h-screen w-full px-8 flex bg-[#FFF] gap-10 overflow-hidden">
+    <section className="min-h-screen w-full xl:pl-8 flex bg-[#FFF] xl:gap-10 overflow-hidden ">
       <div className="sticky top-0 h-screen">
         {/* Sidebar */}
-        <Link href="/" className="mb-4 block">
+        <Link href="/" className="mb-4 xl:block hidden">
           <Image src={Logo} alt="Logo" width={140} height={72} />
         </Link>
 
-        <aside className="w-[320px] h-[calc(100vh-6rem)] bg-[#E7F9DE] rounded-3xl md:flex hidden flex-col justify-between overflow-hidden">
+        <aside className="w-[320px] h-[calc(100vh-6rem)] bg-[#E7F9DE] rounded-3xl xl:flex hidden flex-col justify-between overflow-hidden">
           {/* Scrollable upper section */}
           <div className="flex-1 overflow-y-auto custom-scroll p-8 space-y-5">
             <nav className="flex flex-col gap-3">
@@ -461,10 +462,66 @@ export default function DashboardLayout({
         </aside>
       </div>
 
+      {/* ============ MOBILE DRAWER ============ */}
+      {isOpen && (
+        <div
+          className="fixed inset-0 bg-black/40 z-40"
+          onClick={closeDrawer}
+        ></div>
+      )}
+
+      <div
+        className={`fixed top-0 left-0 h-full w-[300px] bg-[#f8fdf4] shadow-lg z-50 transition-transform duration-300 ${isOpen ? "translate-x-0" : "-translate-x-full"
+          }`}
+      >
+          <div className="flex justify-end items-center p-4 pt-11 border-b">
+          <FiX className="text-xl cursor-pointer" onClick={closeDrawer} />
+        </div>
+
+        <div className="flex flex-col p-6 gap-6 overflow-y-auto h-[calc(100vh-120px)] custom-scroll">
+          {/* Search */}
+          <div className="relative">
+            <FiSearch className="absolute left-4 top-1/2 -translate-y-1/2 text-gray-500 text-lg" />
+            <input
+              type="text"
+              placeholder="Search..."
+              className="w-full bg-[#EFF0F0] rounded-full pl-10 pr-4 py-2 outline-none placeholder:text-gray-500 text-gray-700 focus:ring-2 focus:ring-[#004d3f] transition"
+            />
+          </div>
+
+          {/* Menu Links */}
+          {menuItems.map((nav) => (
+            <Link
+              key={nav.href}
+              href={nav.href}
+              onClick={closeDrawer}
+              className={`flex items-center gap-3 font-medium md:text-lg ${pathname === nav.href ? "text-[#085441] font-semibold" : "text-[#595959]"
+                } hover:text-[#085441] transition-all duration-300`}
+            >
+              {nav.icon} {nav.label}
+            </Link>
+          ))}
+
+          {/* Icons */}
+          <div className="flex gap-4 mt-4">
+            <Link href={"/dashboard/message"} onClick={closeDrawer} className="p-2 bg-[#ECF4E9] rounded-full">
+              <MessageIcon />
+            </Link>
+
+            <div className="p-2 bg-[#ECF4E9] rounded-full">
+              <NotificationIcon />
+            </div>
+          </div>
+
+          <UserProfileDropdown logout={handleLogout} />
+        </div>
+      </div>
+
+
       {/* Main Content */}
       <main className="grow flex flex-col py-4 h-screen overflow-hidden">
         {/* Sticky Top Navbar */}
-        <header className="h-16 w-full flex items-center justify-between sticky top-0 bg-white z-10">
+        <header className="hidden xl:flex h-16 pr-8 w-full items-center justify-between sticky top-0 bg-white z-10">
           <div className="max-w-xl w-full relative ml-2">
             <FiSearch className="absolute left-4 top-1/2 -translate-y-1/2 text-gray-500 text-lg" />
             <input
@@ -530,8 +587,21 @@ export default function DashboardLayout({
             <UserProfileDropdown logout={handleLogout} />
           </div>
         </header>
+        <header className="h-16 w-full xl:hidden flex items-center justify-between sticky top-0 bg-white border-b z-10 shadow xl:p-0 lg:p-8 p-4">
 
-        <section className="flex-1 overflow-y-auto w-full container my-4 custom-scroll">
+          <Link href="/" className="mb-4 block">
+            <Image className="lg:w-[140px] w-[100px]" src={Logo} alt="Logo" width={140} height={72} />
+          </Link>
+
+          <button
+            className="block xl:hidden text-[#085441] text-2xl"
+            onClick={() => setIsOpen(true)}
+          >
+            <FiMenu />
+          </button>
+        </header>
+
+        <section className="flex-1 overflow-y-auto w-full my-4 custom-scroll xl:p-0 lg:px-8 lg:py-4 p-4">
           {children}
         </section>
       </main>
