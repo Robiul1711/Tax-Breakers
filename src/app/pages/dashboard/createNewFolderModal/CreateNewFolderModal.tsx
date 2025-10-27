@@ -29,7 +29,7 @@ const CreateNewFolderModal = () => {
         <div>
             <CommonButton
                 onClick={() => setIsOpen(true)}
-                variant="primary" className="!text-[18px] !font-semibold hover:!text-[#004D3F] !border-[#004D3F] !flex !items-center gap-[10px]"><CreateNewFolderIcon /> Create New Folder
+                variant="primary" className="md:text-[18px]! flex! items-center! gap-2.5"><CreateNewFolderIcon /> Create New Folder
                 </CommonButton>
             <AnimatePresence>
                 {isOpen && (
@@ -48,7 +48,7 @@ const CreateNewFolderModal = () => {
                             className="bg-white shadow-md rounded-xl py-6 px-5 md:w-[600px] w-[370px] border border-gray-200"
                         >
                             <form onSubmit={handleSubmit(onSubmit)} className="flex flex-col">
-                                <h2 className="text-[#191919] text-3xl font-medium">📁 New Folder</h2>
+                                <h2 className="text-[#191919] text-[18px] sm:text-[22px] md:text-[26px] lg:text-[30px] xl:text-[32px] font-medium">📁 New Folder</h2>
                                 <p className="text-[#7F7F7F] mt-2 mb-6">Create a folder to keep related files together.</p>
 
                                 {/* Folder name Input */}

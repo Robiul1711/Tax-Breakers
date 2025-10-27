@@ -6,6 +6,7 @@ import Link from 'next/link'
 import React from 'react'
 import Image from "next/image";
 import AppointmentImage from '@/assets/images/OBJECTS.png'
+import Title from '@/common/Title'
 
 const BookAppointmentPage = async () => {
 
@@ -33,16 +34,16 @@ const BookAppointmentPage = async () => {
     )
   }
   return (
-    <div className='w-full'>
-      <div className='bg-[#FBFBFB] p-8 rounded-2xl'>
-        <div className='flex justify-between items-center'>
-          <div>
-            <h1 className='text-4xl font-semibold mb-2'>Upcoming  Appointments</h1>
-            <p className='text-[#677489] tracking-widest'>Easily schedule tax or accounting chats from your dashboard to manage your finances!</p>
+    <div className='w-full xl:pr-8'>
+      <div className='bg-[#FBFBFB] rounded-3xl lg:p-8 p-4 border border-gray-100'>
+        <div className='flex flex-col lg:flex-row lg:items-center justify-between gap-4 mb-6'>
+          <div className="lg:w-2/3">
+            <Title level="title32" children="Upcoming  Appointments" />
+            <p className='text-[#677489] lg:text-[18px] md:text-base text-sm mt-4'>Easily schedule tax or accounting chats from your dashboard to manage your finances!</p>
           </div>
           <div>
             <Link href={'/dashboard/appointments/book-an-appointment'}>
-              <CommonButton variant='primary' className='font-normal! rounded-2xl!'>Book An Appointment</CommonButton>
+              <CommonButton variant='primary' className='font-normal!'>Book An Appointment</CommonButton>
             </Link>
           </div>
         </div>

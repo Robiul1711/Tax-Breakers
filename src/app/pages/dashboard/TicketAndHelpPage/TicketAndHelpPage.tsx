@@ -4,6 +4,7 @@ import { TTickets } from '@/Types'
 import { useCallback, useState } from 'react';
 import AllTickets from './AllTickets/AllTickets';
 import CreateTicketButton from './CreateTicketButton/CreateTicketButton';
+import Title from '@/common/Title';
 
 
 const TicketAndHelpPage = ({ ticketData }: { ticketData: TTickets[] }) => {
@@ -17,12 +18,12 @@ const TicketAndHelpPage = ({ ticketData }: { ticketData: TTickets[] }) => {
   }, [])
 
   return (
-    <div>
-      <div className='bg-[#FBFBFB] p-8 rounded-2xl'>
-        <div className=' flex justify-between items-center'>
-          <div>
-            <h1 className='text-4xl font-semibold mb-2'>Support & Ticketing</h1>
-            <p className='text-[#677489] tracking-wider'>Handle customer requests and keep an eye on how things are getting resolved</p>
+    <div className='xl:mr-8'>
+      <div className='bg-[#FBFBFB] rounded-3xl lg:p-8 p-4'>
+        <div className="flex flex-col lg:flex-row lg:items-center justify-between gap-4 mb-6">
+          <div className="lg:w-2/3">
+            <Title level="title32" children="Support & Ticketing"/>
+            <p className='text-[#677489] lg:text-[18px] md:text-base text-sm mt-4'>Handle customer requests and keep an eye on how things are getting resolved</p>
           </div>
           <div>
             <CreateTicketButton />
@@ -31,11 +32,11 @@ const TicketAndHelpPage = ({ ticketData }: { ticketData: TTickets[] }) => {
       </div>
 
       {/* table */}
-      <div className='mt-10'>
+      <div className='mt-10 '>
         <AllTickets ticketData={currentPageData} />
       </div>
 
-      <div className='flex justify-between items-center'>
+      <div className='flex flex-col justify-between items-center mt-10'>
         <div>
           <h2 className="text-[#6B7271] text-[12px]">Showing
             <select className="bg-[#ECF4E9] border-none mx-2 px-3 py-2 rounded-md cursor-pointer" value={currentPageData.length} onChange={(e) => {
@@ -50,7 +51,7 @@ const TicketAndHelpPage = ({ ticketData }: { ticketData: TTickets[] }) => {
             </select> out of {ticketData?.length}</h2>
         </div>
 
-        <div className="mt-10">
+        <div >
           <Pagination
             data={ticketData}
             dataPerPage={dataPerPage}

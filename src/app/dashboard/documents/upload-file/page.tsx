@@ -13,9 +13,9 @@ const UploadFile = () => {
     };
     return (
         <div>
-            <div className="flex flex-col justify-center items-center min-h-[60vh] mx-8">
-                <h2 className="text-center text-[#0E1109] text-[32px] font-semibold mb-11"> Upload Documents</h2>
-                <div className="border-2 border-dashed border-[#004D3F] bg-[#FBFBFB] rounded-3xl w-full h-[300px] flex flex-col justify-center items-center mx-auto">
+            <div className="flex flex-col justify-center items-center min-h-[60vh] lg:mx-8 mx-4">
+                <h2 className="text-center text-[#0E1109] text-xl xl:text-[32px] font-semibold mb-11"> Upload Documents</h2>
+                <div className="border-2 border-dashed border-[#004D3F] bg-[#FBFBFB] rounded-3xl w-full h-[200px] md:h-[300px] flex flex-col justify-center items-center mx-auto">
                     <DownloadBoxIcon />
                     <p className="mt-3">Drag & drop or click to upload  Documents</p>
                     <h2 className="font-semibold text-2xl mt-3 mb-6">Or</h2>
@@ -29,7 +29,7 @@ const UploadFile = () => {
                     {/* Your Button */}
                     <CommonButton
                         variant="primary"
-                        className="!text-[18px] !font-semibold hover:!text-[#004D3F] !border-[#004D3F] !flex !items-center gap-[10px]"
+                        className="md:text-[18px]! font-semibold! hover:text-[#004D3F]! border-[#004D3F]! flex! items-center! gap-2.5"
                         onClick={handleClick}
                     >
                         Browse File
@@ -56,9 +56,6 @@ const UploadFile = () => {
                                 </div>
                             </div>
                             <div className="flex items-center gap-12">
-                                <div className="bg-[#EDEDED] w-[355px] h-2 rounded-full">
-                                    <p className="bg-[#004D3F] w-[250px] h-2 rounded-full"></p>
-                                </div>
                                 <div className="cursor-pointer">
                                     <CrossIcon width="30" height="30"/>
                                 </div>

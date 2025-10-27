@@ -146,7 +146,7 @@ const AppointmentForm = () => {
     };
 
     return (
-        <div className="bg-[#FBFBFB] rounded-3xl p-8 relative">
+        <div className="bg-[#FBFBFB] rounded-3xl lg:p-8 p-4 relative">
             <form onSubmit={handleSubmit(onSubmit)} className="space-y-6">
 
                 {/* Basic Info */}
@@ -275,7 +275,7 @@ const AppointmentForm = () => {
 
                 {/* Buttons */}
                 <div className="flex justify-end">
-                    <CommonButton className="px-10! rounded-2xl!" type="submit" variant="primary">
+                    <CommonButton className="px-8! py-3!" type="submit" variant="primary">
                         Submit Booking
                     </CommonButton>
                 </div>

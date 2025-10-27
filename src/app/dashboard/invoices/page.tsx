@@ -1,5 +1,6 @@
 import InvoiceDataTab from "@/app/pages/dashboard/invoiceDataTab/InvoiceDataTab"
 import CommonButton from "@/common/CommonButton"
+import Title from "@/common/Title"
 import { ArrowDownIcon, ArrowUpIcon, CircleWaveCheckIcon, NavInvoiceIcon, WarningOctagonIcon } from "@/Components/SvgContainer/SvgContainer"
 import { DropdownMenu, DropdownMenuContent, DropdownMenuLabel, DropdownMenuTrigger } from "@/Components/ui/dropdown-menu"
 import { getAllInvoice } from "@/services/dashboard/invoice/invoice"
@@ -48,12 +49,12 @@ const DashboardInvoicePage = async () => {
   const invoices : TInvoice[] = result instanceof Error ? [] : result;
 
   return (
-    <div>
-      <div className="bg-[#FBFBFB] rounded-3xl p-8 mr-8">
-        <div className="flex items-center justify-between mb-14">
-          <div>
-            <h1 className="text-[32px] font-semibold text-[#000]">Invoices</h1>
-            <p className="text-[#677489] text-[18px] mt-4">Easily book a tax or accounting chat right from your dashboard and keep your finances in check!</p>
+    <div className="xl:mr-8">
+      <div className="bg-[#FBFBFB] rounded-3xl lg:p-8 p-4">
+        <div className="flex flex-col lg:flex-row lg:items-center justify-between gap-4 mb-14">
+          <div className="lg:w-2/3">
+            <Title level="title32" children="Invoices"/>
+            <p className="text-[#677489] lg:text-[18px] md:text-base text-sm mt-4">Easily book a tax or accounting chat right from your dashboard and keep your finances in check!</p>
           </div>
           <div className="flex items-center gap-4">
 
@@ -61,18 +62,18 @@ const DashboardInvoicePage = async () => {
               <DropdownMenuTrigger asChild>
                 <CommonButton
                   variant="primary"
-                  className="!text-[18px] !font-semibold hover:!text-[#004D3F] !border-[#004D3F] !flex !items-center gap-[10px]"
+                  className="lg:text-[18px]! font-semibold! hover:text-[#004D3F]! border-[#004D3F]! flex! items-center! gap-2.5 "
                 >
                   <FaPlus /> Add Invoice
                 </CommonButton>
               </DropdownMenuTrigger>
 
-              <DropdownMenuContent>
+              <DropdownMenuContent className="lg:mr-18 ml-8">
                 <DropdownMenuLabel>
                  <Link href={'/dashboard/invoices/invoice-create'}>
                   <CommonButton
                     variant="primary"
-                    className="font-semibold! hover:text-[#004D3F]! border-[#004D3F]! !flex !items-center gap-[10px]"
+                    className="font-semibold! hover:text-[#004D3F]! border-[#004D3F]! flex! items-center! gap-2.5"
                   >
                     <FaPlus /> Proforma Invoice
                   </CommonButton></Link>
@@ -81,7 +82,7 @@ const DashboardInvoicePage = async () => {
                   <Link href={'/dashboard/invoices/invoice-create'}>
                   <CommonButton
                     variant="secondary"
-                    className="!font-semibold hover:!text-white !flex !items-center gap-[10px]"
+                    className="font-semibold! hover:text-white! flex! items-center! gap-2.5"
                   >
                     <FaPlus /> Electronic Invoice
                   </CommonButton>
@@ -91,10 +92,10 @@ const DashboardInvoicePage = async () => {
             </DropdownMenu>
           </div>
         </div>
-        <div className="grid grid-cols-3 gap-8">
+        <div className="grid md:grid-cols-2 xl:grid-cols-3 gap-4 lg:gap-6 xl:gap-8 mb-6">
           {
             invoicesData.map((invoice, index) => (
-              <div key={index} className="bg-[#FFF] rounded-2xl p-4 mb-6 border border-[#E5E6E6] flex justify-between items-center gap-4">
+              <div key={index} className="bg-[#FFF] rounded-2xl p-4 border border-[#E5E6E6] flex justify-between items-center gap-4">
                 <div className="flex items-center gap-4">
                   <div className="bg-[#ECF4E9] w-[50px] h-[50px] rounded-full flex items-center justify-center">
                     <div className="mx-auto">
@@ -121,11 +122,11 @@ const DashboardInvoicePage = async () => {
         </div>
 
       </div>
-      <div className="mt-8 mr-8">
+      <div className="mt-8">
         <InvoiceDataTab invoices={invoices} />
       </div>
     </div>
   )
 }
 
-export default DashboardInvoicePage
+export default DashboardInvoicePage;
