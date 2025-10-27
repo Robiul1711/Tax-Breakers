@@ -1,3 +1,4 @@
+import ChatSupport from "@/Components/AiChatSupport/ChatSupport";
 import Footer from "@/Shared/Footer";
 import Navbar from "@/Shared/Navbar";
 
@@ -10,7 +11,7 @@ export default function MainLayout({
     <>
       <Navbar />
       {/* <meta name="color-scheme" content="light" /> */}
-      <main>{children}</main>
+      <main>{children}  <ChatSupport /></main>
       <Footer />
     </>
   );
