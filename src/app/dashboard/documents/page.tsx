@@ -29,8 +29,8 @@ const DashboardDocumentPage = async () => {
     const folders: IFolder[] = result instanceof Error ? [] : result;
     return (
         <div className="xl:mr-8">
-            <div className="bg-[#FBFBFB] rounded-3xl lg:p-8 p-4">
-                <div className="flex flex-col lg:flex-row lg:items-center justify-between gap-4 mb-14">
+            <div className="sm:bg-[#FBFBFB] rounded-3xl lg:p-8 sm:p-4">
+                <div className="flex flex-col lg:flex-row lg:items-center justify-between gap-4 mb-6 sm:mb-14">
                     <div className="lg:w-1/3">
                         <Title level="title32" children="Documents"/>
                         <p className="text-[#677489] lg:text-[18px] md:text-base text-sm mt-4">Access and organize all your personal and work files in one place.</p>
@@ -47,24 +47,24 @@ const DashboardDocumentPage = async () => {
                     <div className="flex items-center gap-2 text-[#191919] text-[18px] font-medium">
                         <FolderIcon /> <h2>My Folder</h2>
                     </div>
-                    <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-6 2xl:grid-cols-8 gap-6 mt-6 lg:p-8 p-4 rounded-3xl bg-[#FFF]">
+                    <div className="grid grid-cols-3 md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-6 2xl:grid-cols-8 gap-4 sm:gap-6 mt-6 lg:p-8 sm:p-4 rounded-3xl bg-[#FFF]">
                         {folders.map((folder, index) => (
                         <Link href={`/dashboard/documents/${folder?.name.toLowerCase().split(" ").join("-")}`} key={index} className="mt-4 text-black hover:text-[#004d3f]">
                                 <div className="relative">
                                     <Image src={GreenFolderImg} alt="Folder Icon" width={150} height={150} />
-                                    <div className="absolute bottom-2 md:left-4 left-6 flex justify-center text-[#FFF] md:text-base text-sm font-medium items-center gap-6">
+                                    <div className="absolute bottom-2 md:left-4 left-4 sm:left-6 flex justify-center text-[#FFF] md:text-base text-sm font-medium items-center gap-6">
                                         <p>{folder?.size}</p>
                                         <p>{folder?.items}</p>
                                     </div>
                                 </div>
-                                <h3 className="mt-4 font-medium text-[16px]">
+                                <h3 className="mt-4 font-medium text-xs sm:text-sm md:text-base">
                                     {
                                         folder?.name.length > 12
                                             ? folder?.name.slice(0, 12) + "..."
                                             : folder?.name
                                     }
                                 </h3>
-                                <p className="text-[#7F7F7F] md:text-base text-sm mt-1">{folder.last_opened}</p>
+                                <p className="text-[#7F7F7F] md:text-base text-xs sm:text-sm  mt-1">{folder.last_opened}</p>
                             </Link>
                         ))}
                     </div>
