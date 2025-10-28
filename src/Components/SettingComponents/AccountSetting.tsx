@@ -1,4 +1,5 @@
 "use client";
+import Image from "next/image";
 import React, { useState } from "react";
 import { useForm, SubmitHandler } from "react-hook-form";
 import { LuDownload } from "react-icons/lu";
@@ -73,14 +74,20 @@ export default function AccountSetting() {
       <div className="">
         {/* Profile Photo Section */}
         <div className="mb-6 bg-[#FBFBFB] p-6 rounded-2xl">
-          <div className="flex items-start gap-6 ">
-            <div className="w-28 h-28 rounded-full  flex items-center justify-center overflow-hidden">
-              <img src={profileImage} alt="Profile" className="w-full h-full object-cover" />
+          <div className="flex items-center gap-6 w-full xl:w-fit">
+            <div className="w-1/3 lg:flex items-center xl:justify-start justify-center">
+              <Image
+                className="xl:w-[156px] xl:h-[116px] w-full h-full rounded-full object-cover"
+                src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=150&h=150&fit=crop"
+                alt="Profile"
+                width={126}
+                height={126}
+              />
             </div>
-            <div>
+            <div className="w-2/3">
               <label
                 htmlFor="photo-upload"
-                className="inline-block px-4 py-2 border border-[#004D3F] shadow rounded-md text-sm font-medium text-[#004D3F] bg-white hover:bg-gray-50 cursor-pointer transition-colors"
+                className="inline-block md:px-4 px-2 py-1 md:py-2 border border-[#004D3F] shadow rounded-md text-xs md:text-sm font-medium text-[#004D3F] bg-white hover:bg-gray-50 cursor-pointer transition-colors"
               >
                 Upload New Photo
               </label>
@@ -91,25 +98,25 @@ export default function AccountSetting() {
                 onChange={handleImageUpload}
                 className="hidden"
               />
-              <p className="text-xs text-gray-500 mt-2">At Least 800x800 Px Recommended.</p>
-              <p className="text-xs text-gray-500">JPG Or PNG Is Allowed</p>
+              <p className="text-[10px] md:text-xs text-gray-500 mt-2">At Least 800x800 Px Recommended.</p>
+              <p className="text-[10px] md:text-xs text-gray-500">JPG Or PNG Is Allowed</p>
             </div>
           </div>
         </div>
 
         {/* Personal Information */}
-        <div className="mb-6 bg-[#FBFBFB] p-6 rounded-2xl">
+        <div className="mb-6 bg-[#FBFBFB] lg:p-6 p-4 rounded-2xl">
           <div className="flex items-center justify-between mb-6">
-            <h2 className="text-xl font-semibold text-gray-900">Personal Information</h2>
+            <h2 className="text-md lg:text-xl font-semibold text-gray-900">Personal Information</h2>
             <button
               type="submit"
-              className="px-6 py-2 bg-[#004D3F] text-white rounded-md hover:bg-teal-800 transition-colors text-sm font-medium"
+              className="md:px-6 px-2 py-2 md:py-2 bg-[#004D3F] text-white rounded-md hover:bg-teal-800 transition-colors md:text-sm text-xs font-medium"
             >
               Save Changes
             </button>
           </div>
 
-          <div className="grid grid-cols-2 gap-6">
+          <div className="grid lg:grid-cols-2 gap-6">
             <div>
               <label className="block text-sm text-gray-600 mb-2">Name</label>
               <input
@@ -152,18 +159,18 @@ export default function AccountSetting() {
         </div>
 
         {/* Business Information */}
-        <div className=" bg-[#FBFBFB] p-6 rounded-2xl">
+        <div className=" bg-[#FBFBFB] lg:p-6 p-4  rounded-2xl">
           <div className="flex items-center justify-between mb-6 ">
-            <h2 className="text-xl font-semibold text-gray-900">Business Information</h2>
+            <h2 className="text-md lg:text-xl font-semibold text-gray-900">Business Information</h2>
             <button
               type="submit"
-              className="px-6 py-2 bg-[#004D3F] text-white rounded-md hover:bg-teal-800 transition-colors text-sm font-medium"
+              className="md:px-6 px-2 py-2 md:py-2 bg-[#004D3F] text-white rounded-md hover:bg-teal-800 transition-colors md:text-sm text-xs font-medium"
             >
               Save Changes
             </button>
           </div>
 
-          <div className="grid grid-cols-2 gap-6 mb-6">
+          <div className="grid lg:grid-cols-2 gap-6 mb-6">
             <div>
               <label className="block text-sm text-gray-600 mb-2">Company Name</label>
               <input
@@ -201,7 +208,7 @@ export default function AccountSetting() {
           {/* Upload Documents */}
           <div>
             <label className="block text-sm text-gray-600 mb-4">Upload ID/Compliance Docs</label>
-            <div className="border-2 border-dashed border-[#E6E8E5] shadow rounded-lg p-12 text-center bg-gray-50">
+            <div className="border-2 border-dashed border-[#E6E8E5] shadow rounded-lg p-4 md:p-12 text-center bg-gray-50">
               <div className="flex flex-col items-center">
                 <LuDownload className="w-8 h-8 text-gray-400 mb-3" />
                 <p className="text-sm text-gray-600 mb-1">

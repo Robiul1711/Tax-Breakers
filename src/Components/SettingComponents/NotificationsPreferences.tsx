@@ -20,7 +20,7 @@ const NotificationsPreferences = () => {
 
 
       {/* Notification Channels */}
-      <div className="bg-[#FBFBFB] rounded-xl p-6 mb-6">
+      <div className="bg-[#FBFBFB] rounded-xl lg:p-6 p-4 mb-6">
         <h3 className="font-semibold mb-4 text-gray-800">Notification Channels</h3>
 
         <div className="space-y-4">
@@ -45,35 +45,36 @@ const NotificationsPreferences = () => {
               key={key}
               className="flex items-start justify-between border-b border-gray-200 pb-3 last:border-0"
             >
-              <div>
-                <h4 className="font-medium text-gray-900 md:text-lg mb-2">{label}</h4>
+              <div className="w-full">
+                <div className="flex justify-between items-center mb-2">
+                  <h4 className="font-medium text-gray-900 md:text-lg">{label}</h4>
+                  {/* Toggle */}
+                  <button
+                    onClick={() => handleToggle(key as keyof typeof notifications)}
+                    className={`relative inline-flex h-5 w-10 items-center rounded-full transition ${notifications[key as keyof typeof notifications]
+                      ? "bg-[#004D3F]"
+                      : "bg-gray-300"
+                      }`}
+                  >
+                    <span
+                      className={`inline-block h-4 w-4 transform rounded-full bg-white transition ${notifications[key as keyof typeof notifications]
+                        ? "translate-x-5"
+                        : "translate-x-1"
+                        }`}
+                    />
+                  </button>
+                </div>
                 <p className="text-sm text-gray-500">{desc}</p>
               </div>
 
-              {/* Toggle */}
-              <button
-                onClick={() => handleToggle(key as keyof typeof notifications)}
-                className={`relative inline-flex h-5 w-10 items-center rounded-full transition ${
-                  notifications[key as keyof typeof notifications]
-                    ? "bg-[#004D3F]"
-                    : "bg-gray-300"
-                }`}
-              >
-                <span
-                  className={`inline-block h-4 w-4 transform rounded-full bg-white transition ${
-                    notifications[key as keyof typeof notifications]
-                      ? "translate-x-5"
-                      : "translate-x-1"
-                  }`}
-                />
-              </button>
+
             </div>
           ))}
         </div>
       </div>
 
       {/* Custom Alerts */}
-      <div className="bg-[#FBFBFB] rounded-xl p-6 mb-6">
+      <div className="bg-[#FBFBFB] rounded-xl lg:p-6 p-4 mb-6">
         <h3 className="font-semibold mb-4 text-gray-800">Custom Alerts</h3>
 
         <div className="space-y-4">
@@ -98,52 +99,56 @@ const NotificationsPreferences = () => {
               key={key}
               className="flex items-start justify-between border-b border-gray-200 pb-3 last:border-0"
             >
-              <div>
-                <h4 className="font-medium text-gray-900 md:text-lg mb-2">{label}</h4>
+              <div className="w-full">
+                <div className="flex justify-between items-center mb-2">
+                  <h4 className="font-medium text-gray-900 md:text-lg">{label}</h4>
+
+                  <button
+                    onClick={() => handleToggle(key as keyof typeof notifications)}
+                    className={`relative inline-flex h-5 w-10 items-center rounded-full transition ${notifications[key as keyof typeof notifications]
+                      ? "bg-[#004D3F]"
+                      : "bg-gray-300"
+                      }`}
+                  >
+                    <span
+                      className={`inline-block h-4 w-4 transform rounded-full bg-white transition ${notifications[key as keyof typeof notifications]
+                        ? "translate-x-5"
+                        : "translate-x-1"
+                        }`}
+                    />
+                  </button>
+                </div>
                 <p className="text-sm text-gray-500">{desc}</p>
               </div>
 
-              <button
-                onClick={() => handleToggle(key as keyof typeof notifications)}
-                className={`relative inline-flex h-5 w-10 items-center rounded-full transition ${
-                  notifications[key as keyof typeof notifications]
-                    ?  "bg-[#004D3F]"
-                    : "bg-gray-300"
-                }`}
-              >
-                <span
-                  className={`inline-block h-4 w-4 transform rounded-full bg-white transition ${
-                    notifications[key as keyof typeof notifications]
-                      ? "translate-x-5"
-                      : "translate-x-1"
-                  }`}
-                />
-              </button>
             </div>
           ))}
         </div>
       </div>
 
       {/* Language Settings */}
-      <div className="bg-gray-50 rounded-xl p-6">
+      <div className="bg-gray-50 rounded-xl lg:p-6 p-4">
         <h3 className="font-semibold mb-4 text-gray-800">Language Settings</h3>
         <div className="flex items-center justify-between">
-          <div>
-            <p className="font-medium text-gray-900 md:text-lg mb-2">Language:</p>
+          <div className="w-full">
+            <div className="flex justify-between items-center gap-4 mb-2">
+              <h2 className="font-medium text-gray-900 md:text-lg">Language:</h2>
+              <select
+                className="border border-gray-300 rounded-md lg:px-3 px-2 lg:py-2 py-1 text-sm focus:outline-none focus:ring-2 focus:ring-[#004D3F]"
+                defaultValue="English"
+              >
+                <option>English</option>
+                <option>Spanish</option>
+                <option>French</option>
+                <option>Bangla</option>
+              </select>
+            </div>
             <p className="text-sm text-gray-500">
               Choose your preferred language for the interface, notifications, and AI support assistant.
             </p>
           </div>
 
-          <select
-            className="border border-gray-300 rounded-md px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-[#004D3F]"
-            defaultValue="English"
-          >
-            <option>English</option>
-            <option>Spanish</option>
-            <option>French</option>
-            <option>Bangla</option>
-          </select>
+
         </div>
       </div>
     </div>

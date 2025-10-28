@@ -32,7 +32,7 @@ export default function SecurityAuthentication() {
       <div className="bg-[#FAFAFA] rounded-xl shadow-sm p-6">
         <h2 className="text-lg font-semibold mb-6 text-gray-900">Change Password</h2>
         <form onSubmit={handleSubmit(onSubmit)} className="space-y-6">
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+          <div className="grid grid-cols-1 xl:grid-cols-2 gap-6">
             {/* Current Password */}
             <div className="flex flex-col">
               <label className="text-sm text-gray-700 mb-2">Current Password</label>
