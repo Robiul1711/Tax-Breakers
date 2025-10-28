@@ -59,27 +59,27 @@ const page = () => {
     },
   ];
   return (
-    <div>
-      <div className="p-9 bg-[#FBFBFB] rounded-3xl flex flex-col gap-4">
-        <Title level="title36">Settings</Title>
-        <Title level="title18" className="text-[#677489]">
+    <div className="xl:mr-8">
+      <div className="lg:p-8 p-4 bg-[#FBFBFB] rounded-3xl flex flex-col gap-4 pb-8">
+        <Title level="title32">Settings</Title>
+        <p className="text-[#677489] lg:text-[18px] md:text-base text-sm">
           Manage your account preferences, update your details, and customize
           your experience—all in one place.
-        </Title>
+        </p>
       </div>
-      <div className="w-full mt-8 bg-[#FBFBFB] p-6 rounded-3xl">
-        <div className="flex flex-col sm:flex-row gap-4 md:gap-6 rounded-xl overflow-hidden">
+      <div className="w-full mt-8 bg-[#FBFBFB] xl:pr-2 xl:pl-1 p-4 rounded-3xl">
+        <div className="grid md:grid-cols-[14rem_1fr] lg:grid-cols-[15rem_1fr] xl:grid-cols-[13rem_1fr] 2xl:grid-cols-[19rem_1fr] gap-4 md:gap-6 rounded-xl">
           {/* Sidebar Tabs */}
-          <div className="flex sm:w-72 sm:flex-col overflow-x-auto space-y-2 sm:overflow-visible ">
+          <div className="md:sticky top-6 self-start space-y-4 lg:w-76 p-1 h-fit">
             {tabs.map((tab) => (
               <button
                 key={tab.id}
                 onClick={() => setActiveTab(tab.id)}
-                className={`relative flex items-center px-4 py-3   transition-all flex-shrink-0 sm:flex-shrink-none
+                className={`relative flex items-center lg:px-4 lg:py-3 2xl:text-xl w-full cursor-pointer transition-all shrink-0 sm:flex-shrink-none
             ${
               activeTab === tab.id
-                ? "text-black font-bold bg-gray-100 rounded-2xl cursor-pointer"
-                : "text-gray-500 hover:text-gray-800 hover:bg-gray-100 rounded-lg cursor-pointer"
+                ? "text-black font-bold"
+                : "text-[#677489]"
             }
           `}
               >
@@ -92,9 +92,9 @@ const page = () => {
                     transition={{ duration: 0.2 }}
                   />
                 )}
-                <div className="flex items-center gap-2 sm:gap-3 z-10">
+                <div className="flex gap-2 sm:gap-3 z-10">
                   {/* <span className="text-base sm:text-xl">{tab.icon}</span> */}
-                  <span className="text-sm sm:text-base font-medium whitespace-nowrap">
+                  <span>
                     {tab.name}
                   </span>
                 </div>
@@ -115,7 +115,7 @@ const page = () => {
           </div>
 
           {/* Tab Content */}
-          <div className="flex-1 relative bg-white rounded-2xl backdrop-filter">
+          <div className=" relative bg-white rounded-2xl backdrop-filter md:mt-0 mt-8">
             <AnimatePresence mode="wait">
               <motion.div
                 key={activeTab}
